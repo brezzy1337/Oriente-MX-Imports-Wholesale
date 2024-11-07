@@ -1,0 +1,36 @@
+generator client {                                                                           
+   provider = "prisma-client-js"                                                              
+ }                                                                                            
+                                                                                              
+ datasource db {                                                                              
+   provider = "postgresql"                                                                    
+   url      = env("DATABASE_URL")                                                             
+ }                                                                                            
+                                                                                              
+ model User {                                                                                 
+   id        String   @id @default(cuid())                                                    
+   email     String   @unique                                                                 
+   password  String                                                                           
+   name      String?                                                                          
+   company   String?                                                                          
+   role      Role     @default(CUSTOMER)                                                      
+   createdAt DateTime @default(now())                                                         
+   updatedAt DateTime @updatedAt                                                              
+ }                                                                                            
+                                                                                              
+ model Product {                                                                              
+   id          String   @id @default(cuid())                                                  
+   name        String                                                                         
+   description String?                                                                        
+   price       Float                                                                          
+   caseSize    Int                                                                            
+   imageUrl    String?                                                                        
+   category    String                                                                         
+   createdAt   DateTime @default(now())                                                       
+   updatedAt   DateTime @updatedAt                                                            
+ }                                                                                            
+                                                                                              
+ enum Role {                                                                                  
+   ADMIN                                                                                      
+   CUSTOMER                                                                                   
+ } 
