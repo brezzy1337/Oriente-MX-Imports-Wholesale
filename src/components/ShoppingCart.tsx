@@ -1,3 +1,5 @@
+'use client'
+
 import { FaShoppingCart } from 'react-icons/fa';
 
 const ShoppingCart = () => {
