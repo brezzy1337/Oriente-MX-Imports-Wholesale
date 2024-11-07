@@ -1,0 +1,40 @@
+Deli Asya is a thai food and goods importer, wholesaler, and distributor. I want to create a website that has a few core features that I will go over below. It will have a very simlar feel to https://vietnamwholesale.asia/ however.
+
+1. Home Page: A landing page with a brief introduction to the company, a brief description of the services offered, and a call-to-action to explore the website further.
+
+2. Navigation: A navigation bar that allows users to easily access different sections of the website, such as the About Us, Catalog, Contact Us, and Login/Sign Up pages.
+
+3. Catalog: A catalog of products offered by the company, with detailed information about each product, including images, descriptions, case, and prices.
+
+4. Invoice Generator: A tool that allows users to generate invoices for their purchases, with options to customize the invoice with their own logo and branding.
+
+5. Whatsapp Integration: A Whatsapp integration that allows users to easily contact the company via Whatsapp which sense inquries based off the products selected in the catalog.
+
+Tecnologies:
+
+1. Backend (Node.js, Express, TypeScript):
+   - Set up a basic Express server with TypeScript
+   - Create a basic API route for health check
+   - Set up a PostgreSQL connection using (Prisma)
+   - Implement basic user and project models
+   - Create initial API endpoints for user registration and project creation
+
+2. Frontend (React, Next.js, TypeScript):
+   - Set up a Next.js project with TypeScript
+   - Create a basic layout component
+   - Implement a home page with a brief description of the platform
+   - Add a simple navigation component
+
+3. Authentication:
+   - Implement JWT-based authentication on the backend
+   - Create login and registration forms on the frontend
+
+4. Project Structure:
+   - Organize the project into a monorepo structure with separate 'backend' and 'frontend' directories
+   - Set up a shared types directory for common TypeScript interfaces
+
+5. Development Environment:
+   - Create a docker-compose file for local development (PostgreSQL, backend, frontend)
+   - Set up basic ESLint and Prettier configurations for both backend and frontend
+
+Use the tech stack and features we discussed to generate a simple MVP for the Codeshares platform, which connects startup entrepreneurs with developers and engineers in exchange for equity. The stuture of the database will be similer to upwork based on this documentation https://www.upwork.com/developer/documentation/graphql/api/docs/index.html#mapping-users. The platform should have a backend using Node.js, Express, and TypeScript, and a frontend using React, Next.js, and TypeScript. Include basic user authentication with JWT, a simple job board for equity-based projects, and basic user profiles. The user interface will be web-based. The app should use PostgreSQL for the database. Generate all the required files, functions, methods, imports, etc. but don't implement any functions yet. Instead, just insert comments. Also, generate the package.json files for both backend and frontend, and a docker-compose.yml for local development. Only implement the features I've requested for the MVP.
