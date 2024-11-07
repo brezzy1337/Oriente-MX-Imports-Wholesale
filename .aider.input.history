@@ -1,0 +1,78 @@
+
+# 2024-11-07 06:59:41.630486
++y
+
+# 2024-11-07 07:00:09.630216
++/help
+
+# 2024-11-07 07:00:23.373132
++/add AiderGen
+
+# 2024-11-07 07:00:57.734243
++Hey hope you are well! Can you generate a project based of the requirements I set on AiderGen.
+
+# 2024-11-07 07:01:50.432555
++y
+
+# 2024-11-07 07:01:58.955573
++/run npm install
+
+# 2024-11-07 07:02:00.256073
++/run docker-compose up -d
+
+# 2024-11-07 07:02:00.810579
++/run npx prisma generate
+
+# 2024-11-07 07:02:12.428446
++/run npx prisma db push
+
+# 2024-11-07 07:02:14.426363
++/run npm run dev
+
+# 2024-11-07 07:02:45.843500
++Awesome lets set up vercel so I can take a look at the project.
+
+# 2024-11-07 07:03:08.018295
++y
+
+# 2024-11-07 07:03:20.715688
++/run git init
+
+# 2024-11-07 07:03:21.098832
++/run git add .
+
+# 2024-11-07 07:03:21.488151
++/run git commit -m "Initial commit"
+
+# 2024-11-07 07:03:21.938113
++/run git branch -M main
+
+# 2024-11-07 07:03:22.329260
++/run git remote add origin YOUR_GITHUB_REPO_URL
+
+# 2024-11-07 07:03:22.738938
++/run git push -u origin main
+
+# 2024-11-07 07:03:30.448636
++n
+
+# 2024-11-07 07:03:32.645729
++y
+
+# 2024-11-07 07:03:32.650233
++/run npm i -g vercel
+
+# 2024-11-07 07:03:48.176495
++/run vercel login
+
+# 2024-11-07 07:05:09.951918
++/run vercel
+
+# 2024-11-07 07:23:22.686491
++/add deli_asya/next.config.ts
+
+# 2024-11-07 07:23:38.094508
++Can you take a look at my nextConfig and set it back default?
+
+# 2024-11-07 07:23:47.956880
++y
