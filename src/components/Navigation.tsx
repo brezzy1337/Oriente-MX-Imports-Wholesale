@@ -1,9 +1,16 @@
 'use client'
 import { useState } from 'react';
+import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import { FaBars } from 'react-icons/fa';
-import SideMenu from './SideMenu';
-import ShoppingCart from './ShoppingCart';
+
+ const ShoppingCart = dynamic(() => import('@/components/ShoppingCart'), {
+  ssr: false,
+})
+
+const SideMenu = dynamic(() => import('@/components/SideMenu'), {
+  ssr: false,
+})
 
 const Navigation = () => {
   const [isSideMenuOpen, setIsSideMenuOpen] = useState(false);
