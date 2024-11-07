@@ -9,9 +9,6 @@
     "lint": "next lint",                                                                     
     "postinstall": "prisma generate"                                                         
   },                                            
-  "primsa": {
-    "schema": "./src/prisma/schema.prisma"
-  },                                             
   "dependencies": {                                                                          
     "@prisma/client": "^5.7.0",                                                              
     "next": "14.0.3",                                                                        
