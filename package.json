@@ -7,11 +7,8 @@
     "build": "next build",                                                                   
     "start": "next start",                                                                   
     "lint": "next lint",                                                                     
-    "postinstall": "prisma generate"                                                         
+    "postinstall": "prisma generate --schema=deli_asya/src/prisma/schema.prisma"                                                         
   },                                            
-  "primsa": {
-    "schema": "deli_asya/src/prisma/schema.prisma"
-  },                                             
   "dependencies": {                                                                          
     "@prisma/client": "^5.7.0",                                                              
     "next": "14.0.3",                                                                        
