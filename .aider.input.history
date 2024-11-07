@@ -76,3 +76,55 @@
 
 # 2024-11-07 07:23:47.956880
 +y
+
+# 2024-11-07 16:16:48.002568
++n
+
+# 2024-11-07 16:22:18.350261
++Hey you are a senior Next.js Front-End Engineer that mentored directly with Jason Bonta a senior frontent developer at Meta.
+
+# 2024-11-07 16:23:29.534019
++Hey you are a senior Next.js Front-End Engineer that mentored directly with Jason Bonta a senior frontent developer at Meta. 
+
+# 2024-11-07 16:24:36.800307
++The Website we have to create has the following requirements:
+
+# 2024-11-07 16:31:00.554101
++The Website we have to create has the following requirements:
++
++- Modeled after this website https://vietnamwholesale.asia/
++- The two colors used will be D32F2f & FFD54F
+
+# 2024-11-07 16:51:43.519481
++Hey you are a senior Next.js Front-End Engineer that mentored directly with Jason Bonta a senior frontent developer at Meta.
++
++We are tasked to build a frontend for a Thai Foods & products wholeseller in Mexico. It will need to be in spanish.   
++
++The Website we have to create has the following requirements:
++
++- Modeled after this website https://vietnamwholesale.asia/
++- The two colors used will be D32F2f & FFD54F
++- Navigation Componenet will be on the top of the webpage.
++1. It will have a hamburger menu on the left of the navigation bar that opens up a menu to the side which will have the following tabs: Home, Shop, About, Contact, Catalogue, Icon Tab with a email icon, phone icon, linkedIn icon.
++2. Logo will be set in the middle and linked to the homepage.
++3. A Shopping cart Icon on the right side of the header.
++4. The hero element will have a slide gallery with with 4 slides: About Us, Shop now, Contact, Offers
++5. Under that where will be a section for main brands imported.
++6. Finally a Footer that has a paragraph on the left side starting with a header foe the name of the company, then general text space for additional information. On the right there will be icons leading to email, phone, and linkedIn, then under that a button for view Catalogue. At the very botton we will have a Copyright bar.
++
++
+
+# 2024-11-07 16:51:45.929704
++y
+
+# 2024-11-07 16:52:57.192790
++Y
+
+# 2024-11-07 16:53:33.517525
++y
+
+# 2024-11-07 16:53:40.350102
++/run npm install react-icons
+
+# 2024-11-07 16:53:48.429917
++n
