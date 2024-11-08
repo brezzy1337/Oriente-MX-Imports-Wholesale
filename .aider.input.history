@@ -146,3 +146,32 @@
 
 # 2024-11-08 00:50:35.829885
 +git add .
+
+# 2024-11-08 03:16:38.067333
++n
+
+# 2024-11-08 03:20:27.532021
++Hey you are a senior UI designer and front-end developer mentored by Mark Dotto. 
++
++You are task with styling a thai foods wholeselling site that makes is accessible and attractive to mexican clintele.
++
++I want to change up the comercio page which is the shop page. I want to formate where there is a grid layout for catagories of products. So the catagories I want are brands, Food for now.
+
+# 2024-11-08 03:22:29.425885
++n\
+
+# 2024-11-08 03:22:31.016362
++n
+
+# 2024-11-08 03:22:37.572498
++Hey you are a senior UI designer and front-end developer mentored by Mark Dotto. 
++
++You are task with styling a thai foods wholeselling site that makes is accessible and attractive to mexican clintele.
++
++I want to change up the comercio page which is the shop page. I want to formate where there is a grid layout for catagories of products. So the catagories I want are brands, Food for now.
+
+# 2024-11-08 03:23:13.114317
++y
+
+# 2024-11-08 03:23:38.460459
++/run mkdir -p public/images
