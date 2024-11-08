@@ -234,3 +234,38 @@
 
 # 2024-11-08 04:29:03.544975
 +Awesome looks perfect! Lets make one more style change I actually want the containers and the grids to be about half the size it is right now and a little bit more of a gap would be nice.
+
+# 2024-11-08 04:35:37.149110
++Awesome, looks perfect! Lets get into the products now for the brands. Product are listed below:
++
++	Brand	Quantity/Weight
++Leche de coco	AROY D	2.9L
++Curry verde	AROY D	1KG
++Curry rojo	AROY D	1KG
++Curry amarillo	AROY D	1KG
++Curry panang	AROY D	1KG
++Curry massaman	AROY D	1KG
++Rice stick / tallarín de arroz 5MM	ROSE	375G
++Rice stick / tallarín de arroz 10MM	ROSE	375G
++Pasta de chili con aceite de soya "Prik Pao"	COCK	3KG
++Sweet chili salsa	AROY D	920G
++Papel arroz 22cm	AROY D	454G
++Rice vermicelli	ROSE	220G
++Canned bamboo sliced	AROY D	2.95KG
++Salsa soya	KIKKOMAN	18.9L
++Oyster sauce	KUM CHUM LKK	2.27KG
++Crema de cacahuate	-	1KG
++
++So products are going to be a little different. It will have the same gridlayout but below the image there will be name of product, case size, and then cost.
+
+# 2024-11-08 04:36:05.874662
++y
+
+# 2024-11-08 04:36:30.997252
++Awsome lets do that for all the brands.
+
+# 2024-11-08 04:36:55.895310
++y
+
+# 2024-11-08 04:37:04.120026
++/run mkdir -p public/images/products/{kikkoman,kum-chun,cock,rose}
