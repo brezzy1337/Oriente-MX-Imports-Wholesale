@@ -43,10 +43,10 @@ export default function Catalog() {
                   style={{ objectFit: 'cover' }}
                   className="group-hover:opacity-90 transition-opacity"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#D32F2F]/80 via-[#D32F2F]/40 to-transparent" />
+                <div className="absolute inset-0 bg-[#D32F2F]/75" />
               </div>
               
-              <div className="absolute bottom-0 w-full p-8 text-white backdrop-blur-sm bg-black/10">
+              <div className="absolute bottom-0 w-full p-8 text-white bg-black/5">
                 <h2 className="text-2xl font-bold mb-2 group-hover:text-[#FFD54F] transition-colors">
                   {category.name}
                 </h2>
