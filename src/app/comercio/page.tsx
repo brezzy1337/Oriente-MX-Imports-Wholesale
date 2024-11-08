@@ -1,4 +1,5 @@
 export default function Catalog() {
+  
   const categories = [
     {
       id: 1,
