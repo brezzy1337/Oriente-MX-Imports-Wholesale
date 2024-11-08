@@ -9,7 +9,7 @@ const slides = [
     title: "About Us",
     heading: "Deli Asya",
     description: "We are your premier Thai food wholesale partner in Mexico, dedicated to importing authentic Thai products directly from Thailand. Our mission is to bring the finest Thai ingredients and flavors to Mexican kitchens and businesses.",
-    image: "/images/thai-foods.webp",
+    image: "/images/thailand-bangkok.jpg",
     buttonText: "Learn More",
     buttonLink: "/about"
   },
@@ -18,7 +18,7 @@ const slides = [
     title: "Our Products",
     heading: "Authentic Thai Selection",
     description: "Discover our extensive range of premium Thai products, from essential sauces to specialty ingredients.",
-    image: "/images/thai-brands.jpg",
+    image: "/images/Thai-supermarket.jpg",
     buttonText: "View Catalog",
     buttonLink: "/comercio"
   },
@@ -27,7 +27,7 @@ const slides = [
     title: "Quality Guarantee",
     heading: "Premium Quality",
     description: "We ensure all our products meet the highest standards of quality and authenticity.",
-    image: "/images/brands/aroy-d.png",
+    image: "/images/thai-fresh-fruit.jpg",
     buttonText: "Our Brands",
     buttonLink: "/comercio/brands"
   },
@@ -36,7 +36,7 @@ const slides = [
     title: "Distribution",
     heading: "Nationwide Service",
     description: "Reliable wholesale distribution services across Mexico, ensuring your business never runs out of stock.",
-    image: "/images/brands/kikkoman.png",
+    image: "/images/truck.jpg",
     buttonText: "Contact Us",
     buttonLink: "/contact"
   }
