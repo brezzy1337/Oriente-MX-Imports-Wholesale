@@ -6,7 +6,7 @@ export default function Catalog() {
       id: 1,
       name: "Marcas Populares",
       count: 24,
-      image: "/brands-thai.jpg",
+      image: "/thai-brands.jpg",
       link: "/comercio/brands"
     },
     {
