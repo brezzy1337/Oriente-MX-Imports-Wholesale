@@ -6,14 +6,14 @@ export default function Brands() {
       id: 1,
       name: "AROY D",
       productCount: 45,
-      image: "/images/brands/aroy-d.jpg",
+      image: "/images/brands/aroy-d.png",
       link: "/comercio/brands/aroy-d"
     },
     {
       id: 2,
       name: "KIKKOMAN",
       productCount: 32,
-      image: "/images/brands/kikkoman.jpg",
+      image: "/images/brands/kikkoman.png",
       link: "/comercio/brands/kikkoman"
     },
     {
