@@ -1,5 +1,6 @@
+import Image from 'next/image';
+
 export default function Catalog() {
-  
   const categories = [
     {
       id: 1,
@@ -34,13 +35,19 @@ export default function Catalog() {
               href={category.link}
               className="group relative overflow-hidden rounded-2xl shadow-lg transition-transform duration-300 hover:scale-105"
             >
-              <div className="aspect-w-16 aspect-h-9 w-full bg-gray-200">
-                {/* Replace with actual image component once added */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+              <div className="relative w-full h-[300px] bg-amber-100">
+                <Image
+                  src={category.image}
+                  alt={category.name}
+                  fill
+                  style={{ objectFit: 'cover' }}
+                  className="group-hover:opacity-90 transition-opacity"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
               </div>
               
-              <div className="absolute bottom-0 w-full p-6 text-white">
-                <h2 className="text-2xl font-bold mb-2 group-hover:text-amber-300 transition-colors">
+              <div className="absolute bottom-0 w-full p-6 text-white backdrop-blur-sm bg-black/20">
+                <h2 className="text-2xl font-bold mb-2 group-hover:text-amber-400 transition-colors">
                   {category.name}
                 </h2>
                 <p className="text-gray-200">
