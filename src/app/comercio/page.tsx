@@ -5,15 +5,15 @@ export default function Catalog() {
     {
       id: 1,
       name: "Marcas Populares",
-      description: "Las mejores marcas de comida Thai",
-      image: "/brands-thai.jpg", // You'll need to add this image
+      count: 24,
+      image: "/brands-thai.jpg",
       link: "/comercio/brands"
     },
     {
       id: 2,
       name: "Alimentos",
-      description: "Ingredientes auténticos Thai",
-      image: "/foods-thai.jpg", // You'll need to add this image
+      count: 156,
+      image: "/foods-thai.jpg",
       link: "/comercio/food"
     }
   ];
@@ -21,37 +21,35 @@ export default function Catalog() {
   return (
     <div className="min-h-screen bg-white">
       <div className="container mx-auto px-4 py-16">
-        <h1 className="text-5xl font-bold mb-4 text-[#D32F2F] text-center">
+        <h1 className="text-4xl font-bold mb-4 text-gray-900 text-center">
           Sabores de Tailandia
         </h1>
-        <p className="text-xl text-gray-600 text-center mb-16 max-w-2xl mx-auto">
+        <p className="text-lg text-gray-600 text-center mb-16 max-w-2xl mx-auto">
           Descubre auténticos productos tailandeses para tu cocina
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-12 max-w-6xl mx-auto">
           {categories.map((category) => (
             <a
               key={category.id}
               href={category.link}
-              className="group relative overflow-hidden rounded-lg shadow-md transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
+              className="group block"
             >
-              <div className="relative w-full h-[300px] bg-amber-100">
+              <div className="relative w-full aspect-square overflow-hidden rounded-lg mb-4">
                 <Image
                   src={category.image}
                   alt={category.name}
                   fill
                   style={{ objectFit: 'cover' }}
-                  className="group-hover:opacity-90 transition-opacity"
+                  className="transition-transform duration-300 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-[#D32F2F]/75" />
               </div>
-              
-              <div className="absolute bottom-0 w-full p-8 text-white bg-black/5">
-                <h2 className="text-2xl font-bold mb-2 group-hover:text-[#FFD54F] transition-colors">
+              <div className="text-center">
+                <h2 className="text-xl font-medium text-gray-900 mb-1">
                   {category.name}
                 </h2>
-                <p className="text-gray-200">
-                  {category.description}
+                <p className="text-sm text-gray-500">
+                  {category.count} productos
                 </p>
               </div>
             </a>
