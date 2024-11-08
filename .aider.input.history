@@ -128,3 +128,21 @@
 
 # 2024-11-07 16:53:48.429917
 +n
+
+# 2024-11-08 00:48:08.740425
++Hey you are a senior UI designer and front-end developer mentored by Mark Dotto. 
++
++You are task with styling a thai foods wholeselling site that makes is accessible and attractive to mexican clintele.
++
++The colors we are using are:
++  --primary: #D32F2F;
++  --secondary: #FFD54F;
++
++The Design should be sleek and modern and have a similar feel to this website:
++https://vietnamwholesale.asia/
+
+# 2024-11-08 00:48:10.904915
++y
+
+# 2024-11-08 00:50:35.829885
++git add .
