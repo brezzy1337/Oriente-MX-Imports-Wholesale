@@ -2,13 +2,11 @@
 
 import Image from 'next/image';
 import HeroGallery from '@/components/HeroGallery';
-import ThaiFlag from '@/components/ThaiFlag';
 
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col">
       <HeroGallery />
-      
       <section className="bg-gray-50 py-16">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-12">Nuestras Marcas Principales</h2>
@@ -71,21 +69,19 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="container mx-auto px-4 py-16">
-        <div className="grid gap-8 md:grid-cols-3 max-w-[50%] mx-auto">
-          <div className="group bg-white rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow border border-gray-100 text-center">
-            <ThaiFlag />
-            <h2 className="text-xl font-semibold text-[--primary] mb-4">
+      
+      <section className="container mx-auto px-4 py-16 h-48">
+        <div className="grid gap-8 md:grid-cols-3">
+          <div className="group bg-white rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow border border-gray-100">
+            <h2 className="text-2xl font-semibold text-[--primary] mb-4">
               Importación de Alimentos
             </h2>
-            <p className="text-sm text-[--text-secondary] leading-relaxed">
+            <p className="text-[--text-secondary] leading-relaxed">
               Productos tailandeses premium para distribución mayorista. Sabores
               auténticos directamente desde Tailandia.
             </p>
           </div>
-
-          <div className="group bg-white rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow border border-gray-100 text-center">
-            <ThaiFlag />
+          <div className="group bg-white rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow border border-gray-100">
             <h2 className="text-2xl font-semibold text-[--primary] mb-4">
               Distribución Mayorista
             </h2>
@@ -93,9 +89,7 @@ export default function Home() {
               Servicios confiables de distribución en toda la región.
             </p>
           </div>
-
-          <div className="group bg-white rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow border border-gray-100 text-center">
-            <ThaiFlag />
+          <div className="group bg-white rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow border border-gray-100">
             <h2 className="text-2xl font-semibold text-[--primary] mb-4">
               Productos de Calidad
             </h2>
@@ -105,7 +99,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
     </main>
   );
 }
