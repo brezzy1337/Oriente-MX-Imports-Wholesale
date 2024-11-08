@@ -19,21 +19,21 @@ export default function Catalog() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-amber-50 to-white">
-      <div className="container mx-auto px-4 py-12">
-        <h1 className="text-4xl font-bold mb-4 text-gray-900 text-center">
+    <div className="min-h-screen bg-white">
+      <div className="container mx-auto px-4 py-16">
+        <h1 className="text-5xl font-bold mb-4 text-[#D32F2F] text-center">
           Sabores de Tailandia
         </h1>
-        <p className="text-xl text-gray-600 text-center mb-12">
+        <p className="text-xl text-gray-600 text-center mb-16 max-w-2xl mx-auto">
           Descubre auténticos productos tailandeses para tu cocina
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-6xl mx-auto">
           {categories.map((category) => (
             <a
               key={category.id}
               href={category.link}
-              className="group relative overflow-hidden rounded-2xl shadow-lg transition-transform duration-300 hover:scale-105"
+              className="group relative overflow-hidden rounded-lg shadow-md transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
             >
               <div className="relative w-full h-[300px] bg-amber-100">
                 <Image
@@ -43,11 +43,11 @@ export default function Catalog() {
                   style={{ objectFit: 'cover' }}
                   className="group-hover:opacity-90 transition-opacity"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#D32F2F]/80 via-[#D32F2F]/40 to-transparent" />
               </div>
               
-              <div className="absolute bottom-0 w-full p-6 text-white backdrop-blur-sm bg-black/20">
-                <h2 className="text-2xl font-bold mb-2 group-hover:text-amber-400 transition-colors">
+              <div className="absolute bottom-0 w-full p-8 text-white backdrop-blur-sm bg-black/10">
+                <h2 className="text-2xl font-bold mb-2 group-hover:text-[#FFD54F] transition-colors">
                   {category.name}
                 </h2>
                 <p className="text-gray-200">
