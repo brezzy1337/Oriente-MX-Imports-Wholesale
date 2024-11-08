@@ -317,3 +317,23 @@
 
 # 2024-11-08 06:08:30.478271
 +Its looking really good I've noticed that the text is to long. I'm thinking we can make the font smaller and give more width to the containers.
+
+# 2024-11-08 07:02:48.994516
++Hey you are a senior front-end development. 
++
++You need make the second section on the home page more compact and dynamic. It should have a clean, sleek, mordern feel to it. 
+
+# 2024-11-08 07:03:00.949565
++y
+
+# 2024-11-08 07:03:03.739386
++n
+
+# 2024-11-08 07:03:28.287893
++y
+
+# 2024-11-08 07:03:31.776040
++/run npm install @tabler/icons-react
+
+# 2024-11-08 07:03:50.820549
++n
