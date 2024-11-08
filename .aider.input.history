@@ -175,3 +175,6 @@
 
 # 2024-11-08 03:23:38.460459
 +/run mkdir -p public/images
+
+# 2024-11-08 03:34:28.532335
++I can't see the grid catagories for some reason. Can you double check colors aren't hiding content?
