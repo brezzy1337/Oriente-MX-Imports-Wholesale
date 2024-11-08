@@ -44,7 +44,7 @@ export default function ServiceCards() {
   ];
 
   return (
-    <div className="grid gap-4 md:grid-cols-3 place-items-center max-w-7xl mx-auto">
+    <div className="grid gap-4 md:grid-cols-3 place-items-top max-w-5xl mx-auto">
       {services.map((service, index) => (
         <ServiceCard key={index} {...service} />
       ))}
