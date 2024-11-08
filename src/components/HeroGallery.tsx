@@ -6,38 +6,38 @@ import Image from 'next/image';
 const slides = [
   {
     id: 1,
-    title: "About Us",
+    title: "Sobre Nosotros",
     heading: "Deli Asya",
-    description: "We are your premier Thai food wholesale partner in Mexico, dedicated to importing authentic Thai products directly from Thailand. Our mission is to bring the finest Thai ingredients and flavors to Mexican kitchens and businesses.",
+    description: "Somos tu socio mayorista líder en productos tailandeses en México, dedicados a importar productos auténticos directamente desde Tailandia. Nuestra misión es llevar los mejores ingredientes y sabores tailandeses a las cocinas y negocios mexicanos.",
     image: "/images/thailand-bangkok.jpg",
-    buttonText: "Learn More",
+    buttonText: "Conócenos",
     buttonLink: "/about"
   },
   {
     id: 2,
-    title: "Our Products",
-    heading: "Authentic Thai Selection",
-    description: "Discover our extensive range of premium Thai products, from essential sauces to specialty ingredients.",
+    title: "Nuestros Productos",
+    heading: "Selección Tailandesa Auténtica",
+    description: "Descubre nuestra extensa gama de productos tailandeses premium, desde salsas esenciales hasta ingredientes especiales.",
     image: "/images/Thai-supermarket.jpg",
-    buttonText: "View Catalog",
+    buttonText: "Ver Catálogo",
     buttonLink: "/comercio"
   },
   {
     id: 3,
-    title: "Quality Guarantee",
-    heading: "Premium Quality",
-    description: "We ensure all our products meet the highest standards of quality and authenticity.",
+    title: "Garantía de Calidad",
+    heading: "Calidad Premium",
+    description: "Aseguramos que todos nuestros productos cumplan con los más altos estándares de calidad y autenticidad.",
     image: "/images/thai-fresh-fruit.jpg",
-    buttonText: "Our Brands",
+    buttonText: "Nuestras Marcas",
     buttonLink: "/comercio/brands"
   },
   {
     id: 4,
-    title: "Distribution",
-    heading: "Nationwide Service",
-    description: "Reliable wholesale distribution services across Mexico, ensuring your business never runs out of stock.",
+    title: "Distribución",
+    heading: "Servicio Nacional",
+    description: "Servicios confiables de distribución mayorista en todo México, asegurando que tu negocio nunca se quede sin existencias.",
     image: "/images/truck.jpg",
-    buttonText: "Contact Us",
+    buttonText: "Contáctanos",
     buttonLink: "/contact"
   }
 ];
