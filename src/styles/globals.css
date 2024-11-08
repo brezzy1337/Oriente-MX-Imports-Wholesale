@@ -6,9 +6,26 @@
   --background: #ffffff;
   --primary: #D32F2F;
   --secondary: #FFD54F;
+  --text-primary: #2D3748;
+  --text-secondary: #4A5568;
 }
 
-/* body {
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-} */
+@layer base {
+  body {
+    @apply bg-white text-[--text-primary];
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-[--primary] text-white px-6 py-2 rounded-md hover:opacity-90 transition-opacity;
+  }
+  
+  .btn-secondary {
+    @apply bg-[--secondary] text-[--text-primary] px-6 py-2 rounded-md hover:opacity-90 transition-opacity;
+  }
+
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+}

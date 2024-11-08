@@ -16,9 +16,9 @@ const Navigation = () => {
   const [isSideMenuOpen, setIsSideMenuOpen] = useState(false);
 
   return (
-    <nav className="bg-white shadow-lg fixed w-full top-0 z-30">
-      <div className="max-w-6xl mx-auto px-4">
-        <div className="flex justify-between items-center h-16">
+    <nav className="bg-white shadow-lg fixed w-full top-0 z-30 border-b border-gray-100">
+      <div className="container-custom">
+        <div className="flex justify-between items-center h-20">
           <button
             onClick={() => setIsSideMenuOpen(true)}
             className="p-2 hover:text-[#D32F2F] transition-colors"
