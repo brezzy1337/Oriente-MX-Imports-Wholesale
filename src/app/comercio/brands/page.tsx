@@ -25,20 +25,13 @@ export default function Brands() {
     },
     {
       id: 4,
-      name: "LKK",
-      productCount: 37,
-      image: "/images/brands/lkk.jpg",
-      link: "/comercio/brands/lkk"
-    },
-    {
-      id: 5,
       name: "COCK",
       productCount: 25,
       image: "/images/brands/cock.jpg",
       link: "/comercio/brands/cock"
     },
     {
-      id: 6,
+      id: 5,
       name: "ROSE",
       productCount: 30,
       image: "/images/brands/rose.jpg",
