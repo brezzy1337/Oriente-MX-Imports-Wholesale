@@ -72,7 +72,7 @@ export default function Home() {
         </div>
       </section>
       <section className="container mx-auto px-4 py-16">
-        <div className="grid gap-8 md:grid-cols-3 max-w-[75%] mx-auto">
+        <div className="grid gap-8 md:grid-cols-3 max-w-[37.5%] mx-auto">
           <div className="group bg-white rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow border border-gray-100 text-center">
             <ThaiFlag />
             <h2 className="text-2xl font-semibold text-[--primary] mb-4">
