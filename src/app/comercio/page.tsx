@@ -13,7 +13,7 @@ export default function Catalog() {
       id: 2,
       name: "Alimentos",
       count: 156,
-      image: "/foods-thai.jpg",
+      image: "/thai-foods.jpg",
       link: "/comercio/food"
     }
   ];
