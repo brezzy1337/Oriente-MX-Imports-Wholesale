@@ -337,3 +337,64 @@
 
 # 2024-11-08 07:03:50.820549
 +n
+
+# 2024-11-08 09:24:46.357739
++Hey good evening so I found this some css I want to alter attached to this div 
++<div class= "grid gap-4 md:grid-cols-3"> 
++
++The css is this: 
++md\:grid-cols-3 {
++        grid-template-columns: repeat(3, minmax(0, 1fr));
++    }
++}
++
++I want to set this to minmax(0, .25fr) and also center the containers;
+
+# 2024-11-08 09:25:03.068194
++export ANTHROPIC_API_KEY=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
++
+
+# 2024-11-08 09:25:05.888619
++Hey good evening so I found this some css I want to alter attached to this div 
++<div class= "grid gap-4 md:grid-cols-3"> 
++
++The css is this: 
++md\:grid-cols-3 {
++        grid-template-columns: repeat(3, minmax(0, 1fr));
++    }
++}
++
++I want to set this to minmax(0, .25fr) and also center the containers;
+
+# 2024-11-08 09:25:32.164696
++Hey good evening so I found this some css I want to alter attached to this div  
++<div class= "grid gap-4 md:grid-cols-3">  
++ 
++The css is this:  
++md\:grid-cols-3 { 
++        grid-template-columns: repeat(3, minmax(0, 1fr)); 
++    } 
++} 
++ 
++I want to set this to minmax(0, .25fr) and also center the containers;         
+
+# 2024-11-08 09:25:44.714380
++n
+
+# 2024-11-08 09:25:48.969255
++/add src/components/ServiceCards.tsx
+
+# 2024-11-08 09:25:51.922157
++Hey good evening so I found this some css I want to alter attached to this div  
++<div class= "grid gap-4 md:grid-cols-3">  
++ 
++The css is this:  
++md\:grid-cols-3 { 
++        grid-template-columns: repeat(3, minmax(0, 1fr)); 
++    } 
++} 
++ 
++I want to set this to minmax(0, .25fr) and also center the containers;         
+
+# 2024-11-08 09:26:07.529953
++n
