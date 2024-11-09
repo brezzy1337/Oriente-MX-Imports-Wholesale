@@ -1,17 +1,17 @@
-'use client'
+"use client";
 
-import { useState } from 'react';
-import dynamic from 'next/dynamic';
-import Link from 'next/link';
-import { FaBars } from 'react-icons/fa';
+import { useState } from "react";
+import dynamic from "next/dynamic";
+import Link from "next/link";
+import { FaBars } from "react-icons/fa";
 
- const ShoppingCart = dynamic(() => import('@/components/ShoppingCart'), {
+const ShoppingCart = dynamic(() => import("@/components/ShoppingCart"), {
   ssr: false,
-})
+});
 
-const SideMenu = dynamic(() => import('@/components/SideMenu'), {
+const SideMenu = dynamic(() => import("@/components/SideMenu"), {
   ssr: false,
-})
+});
 
 const Navigation = () => {
   const [isSideMenuOpen, setIsSideMenuOpen] = useState(false);
@@ -37,29 +37,47 @@ const Navigation = () => {
           </div>
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-8 justify-center w-full">
-            <Link href="/" className="text-gray-800 hover:text-[#D32F2F] transition-colors">
+            <Link
+              href="/"
+              className="text-gray-800 hover:text-[#D32F2F] transition-colors"
+            >
               Inicio
             </Link>
-            <Link href="/tienda" className="text-gray-800 hover:text-[#D32F2F] transition-colors">
+            <Link
+              href="/tienda"
+              className="text-gray-800 hover:text-[#D32F2F] transition-colors"
+            >
               Tienda
             </Link>
-            <Link href="/nosotros" className="text-gray-800 hover:text-[#D32F2F] transition-colors">
+            <Link
+              href="/nosotros"
+              className="text-gray-800 hover:text-[#D32F2F] transition-colors"
+            >
               Nosotros
             </Link>
-            <Link href="/contacto" className="text-gray-800 hover:text-[#D32F2F] transition-colors">
+            <Link
+              href="/contacto"
+              className="text-gray-800 hover:text-[#D32F2F] transition-colors"
+            >
               Contacto
             </Link>
-            <Link href="/comercio" className="text-gray-800 hover:text-[#D32F2F] transition-colors">
+            <Link
+              href="/comercio"
+              className="text-gray-800 hover:text-[#D32F2F] transition-colors"
+            >
               Comercio
             </Link>
-            <Link href="/catalogo" className="text-gray-800 hover:text-[#D32F2F] transition-colors">
+            <Link
+              href="/catalogo"
+              className="text-gray-800 hover:text-[#D32F2F] transition-colors"
+            >
               Catálogo
             </Link>
           </div>
           <ShoppingCart />
         </div>
       </div>
-      <SideMenu 
+      <SideMenu
         isOpen={isSideMenuOpen}
         onClose={() => setIsSideMenuOpen(false)}
       />
