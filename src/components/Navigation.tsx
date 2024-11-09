@@ -1,4 +1,5 @@
 'use client'
+
 import { useState } from 'react';
 import dynamic from 'next/dynamic';
 import Link from 'next/link';
@@ -35,7 +36,7 @@ const Navigation = () => {
             </Link>
           </div>
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-8 flex-1 justify-center">
+          <div className="hidden lg:flex items-center space-x-8 justify-center">
             <Link href="/" className="text-gray-800 hover:text-[#D32F2F] transition-colors">
               Inicio
             </Link>
