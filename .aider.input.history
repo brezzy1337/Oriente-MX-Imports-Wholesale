@@ -406,3 +406,54 @@
 
 # 2024-11-09 01:58:23.187635
 +y
+
+# 2024-11-09 03:57:06.290417
++Hey! I think I'm ready to add the next element into my home page. I'm gonna need to do a featured products section. It will pull from a centrilzed products list which can also be used for catagorgies later.
+
+# 2024-11-09 03:57:27.948964
++y
+
+# 2024-11-09 03:57:50.512354
++/run npm run dev
+
+# 2024-11-09 03:57:55.667159
++n
+
+# 2024-11-09 04:15:15.582356
++Thats a great start thank you! I found a example I do like alot here: https://vietnamwholesale.asia/. 
++
++The featured products will be on a gallery slider. which has dots on the botton to show the position on the gallery. I don't think we need any boarder boxes, or hover effects, under the image there will be the brand and catagory the product is under. 
++
++Example: 7-up - Beverage
++
++Then will be the name of the product followed by the unit size. Finnally will be the case size of one order.
+
+# 2024-11-09 04:15:17.573897
++y
+
+# 2024-11-09 04:16:13.089834
++/run npm install react-slick slick-carousel
+
+# 2024-11-09 04:16:24.274757
++n
+
+# 2024-11-09 04:16:25.630586
++y
+
+# 2024-11-09 04:16:25.634541
++/run npm run dev
+
+# 2024-11-09 04:17:40.265152
++n
+
+# 2024-11-09 07:31:56.142090
++Hey! Just got back from my lunch break, feeling well rested and ready to roll. I was wondering if I could get some social media, email, and contact icons from the side menu on the navigation when it is full screen. I think we need a place for that on the footer as well.
+
+# 2024-11-09 07:37:36.760481
++y
+
+# 2024-11-09 07:38:14.575736
++/run npm install react-icons
+
+# 2024-11-09 07:38:20.409347
++n

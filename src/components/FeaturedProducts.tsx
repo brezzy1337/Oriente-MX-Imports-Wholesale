@@ -41,15 +41,15 @@ const FeaturedProducts = () => {
   };
 
   return (
-    <section className="py-16 bg-white">
+    <section className="py-16 bg-white width-full">
       <div className="container-custom">
         <h2 className="text-3xl font-bold text-center mb-12">Featured Products</h2>
         <Slider {...settings}>
           {featuredProducts.map((product) => (
             <div key={product.id} className="px-2">
               <Link href={`/tienda/${product.id}`}>
-                <div className="text-center">
-                  <div className="relative h-48 w-full mb-4">
+                <div className="text-align-start">
+                  <div className="relative h-32 w-full mb-4">
                     <Image
                       src={product.image}
                       alt={product.name}
@@ -60,9 +60,8 @@ const FeaturedProducts = () => {
                   <div className="text-sm text-gray-600 mb-2">
                     {product.brand} - {product.category}
                   </div>
-                  <h3 className="font-medium mb-1">{product.name}</h3>
-                  <div className="text-sm text-gray-500 mb-1">{product.unitSize}</div>
-                  <div className="text-sm text-gray-500">{product.caseSize}</div>
+                  <h3 className="font-medium mb-1">{product.name} {product.unitSize}</h3>
+                  <div className="text-sm text-gray-500 pb-8">{product.caseSize}</div>
                 </div>
               </Link>
             </div>
