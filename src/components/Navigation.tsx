@@ -27,7 +27,7 @@ const Navigation = () => {
             <FaBars className="w-6 h-6" />
           </button>
           {/* Logo */}
-          <div className="flex-1 flex justify-center md:justify-start">
+          <div className="flex-1 flex justify-center md:justify-start lg:justify-center">
             <Link href="/" className="flex items-center">
               <span className="font-semibold text-[#D32F2F] text-xl">
                 Deli Asya
