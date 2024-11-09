@@ -22,11 +22,10 @@ const Navigation = () => {
           {/* Mobile hamburger */}
           <button
             onClick={() => setIsSideMenuOpen(true)}
-            className="p-2 hover:text-[#D32F2F] transition-colors md:hidden"
+            className="p-2 hover:text-[#D32F2F] transition-colors lg:hidden"
           >
             <FaBars className="w-6 h-6" />
           </button>
-
           {/* Logo */}
           <div className="flex-1 flex justify-center md:justify-start">
             <Link href="/" className="flex items-center">
@@ -35,9 +34,8 @@ const Navigation = () => {
               </span>
             </Link>
           </div>
-
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8 flex-1 justify-center">
+          <div className="hidden lg:flex items-center space-x-8 flex-1 justify-center">
             <Link href="/" className="text-gray-800 hover:text-[#D32F2F] transition-colors">
               Inicio
             </Link>
@@ -57,11 +55,9 @@ const Navigation = () => {
               Catálogo
             </Link>
           </div>
-
           <ShoppingCart />
         </div>
       </div>
-
       <SideMenu 
         isOpen={isSideMenuOpen}
         onClose={() => setIsSideMenuOpen(false)}
