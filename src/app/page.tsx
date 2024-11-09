@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import HeroGallery from '@/components/HeroGallery';
 import ServiceCards from '@/components/ServiceCards';
+import FeaturedProducts from '@/components/FeaturedProducts';
 
 export default function Home() {
   return (
@@ -70,6 +71,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <FeaturedProducts />
       
       <section className="container mx-auto px-4 py-12">
         <ServiceCards />
