@@ -1,5 +1,4 @@
 import { IconTruck, IconBox, IconStars } from '@tabler/icons-react';
-
 interface ServiceCardProps {
   title: string;
   description: string;
@@ -8,7 +7,7 @@ interface ServiceCardProps {
 
 const ServiceCard = ({ title, description, icon }: ServiceCardProps) => (
   <div className="group bg-white rounded-xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-gray-200 hover:-translate-y-1">
-    <div className="flex items-start gap-4 minmax=[0, .25fr] justify-content-center">
+    <div className="flex items-start gap-4 minmax=[0, .25fr] justify-content-center"> 
       <div className="text-[--primary] group-hover:scale-110 transition-transform duration-300">
         {icon}
       </div>

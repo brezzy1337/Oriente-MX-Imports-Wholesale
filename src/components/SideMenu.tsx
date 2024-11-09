@@ -19,7 +19,7 @@ const SideMenu = ({ isOpen, onClose }: SideMenuProps) => {
         onClick={onClose}
       />
       <div
-        className={`fixed top-0 left-0 h-full w-64 bg-white z-50 transform transition-transform md:hidden ${
+        className={`fixed top-0 left-0 h-full w-64 bg-white z-50 transform transition-transform lg:hidden ${
           isOpen ? 'translate-x-0' : '-translate-x-full'
         }`}
       >
