@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Head from "next/head";
 import dynamic from "next/dynamic";
+import Footer from "@/components/Footer";
 import { Inter } from "next/font/google";
 import "@/styles/globals.css";
 
@@ -28,11 +29,7 @@ export default function RootLayout({
       <body className={`${inter.className} pt-20`}>
         <Navigation />
         <main>{children}</main>
-        <footer className="bg-gray-50 border-t border-gray-100 py-8 mt-20">
-          <div className="container-custom">
-            <p className="text-center text-gray-600">© 2024 Deli Asya. All rights reserved</p>
-          </div>
-        </footer>
+        <Footer />
       </body>
     </html>
   );

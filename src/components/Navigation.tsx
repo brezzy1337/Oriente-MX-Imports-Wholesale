@@ -3,7 +3,8 @@
 import { useState } from "react";
 import dynamic from "next/dynamic";
 import Link from "next/link";
-import { FaBars } from "react-icons/fa";
+import { FaBars, FaFacebook, FaInstagram, FaWhatsapp } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
 
 const ShoppingCart = dynamic(() => import("@/components/ShoppingCart"), {
   ssr: false,
@@ -36,7 +37,7 @@ const Navigation = () => {
             </Link>
           </div>
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-8 justify-center w-full">
+          <div className="hidden lg:flex items-center space-x-8 justify-center flex-1">
             <Link
               href="/"
               className="text-gray-800 hover:text-[#D32F2F] transition-colors"
@@ -72,6 +73,20 @@ const Navigation = () => {
               className="text-gray-800 hover:text-[#D32F2F] transition-colors"
             >
               Catálogo
+            </Link>
+          </div>
+          <div className="hidden lg:flex items-center space-x-4">
+            <Link href="https://facebook.com" target="_blank" className="text-gray-600 hover:text-[#D32F2F] transition-colors">
+              <FaFacebook className="w-5 h-5" />
+            </Link>
+            <Link href="https://instagram.com" target="_blank" className="text-gray-600 hover:text-[#D32F2F] transition-colors">
+              <FaInstagram className="w-5 h-5" />
+            </Link>
+            <Link href="https://wa.me/yourphonenumber" target="_blank" className="text-gray-600 hover:text-[#D32F2F] transition-colors">
+              <FaWhatsapp className="w-5 h-5" />
+            </Link>
+            <Link href="mailto:contact@deliasya.com" className="text-gray-600 hover:text-[#D32F2F] transition-colors">
+              <MdEmail className="w-5 h-5" />
             </Link>
           </div>
           <ShoppingCart />
