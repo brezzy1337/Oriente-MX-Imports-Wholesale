@@ -1,48 +1,58 @@
 export interface Product {
   id: string;
   name: string;
-  description: string;
+  brand: string;
+  category: string;
+  unitSize: string;
+  caseSize: string;
   price: number;
   image: string;
-  category: string;
   featured?: boolean;
 }
 
 export const products: Product[] = [
   {
     id: "1",
-    name: "Salsa de Soja Kikkoman",
-    description: "Salsa de soja premium, perfecta para sushi y cocina asiática",
+    name: "Soy Sauce",
+    brand: "Kikkoman",
+    category: "Sauces",
+    unitSize: "1L",
+    caseSize: "12 bottles/case",
     price: 5.99,
     image: "/images/brands/kikkoman.png",
-    category: "Salsas",
     featured: true
   },
   {
     id: "2",
-    name: "Leche de Coco Aroy-D",
-    description: "Leche de coco cremosa para curry y postres",
+    name: "Coconut Milk",
+    brand: "Aroy-D",
+    category: "Cooking Essentials",
+    unitSize: "400ml",
+    caseSize: "24 cans/case",
     price: 3.99,
     image: "/images/brands/aroy-d.png",
-    category: "Ingredientes básicos",
     featured: true
   },
   {
     id: "3",
-    name: "Salsa de Ostras Kum Chun",
-    description: "Salsa de ostras auténtica para realzar el sabor",
+    name: "Oyster Sauce",
+    brand: "Kum Chun",
+    category: "Sauces",
+    unitSize: "510g",
+    caseSize: "12 bottles/case",
     price: 4.99,
     image: "/images/brands/kum-chun.jpg",
-    category: "Salsas",
     featured: true
   },
   {
     id: "4",
-    name: "Salsa de Pescado Cock",
-    description: "Salsa de pescado tradicional tailandesa",
+    name: "Fish Sauce",
+    brand: "Cock",
+    category: "Sauces",
+    unitSize: "700ml",
+    caseSize: "12 bottles/case",
     price: 4.50,
     image: "/images/brands/cock.jpg",
-    category: "Salsas",
     featured: true
   }
 ];
