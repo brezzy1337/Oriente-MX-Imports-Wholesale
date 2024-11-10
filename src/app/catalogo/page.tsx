@@ -40,7 +40,7 @@ export default function CatalogoPage() {
         </h1>
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
-              <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+              <label htmlFor="name" className="block text-sm font-medium text-white mb-2 drop-shadow-md">
                 Name
               </label>
               <input
@@ -55,7 +55,7 @@ export default function CatalogoPage() {
             </div>
 
             <div>
-              <label htmlFor="companyName" className="block text-sm font-medium text-gray-700 mb-1">
+              <label htmlFor="companyName" className="block text-sm font-medium text-white mb-2 drop-shadow-md">
                 Company Name
               </label>
               <input
@@ -70,7 +70,7 @@ export default function CatalogoPage() {
             </div>
 
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+              <label htmlFor="email" className="block text-sm font-medium text-white mb-2 drop-shadow-md">
                 Email
               </label>
               <input
@@ -85,7 +85,7 @@ export default function CatalogoPage() {
             </div>
 
             <div>
-              <label htmlFor="mobile" className="block text-sm font-medium text-gray-700 mb-1">
+              <label htmlFor="mobile" className="block text-sm font-medium text-white mb-2 drop-shadow-md">
                 Mobile (WhatsApp/Line/Viber/WeChat)
               </label>
               <input
