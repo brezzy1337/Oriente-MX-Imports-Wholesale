@@ -25,10 +25,19 @@ export default function CatalogoPage() {
   };
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      <div className="max-w-2xl mx-auto">
-        <h1 className="text-3xl font-bold text-center mb-8">Request Our Catalogue</h1>
-        <div className="bg-white p-8 rounded-lg shadow-lg">
+    <div 
+      className="min-h-screen flex items-center justify-center px-4 py-8"
+      style={{
+        backgroundImage: "url('/images/thai-foods.webp')",
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundAttachment: 'fixed'
+      }}
+    >
+      <div className="w-full max-w-2xl backdrop-blur-sm bg-white/30 p-8 rounded-2xl">
+        <h1 className="text-4xl font-bold text-center mb-8 text-white drop-shadow-lg">
+          Request Our Catalogue
+        </h1>
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
               <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
@@ -41,7 +50,7 @@ export default function CatalogoPage() {
                 value={formData.name}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                className="w-full px-4 py-3 bg-white/70 rounded-full border-none focus:ring-2 focus:ring-blue-400 focus:bg-white/90 transition-all duration-300 placeholder-gray-500"
               />
             </div>
 
@@ -92,7 +101,7 @@ export default function CatalogoPage() {
 
             <button
               type="submit"
-              className="w-full bg-blue-600 text-white py-3 px-6 rounded-md hover:bg-blue-700 transition-colors duration-200"
+              className="w-full bg-blue-600/90 text-white py-4 px-6 rounded-full hover:bg-blue-700 transition-all duration-300 transform hover:scale-[1.02] font-semibold text-lg shadow-lg"
             >
               Request Catalogue
             </button>
