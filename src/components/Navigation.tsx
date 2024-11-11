@@ -3,6 +3,7 @@
 import { useState } from "react";
 import dynamic from "next/dynamic";
 import Link from "next/link";
+import Image from "next/image";
 import { FaBars, FaFacebook, FaInstagram, FaWhatsapp } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 
@@ -31,30 +32,28 @@ const Navigation = () => {
           {/* Logo */}
           <div className="flex-1 flex justify-center lg:justify-start">
             <Link href="/" className="flex items-center">
-              <span className="font-semibold text-[#D32F2F] text-xl">
-                Deli Asya
-              </span>
+              <Image
+                src="/images/logo.png"
+                alt="Deli Asya Logo"
+                width={140}
+                height={140}
+                className="h-auto"
+              />
             </Link>
           </div>
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-4 px-32 justify-start flex-1">
+          <div className="hidden lg:flex items-center space-x-8 px-32 justify-start flex-1">
             <Link
               href="/"
               className="text-gray-800 hover:text-[#D32F2F] transition-colors"
             >
-              Inicio
-            </Link>
-            <Link
-              href="/tienda"
-              className="text-gray-800 hover:text-[#D32F2F] transition-colors"
-            >
-              Tienda
+              Hogar
             </Link>
             <Link
               href="/nosotros"
               className="text-gray-800 hover:text-[#D32F2F] transition-colors"
             >
-              Nosotros
+              Sobre nosotros
             </Link>
             <Link
               href="/contacto"
