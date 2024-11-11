@@ -50,7 +50,7 @@ const Navigation = () => {
               Hogar
             </Link>
             <Link
-              href="/nosotros"
+              href="/sobre-nosotros"
               className="text-gray-800 hover:text-[#D32F2F] transition-colors"
             >
               Sobre nosotros
