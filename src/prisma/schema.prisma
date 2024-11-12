@@ -7,32 +7,43 @@ generator client {
    url      = env("DATABASE_URL")                                                             
  }                                                                                            
                                                                                               
- model User {                                                                                 
-   id        String   @id @default(cuid())                                                    
-   email     String   @unique                                                                 
-   password  String                                                                           
-   name      String?                                                                          
-   company   String?                                                                          
-   role      Role     @default(CUSTOMER)                                                      
-   createdAt DateTime @default(now())                                                         
-   updatedAt DateTime @updatedAt                                                              
- }                                                                                            
- 
- model Product {                                                                              
-   id          String   @id @default(cuid())                                                  
-   name        String                                                                         
-   description String?                                                                        
-   price       Float? 
-   unitSize    Float                                                                          
-   caseSize    Int                                                                            
-   imageUrl    String?                                                                        
-   brand       String
-   category    String                                                                         
-   createdAt   DateTime @default(now())                                                       
-   updatedAt   DateTime @updatedAt                                                            
- }                                                                                            
+model User {                                                                                 
+  id        String    @id @default(cuid())                                                    
+  email     String    @unique                                                                 
+  password  String                                                                           
+  name      String?                                                                          
+  company   String?                                                                          
+  role      Role      @default(CUSTOMER)                                                      
+  products  Product[] @relation("ProductEditor")
+  createdAt DateTime  @default(now())                                                         
+  updatedAt DateTime  @updatedAt                                                              
+}                                                                                            
+
+model Product {                                                                              
+  id          String   @id @default(cuid())                                                  
+  name        String                                                                         
+  description String?                                                                        
+  price       Float?
+  unitSize    Float                                                                          
+  caseSize    Int                                                                            
+  imageUrl    String?                                                                        
+  brand       String
+  category    String
+  status      Status   @default(ACTIVE)
+  editor      User?    @relation("ProductEditor", fields: [editorId], references: [id])
+  editorId    String?
+  createdAt   DateTime @default(now())                                                       
+  updatedAt   DateTime @updatedAt                                                            
+}                                                                                            
                                                                                               
- enum Role {                                                                                  
-   ADMIN                                                                                      
-   CUSTOMER                                                                                   
+enum Role {                                                                                  
+  ADMIN                                                                                      
+  CUSTOMER
+  EMPLOYEE                                                                   
+}
+
+enum Status {
+  ACTIVE
+  DRAFT
+  ARCHIVED
  } 

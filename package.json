@@ -18,15 +18,22 @@
   "dependencies": {
     "@prisma/client": "^5.7.0",
     "@tabler/icons-react": "^3.21.0",
+    "@tanstack/react-query": "^4.36.1",
+    "@trpc/client": "^10.43.6",
+    "@trpc/next": "^10.43.6",
+    "@trpc/react-query": "^10.43.6",
+    "@trpc/server": "^10.43.6",
     "bcryptjs": "^2.4.3",
     "jsonwebtoken": "^9.0.0",
     "next": "14.0.3",
+    "next-auth": "^4.24.5",
     "react": "^18",
     "prisma": "^5.7.0",
     "react-dom": "^18",
     "react-icons": "^5.3.0",
     "react-slick": "^0.30.2",
-    "slick-carousel": "^1.8.1"
+    "slick-carousel": "^1.8.1",
+    "zod": "^3.22.4"
   },
   "devDependencies": {
     "@types/node": "^20",
