@@ -17,7 +17,7 @@ export default function Home() {
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-5 gap-8 max-w-4xl mx-auto">
             <a href="/comercio/brands/aroy-d" className="group">
-              <div className="bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+              <div className="bg-white p-4 hover:shadow-md transition-shadow">
                 <Image
                   src="/images/brands/aroy-d.png"
                   alt="AROY-D"
@@ -28,7 +28,7 @@ export default function Home() {
               </div>
             </a>
             <a href="/comercio/brands/kikkoman" className="group">
-              <div className="bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+              <div className="bg-white p-4 hover:shadow-md transition-shadow">
                 <Image
                   src="/images/brands/kikkoman.png"
                   alt="KIKKOMAN"
@@ -39,7 +39,7 @@ export default function Home() {
               </div>
             </a>
             <a href="/comercio/brands/kum-chun" className="group">
-              <div className="bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+              <div className="bg-white p-4 hover:shadow-md transition-shadow">
                 <Image
                   src="/images/brands/kum-chun.jpg"
                   alt="KUM CHUN"
@@ -50,7 +50,7 @@ export default function Home() {
               </div>
             </a>
             <a href="/comercio/brands/cock" className="group">
-              <div className="bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+              <div className="bg-white p-4 hover:shadow-md transition-shadow">
                 <Image
                   src="/images/brands/cock.jpg"
                   alt="COCK"
@@ -61,7 +61,7 @@ export default function Home() {
               </div>
             </a>
             <a href="/comercio/brands/rose" className="group">
-              <div className="bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+              <div className="bg-white p-4 hover:shadow-md transition-shadow">
                 <Image
                   src="/images/brands/rose.jpg"
                   alt="ROSE"
