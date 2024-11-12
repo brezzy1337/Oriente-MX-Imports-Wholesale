@@ -19,7 +19,7 @@ const Navigation = () => {
   const [isSideMenuOpen, setIsSideMenuOpen] = useState(false);
 
   return (
-    <nav className="bg-white shadow-lg fixed w-full top-0 z-30 border-b border-gray-100">
+    <nav className="bg-[#FFFFFF] shadow-lg fixed w-full top-0 z-30 border-b border-gray-100">
       <div className="container-custom">
         <div className="flex justify-between items-center h-20">
           {/* Mobile hamburger */}
