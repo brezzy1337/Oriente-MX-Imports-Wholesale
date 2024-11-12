@@ -44,7 +44,7 @@ export default function CatalogoPage() {
             href="/catalogue.pdf"
             download
             
-            className="bg-[#D32F2F]/90 decoration-white py-4 px-8 rounded-full transition-all duration-300 transform hover:scale-[1.02] font-semibold text-lg shadow-lg flex items-center justify-center gap-2"
+            className="bg-[#D32F2F]/90 text-white py-4 px-8 rounded-full transition-all duration-300 transform hover:scale-[1.02] font-semibold text-lg shadow-lg flex items-center justify-center gap-2"
           >
             Download Catalogue
           </a>
