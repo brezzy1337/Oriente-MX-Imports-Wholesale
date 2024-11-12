@@ -34,20 +34,22 @@ export default function CatalogoPage() {
         backgroundAttachment: "fixed",
       }}
     >
-      <div className="w-full max-w-2xl backdrop-blur-sm bg-white/30 p-8 rounded-2xl">
-        <h1 className="text-4xl font-bold text-center mb-8 text-white drop-shadow-lg">
+      <div className="w-full max-w-2xl backdrop-blur-sm bg-/30 p-8 rounded-2xl">
+      <div className="w-full max-w-2xl p-8 rounded-2xl">
+        <h1 className="text-4xl font-bold text-center mb-8 drop-shadow-lg text-[#D32F2F]">
           Our Catalogue
         </h1>
         <div className="mb-8 flex justify-center">
           <a
             href="/catalogue.pdf"
             download
-            className="bg-[#2F7D32]/90 text-white py-4 px-8 rounded-full hover:bg-[#2F7D32] transition-all duration-300 transform hover:scale-[1.02] font-semibold text-lg shadow-lg flex items-center justify-center gap-2"
+            
+            className="bg-[#D32F2F]/90 decoration-white py-4 px-8 rounded-full transition-all duration-300 transform hover:scale-[1.02] font-semibold text-lg shadow-lg flex items-center justify-center gap-2"
           >
             Download Catalogue
           </a>
         </div>
-        <div className="text-center mb-8">
+        {/* <div className="text-center mb-8">
           <p className="text-white text-lg font-medium drop-shadow-md">
             Or request a personalized quote by filling out the form below
           </p>
@@ -128,7 +130,8 @@ export default function CatalogoPage() {
           >
             Request Catalogue{" "}
           </button>
-        </form>
+        </form> */}
+      </div>
       </div>
     </div>
   );
