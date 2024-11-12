@@ -7,10 +7,17 @@ import { TRPCError } from "@trpc/server";
 export const authRouter = router({
 
     signup: publicProcedure
-        .input(z.object({ email: z.string().email(), password: z.string().min(6), name: z.string(), agreedTerms: z.boolean(), subscribeEmails: z.boolean().optional() }))
+        .input(z.object({ 
+            email: z.string().email(), 
+            password: z.string().min(6), 
+            name: z.string(), 
+            role: z.enum(['USER', 'EMPLOYEE', 'ADMIN']).optional(),
+            agreedTerms: z.boolean(), 
+            subscribeEmails: z.boolean().optional() 
+        }))
         .mutation(async ({ input, ctx }) => {
             try {
-                const { email, password, name, agreedTerms, subscribeEmails } = input;
+                const { email, password, name, role, agreedTerms, subscribeEmails } = input;
 
                 const existingUser = await ctx.prisma.user.findUnique({
                     where: { email: email },
@@ -23,7 +30,7 @@ export const authRouter = router({
                     });
                 }
 
-                const user = await createUser(email, password, name);
+                const user = await createUser(email, password, name, role);
 
                 const result = await signIn('credentials', {
                     redirect: false,

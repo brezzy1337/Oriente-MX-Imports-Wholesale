@@ -1,7 +1,9 @@
 import { compare, hash } from 'bcryptjs';
 import { prisma } from '../../utils/primsa';
 
-export async function createUser( email: string, password: string, name: string) {
+export type UserRole = 'USER' | 'EMPLOYEE' | 'ADMIN';
+
+export async function createUser(email: string, password: string, name: string, role: UserRole = 'USER') {
     const hashedPassword = await hash(password, 12)
 
     return prisma.user.create({
@@ -9,6 +11,7 @@ export async function createUser( email: string, password: string, name: string)
             email,
             password: hashedPassword,
             name,
+            role,
         },
     })
 };
