@@ -18,7 +18,6 @@ model User {
   createdAt DateTime  @default(now())                                                         
   updatedAt DateTime  @updatedAt                                                              
 }                                                                                            
-
 model Product {                                                                              
   id          String   @id @default(cuid())                                                  
   name        String                                                                         
@@ -27,14 +26,16 @@ model Product {
   unitSize    String                                                                          
   caseSize    String                                                                            
   imageUrl    String?                                                                        
-  brand       Brand
-  category    Category
+  brand       Brand    @relation(fields: [brandId], references: [id])
+  brandId     String
+  category    Category @relation(fields: [categoryId], references: [id])
+  categoryId  String
   status      Status   @default(ACTIVE)
   editor      User?    @relation("ProductEditor", fields: [editorId], references: [id])
   editorId    String?
   createdAt   DateTime @default(now())                                                       
   updatedAt   DateTime @updatedAt                                                            
-}                                                                                            
+}
 
 model Brand {
   id          String    @id @default(cuid())

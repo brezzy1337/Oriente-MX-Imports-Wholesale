@@ -27,7 +27,7 @@ const slides = [
     title: "Garantía de Calidad",
     heading: "Calidad Premium",
     description: "Aseguramos que todos nuestros productos cumplan con los más altos estándares de calidad y autenticidad.",
-    image: "/images/thai-fresh-fruit.jpg",
+    image: "/images/thai-fresh-fruit.png",
     buttonText: "Nuestras Marcas",
     buttonLink: "/comercio/brands"
   },
@@ -75,14 +75,13 @@ export default function HeroGallery() {
             />
             <div className="absolute inset-0 bg-black/50" />
           </div>
-          
-          <div className="relative z-10 h-full flex flex-col justify-center items-center text-white text-center px-4">
+          <div className="relative z-10 h-full flex flex-col justify-center items-center text-[#FFFFFF] text-center px-4">
             <h2 className="text-xl font-semibold mb-2">{slide.title}</h2>
             <h1 className="text-5xl font-bold mb-4">{slide.heading}</h1>
             <p className="max-w-2xl text-lg mb-8">{slide.description}</p>
             <a
               href={slide.buttonLink}
-              className="bg-white text-gray-900 px-8 py-3 rounded-full font-semibold 
+              className="bg-primary text-gray-900 px-8 py-3 rounded-full font-semibold 
                        hover:bg-gray-100 transition-colors"
             >
               {slide.buttonText}

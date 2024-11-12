@@ -610,3 +610,89 @@
 
 # 2024-11-12 03:48:23.337378
 +Hey can you make the button text white on download catalog? I'm getting it's getting inherited from somewhere.
+
+# 2024-11-12 04:49:08.469736
++I want to add some styleing to the headers on the homepage. I'm thinking some thai line designs on the side of the header. Here are some examples of them: https://www.freepik.com/free-photos-vectors/line-thai
+
+# 2024-11-12 04:49:09.794262
++y
+
+# 2024-11-12 05:00:12.988640
++Hey I found some designs I like can you pick one that fits the thai theme and apply it to the DecoratedHeader'c:/Users/dgame/Desktop/Work/DeliAsya/vecteezy_set-of-vintage-borders-in-brown-isolated-on-a-plain-background_954059/Frames_38_A.eps'
+
+# 2024-11-12 05:00:57.597583
++Yes lets do some Kanok designs!
+
+# 2024-11-12 05:18:53.056198
++/web'c:/Users/dgame/Desktop/Work/DeliAsya/vecteezy_set-of-vintage-borders-in-brown-isolated-on-a-plain-background_954059/Frames_38_A.jpg'
+
+# 2024-11-12 05:18:59.307115
++'c:/Users/dgame/Desktop/Work/DeliAsya/vecteezy_set-of-vintage-borders-in-brown-isolated-on-a-plain-background_954059/Frames_38_A.jpg'
+
+# 2024-11-12 06:56:28.711598
++Hey good afternoon! Hope your doing well! I'm feeling somber but hopefully somehow. 
++
++I need you to be a experienced backend developer today. We are going to be creating a dashboard for employees up add, delete update the catalog. It should just be altering the product data model. So to do this I think we are going to need a authenication setup and trpc to do the requests to the database.
+
+# 2024-11-12 06:56:37.733283
++y
+
+# 2024-11-12 06:57:16.032093
++/run npm install @trpc/server @trpc/client @trpc/react-query @trpc/next @tanstack/react-query next-auth zod
+
+# 2024-11-12 06:57:28.962878
++/run npx prisma migrate dev --name add_product_management
+
+# 2024-11-12 06:57:45.037017
++n
+
+# 2024-11-12 09:56:46.952434
++/add src/app/_app.tsx
+
+# 2024-11-12 09:57:18.089550
++/add src/server/router/_app/ts
+
+# 2024-11-12 09:57:20.686068
++n
+
+# 2024-11-12 10:20:57.040223
++/add src/server/router/_app/ts
+
+# 2024-11-12 10:20:59.374129
++n
+
+# 2024-11-12 10:21:05.192648
++/add
+
+# 2024-11-12 10:28:37.606280
++/add src/prisma/schema.prisma
+
+# 2024-11-12 10:30:02.395790
++Hey can you help me update my primsa schema for updating the Products with proper Brand and Category objects. Idealy I want to be able to add Brands and Catagories as a enum from the user side. Is there a way to do that without manually updating the schema?
+
+# 2024-11-12 10:47:08.821004
++y
+
+# 2024-11-12 10:47:32.429975
++/run npx prisma generate
+
+# 2024-11-12 10:47:34.201757
++/run npx prisma migrate dev --name enhance_brand_and_category_models
+
+# 2024-11-12 10:48:59.122845
++Awesome thanks! I need to create a postProduct, postBrand, postCategory route.
+
+# 2024-11-12 10:49:29.592643
++/add src/server/router.ts
+
+# 2024-11-12 10:49:32.073902
++n
+
+# 2024-11-12 10:49:50.367357
++'/workspaces/Oriente-MX-Imports-Wholesale/src/server/router/_app.ts'
+
+# 2024-11-12 10:50:07.130188
++/add src/server/router/_app.ts
+
+# 2024-11-12 10:50:12.258106
++Awesome thanks! I need to create a postProduct, postBrand, postCategory route.

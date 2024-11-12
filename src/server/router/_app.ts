@@ -61,9 +61,10 @@ export const appRouter = router({
                 throw new TRPCError({ code: 'UNAUTHORIZED' });
             }
 
+            const { categoryId, brandId, ...restInput } = input;
             const product = await prisma.product.create({
                 data: {
-                    ...input,
+                    ...restInput,
                     editor: {
                         connect: {
                             email: session.user.email
@@ -71,20 +72,21 @@ export const appRouter = router({
                     },
                     brand: {
                         connect: {
-                            id: input.brandId
+                            id: brandId
                         }
                     },
                     category: {
                         connect: {
-                            id: input.categoryId
+                            id: categoryId
                         }
                     }
                 },
                 include: {
                     brand: true,
                     category: true,
-                    editor: true
                 }
             });
             return product;
         })
+});
+
