@@ -598,3 +598,15 @@
 
 # 2024-11-12 03:10:05.925559
 +/run echo "DATABASE_URL=\"postgresql://username:password@localhost:5432/your_database_name?schema=public\"" > .env
+
+# 2024-11-12 03:23:52.628212
++Hey we're going to make a quick change on the catalogue page. It will have a direct button to download the catalogue. Can you make that change for me.
+
+# 2024-11-12 03:23:57.458511
++y
+
+# 2024-11-12 03:24:23.153617
++n
+
+# 2024-11-12 03:48:23.337378
++Hey can you make the button text white on download catalog? I'm getting it's getting inherited from somewhere.
