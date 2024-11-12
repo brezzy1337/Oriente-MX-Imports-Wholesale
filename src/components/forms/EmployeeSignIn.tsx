@@ -28,7 +28,7 @@ export default function EmployeeSignIn() {
         return;
       }
 
-      router.push('/dashboard');
+      router.push('/admin/dashboard');
     } catch (err) {
       setError('An error occurred during sign in');
     } finally {
