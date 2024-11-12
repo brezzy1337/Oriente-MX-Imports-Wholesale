@@ -6,14 +6,14 @@ export default function Catalog() {
       id: 1,
       name: "Marcas Populares",
       count: 24,
-      image: "images/thai-brands.jpg",
+      image: "/images/thai-brands.jpg",
       link: "/comercio/brands"
     },
     {
       id: 2,
       name: "Alimentos",
       count: 156,
-      image: "images/thai-foods.jpg",
+      image: "/images/thai-foods.jpg",
       link: "/comercio/food"
     }
   ];
