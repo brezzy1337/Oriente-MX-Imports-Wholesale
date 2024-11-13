@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { useSession } from 'next-auth/react';
+import { getServerSession } from 'next-auth';
 import { useRouter } from 'next/navigation';
 import dynamic from 'next/dynamic';
 
@@ -12,12 +12,11 @@ const CreateCategory = dynamic(() => import('@/components/forms/CreateCategory')
 export default function DashboardPage() {
 
   const router = useRouter();
-  const { data: session, status } = useSession({
-    required: true,
-    onUnauthenticated() {
-      router.push('/auth/signin');
-    },
-  });
+  const session = getServerSession();
+
+  if (!session) {
+    router.push('auth/signin')
+  }
 
   const [activeTab, setActiveTab] = useState('products');
   
