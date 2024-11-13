@@ -3,9 +3,11 @@
 import { useState } from 'react';
 import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
-import CreateProduct from '@/components/forms/CreateProduct';
-import CreateBrand from '@/components/forms/CreateBrand';
-import CreateCategory from '@/components/forms/CreateCategory';
+import dynamic from 'next/dynamic';
+
+const CreateProduct = dynamic(() => import('@/components/forms/CreateProduct'), { ssr: false });
+const CreateBrand = dynamic(() => import('@/components/forms/CreateBrand'), { ssr: false });
+const CreateCategory = dynamic(() => import('@/components/forms/CreateCategory'), { ssr: false });
 
 export default function DashboardPage() {
 
