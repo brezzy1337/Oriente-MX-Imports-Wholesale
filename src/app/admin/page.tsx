@@ -1,18 +1,12 @@
 'use client';
 
 import { useState } from 'react';
-import { useSession } from 'next-auth/react';
 import { redirect } from 'next/navigation';
 import EmployeeSignIn from '@/components/forms/EmployeeSignIn';
 import EmployeeSignUp from '@/components/forms/EmployeeSignUp';
 
 export default function AdminPage() {
   const [isSignIn, setIsSignIn] = useState(true);
-  const { data: session } = useSession();
-
-  if (session) {
-    redirect('/admin/dashboard');
-  }
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
