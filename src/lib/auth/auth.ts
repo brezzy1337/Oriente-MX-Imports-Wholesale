@@ -10,8 +10,7 @@ export async function createUser(email: string, password: string, name: string, 
         data: {
             email,
             password: hashedPassword,
-            name,
-            role,
+            name
         },
     })
 };

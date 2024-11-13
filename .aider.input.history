@@ -696,3 +696,65 @@
 
 # 2024-11-12 10:50:12.258106
 +Awesome thanks! I need to create a postProduct, postBrand, postCategory route.
+
+# 2024-11-12 14:24:07.397987
++Hey, your a experienced fullstack developer that has worked on enterprise retail & wholesale dashboards.
++
++We need to create a minilist UI that allows for Employees to create a account, sign in, and post brands, catagories, and products that use those brands and catagories and dropdown menu options. 
+
+# 2024-11-12 14:24:17.694719
++y
+
+# 2024-11-12 14:24:20.682329
++n
+
+# 2024-11-12 14:24:23.357674
++y
+
+# 2024-11-12 14:25:19.893858
++/run npm install @headlessui/react @heroicons/react
+
+# 2024-11-12 14:25:46.660524
++/run npm install @headlessui/react @heroicons/react
+
+# 2024-11-12 14:38:28.288808
++Can we get a seperate url for the employee loging. I want it to be at href /admin
+
+# 2024-11-12 14:38:38.561135
++y
+
+# 2024-11-12 17:03:12.841223
++n
+
+# 2024-11-12 17:03:23.011492
++/add src/app/admin/page.tsx
+
+# 2024-11-12 17:03:47.685554
++On this page can we forward the Employee to the dashboard after they sign in?
+
+# 2024-11-12 17:04:47.891983
++/add src/components/forms/EmployeeSignIn.tsx
+
+# 2024-11-12 17:04:52.656763
++/add src/app/dashboard/page.tsx
+
+# 2024-11-12 17:06:13.908204
++n
+
+# 2024-11-12 17:06:15.614093
++/add src/app/dashboard/page.tsx
+
+# 2024-11-12 17:06:19.760075
++/add src/components/forms/EmployeeSignIn.tsx
+
+# 2024-11-12 17:06:23.423403
++/add src/app/admin/page.tsx
+
+# 2024-11-12 17:06:50.501271
++Hey can I have the user be forwarded to the dashboard after going throught the employee signin process?
+
+# 2024-11-12 17:07:41.052848
++y
+
+# 2024-11-13 00:56:16.182778
++n

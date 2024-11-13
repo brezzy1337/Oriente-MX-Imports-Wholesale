@@ -8,7 +8,7 @@ export const appRouter = router({
     auth: authRouter,
 
     postBrand: protectedProcedure
-        .input(z.object({ 
+        .input(z.object({
             name: z.string(),
             description: z.string().optional(),
             logoUrl: z.string().optional()
@@ -26,7 +26,7 @@ export const appRouter = router({
         }),
 
     postCategory: protectedProcedure
-        .input(z.object({ 
+        .input(z.object({
             name: z.string(),
             description: z.string().optional(),
             parentId: z.string().optional()
@@ -44,17 +44,18 @@ export const appRouter = router({
         }),
 
     postProduct: protectedProcedure
-        .input(z.object({ 
-            name: z.string(), 
-            description: z.string().optional(), 
-            price: z.number().optional(), 
-            categoryId: z.string(), 
-            unitSize: z.string(), 
-            caseSize: z.string(), 
+        .input(z.object({
+            name: z.string(),
+            description: z.string().optional(),
+            price: z.number().optional(),
+            categoryId: z.string(),
+            unitSize: z.string(),
+            caseSize: z.string(),
             brandId: z.string(),
             imageUrl: z.string().optional(),
             status: z.enum(['ACTIVE', 'DRAFT', 'ARCHIVED']).default('ACTIVE')
         }))
+
         .mutation(async ({ input, ctx }) => {
             const { session } = ctx;
             if (!session.user?.email) {
@@ -90,3 +91,4 @@ export const appRouter = router({
         })
 });
 
+export type AppRouter = typeof appRouter;

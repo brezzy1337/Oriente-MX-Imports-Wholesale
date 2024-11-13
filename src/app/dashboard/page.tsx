@@ -5,6 +5,11 @@ import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 
 export default function DashboardPage() {
+
+  interface User {
+    role: string;
+  }
+
   const { data: session, status } = useSession();
   const router = useRouter();
   const [activeTab, setActiveTab] = useState('products');
@@ -13,7 +18,7 @@ export default function DashboardPage() {
     return <div>Loading...</div>;
   }
 
-  if (!session || !['EMPLOYEE', 'ADMIN'].includes(session.user?.role as string)) {
+  if (!session || !['EMPLOYEE', 'ADMIN'].includes((session.user as User)?.role)) {
     router.push('/auth/signin');
     return null;
   }
