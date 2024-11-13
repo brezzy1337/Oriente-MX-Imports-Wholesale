@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-// import { useSession } from 'next-auth/react';
+import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 import CreateProduct from '@/components/forms/CreateProduct';
 import CreateBrand from '@/components/forms/CreateBrand';

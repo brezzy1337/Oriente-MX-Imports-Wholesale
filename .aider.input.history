@@ -782,3 +782,9 @@
 
 # 2024-11-13 04:58:21.883468
 +Can you add the forms to dashboards page.
+
+# 2024-11-13 05:05:25.461275
++I think the next best step is to fix the auth starting on the admin/page which should have a employeeSign Component which then routes to dashboard on completion and autherization.
+
+# 2024-11-13 05:06:05.593408
++y

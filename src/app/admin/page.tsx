@@ -17,9 +17,8 @@ export default function AdminPage() {
   }
 
   // If user is authenticated and has proper role, redirect to dashboard
-  if (session?.user && ['EMPLOYEE', 'ADMIN'].includes(session.user.role as string)) {
+  if(status === 'authenticated') {
     router.push('/dashboard');
-    return null;
   }
 
   // If not authenticated or doesn't have proper role, show sign in
