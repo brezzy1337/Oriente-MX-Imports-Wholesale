@@ -758,3 +758,27 @@
 
 # 2024-11-13 00:56:16.182778
 +n
+
+# 2024-11-13 04:54:46.879052
++/dashboard
+
+# 2024-11-13 04:54:51.772737
++/add src/app/dashboard/page.tsx
+
+# 2024-11-13 04:55:14.350768
++Hey! Can we create the forms to create the products, brands, and categories.
+
+# 2024-11-13 04:56:01.212264
++y
+
+# 2024-11-13 04:57:20.749548
++/run npm install @headlessui/react
+
+# 2024-11-13 04:57:26.420570
++n
+
+# 2024-11-13 04:58:01.211986
++/add src/app/dashboard/page.tsx
+
+# 2024-11-13 04:58:21.883468
++Can you add the forms to dashboards page.
