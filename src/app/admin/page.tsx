@@ -5,8 +5,13 @@ import { useRouter } from 'next/navigation';
 import EmployeeSignIn from '@/components/forms/EmployeeSignIn';
 
 export default function AdminPage() {
-  const { data: session, status } = useSession();
   const router = useRouter();
+  const { data: session, status } = useSession({
+    required: false,
+    onUnauthenticated() {
+      return <EmployeeSignIn />;
+    },
+  });
 
   if (status === 'loading') {
     return (
@@ -16,11 +21,10 @@ export default function AdminPage() {
     );
   }
 
-  // If user is authenticated and has proper role, redirect to dashboard
-  if(status === 'authenticated') {
+  if (session) {
     router.push('/admin/dashboard');
+    return null;
   }
 
-  // If not authenticated or doesn't have proper role, show sign in
   return <EmployeeSignIn />;
 }
