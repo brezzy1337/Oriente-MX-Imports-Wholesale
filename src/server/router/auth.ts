@@ -11,13 +11,11 @@ export const authRouter = router({
             email: z.string().email(), 
             password: z.string().min(6), 
             name: z.string(), 
-            role: z.enum(['USER', 'EMPLOYEE', 'ADMIN']).optional(),
-            agreedTerms: z.boolean(), 
-            subscribeEmails: z.boolean().optional() 
+            role: z.enum(['EMPLOYEE', 'ADMIN']).optional(),
         }))
         .mutation(async ({ input, ctx }) => {
             try {
-                const { email, password, name, role, agreedTerms, subscribeEmails } = input;
+                const { email, password, name, role } = input;
 
                 const existingUser = await ctx.prisma.user.findUnique({
                     where: { email: email },

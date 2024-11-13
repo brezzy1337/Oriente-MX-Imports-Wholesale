@@ -9,6 +9,7 @@ import { useRouter } from "next/navigation";
 export default function EmployeeSignUp() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [name, setName] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [passwordsMatch, setPasswordsMatch] = useState(true);
   const [error, setError] = useState("");
@@ -33,10 +34,15 @@ export default function EmployeeSignUp() {
     },
   });
 
+  // Check if passwords match
   useEffect(() => {
     setPasswordsMatch(password === confirmPassword || confirmPassword === "");
-  }, [password, confirmPassword]);
-  // Check if passwords match
+    if (passwordsMatch === false) {
+      setError("Passwords do not match");
+    } else {
+      setError("");
+    }
+  }, [password, confirmPassword, passwordsMatch]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -44,18 +50,14 @@ export default function EmployeeSignUp() {
     setError("");
 
     try {
-      const result = await signIn("credentials", {
-        redirect: false,
+      signupMutation.mutate({
         email,
         password,
+        name,
+        role: "EMPLOYEE",
       });
-
-      if (result?.error) {
-        setError("Invalid credentials");
-        return;
-      }
     } catch (err) {
-      setError("An error occurred during sign in");
+      setError("An error occurred during sign up");
     } finally {
       setLoading(false);
     }
@@ -71,6 +73,22 @@ export default function EmployeeSignUp() {
         </div>
         <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
           <div className="rounded-md shadow-sm -space-y-px">
+            <div>
+              <label htmlFor="email-address" className="sr-only">
+                Name
+              </label>
+              <input
+                id="name"
+                name="name"
+                type="name"
+                autoComplete="name"
+                required
+                className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                placeholder="Name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+              />
+            </div>
             <div>
               <label htmlFor="email-address" className="sr-only">
                 Email address
