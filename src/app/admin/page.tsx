@@ -1,9 +1,9 @@
 'use client';
 
 import EmployeeSignIn from '@/components/forms/EmployeeSignIn';
-import CreateBrand from '@/components/forms/CreateBrand';
-import CreateCategory from '@/components/forms/CreateCategory';
-import CreateProduct from '@/components/forms/CreateProduct';
+// import CreateBrand from '@/components/forms/CreateBrand';
+// import CreateCategory from '@/components/forms/CreateCategory';
+// import CreateProduct from '@/components/forms/CreateProduct';
 import { useState } from 'react';
 
 export default function AdminPage() {
@@ -14,7 +14,7 @@ export default function AdminPage() {
       <div className="max-w-4xl mx-auto">
         <EmployeeSignIn />
         
-        <div className="mt-8">
+        {/* <div className="mt-8">
           <div className="flex space-x-4 mb-4">
             <button
               onClick={() => setActiveForm('brand')}
@@ -51,7 +51,7 @@ export default function AdminPage() {
           {activeForm === 'brand' && <CreateBrand />}
           {activeForm === 'category' && <CreateCategory />}
           {activeForm === 'product' && <CreateProduct />}
-        </div>
+        </div> */}
       </div>
     </div>
   );
