@@ -3,6 +3,9 @@
 import { useState } from 'react';
 // import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
+import CreateProduct from '@/components/forms/CreateProduct';
+import CreateBrand from '@/components/forms/CreateBrand';
+import CreateCategory from '@/components/forms/CreateCategory';
 
 export default function DashboardPage() {
 
@@ -68,21 +71,21 @@ export default function DashboardPage() {
             {activeTab === 'products' && (
               <div className="bg-white shadow sm:rounded-lg p-6">
                 <h2 className="text-xl font-semibold mb-4">Product Management</h2>
-                {/* Product management UI will go here */}
+                <CreateProduct />
               </div>
             )}
             
             {activeTab === 'brands' && (
               <div className="bg-white shadow sm:rounded-lg p-6">
                 <h2 className="text-xl font-semibold mb-4">Brand Management</h2>
-                {/* Brand management UI will go here */}
+                <CreateBrand />
               </div>
             )}
             
             {activeTab === 'categories' && (
               <div className="bg-white shadow sm:rounded-lg p-6">
                 <h2 className="text-xl font-semibold mb-4">Category Management</h2>
-                {/* Category management UI will go here */}
+                <CreateCategory />
               </div>
             )}
           </div>
