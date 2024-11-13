@@ -13,18 +13,22 @@ export default function DashboardPage() {
     role: string;
   }
 
-  // const { data: session, status } = useSession();
+  const { data: session, status } = useSession();
   const router = useRouter();
   const [activeTab, setActiveTab] = useState('products');
 
-  // if (status === 'loading') {
-  //   return <div>Loading...</div>;
-  // }
+  if (status === 'loading') {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-xl">Loading...</div>
+      </div>
+    );
+  }
 
-  // if (!session || !['EMPLOYEE', 'ADMIN'].includes((session.user as User)?.role)) {
-  //   router.push('/auth/signin');
-  //   return null;
-  // }
+  if (!session || !['EMPLOYEE', 'ADMIN'].includes((session.user as User)?.role)) {
+    router.push('/admin');
+    return null;
+  }
 
   return (
     <div className="min-h-screen bg-gray-100">
