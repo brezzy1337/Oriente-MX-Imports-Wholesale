@@ -93,6 +93,5 @@ export default function EmployeeSignIn() {
           </div>
         </form>
       </div>
-    </div>
   );
 }
