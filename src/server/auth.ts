@@ -54,7 +54,7 @@ export const authOptions: NextAuthOptions = {
     callbacks: {
         jwt: async ({ token, user }: { token: any; user: any }) => {
             if (user) {
-                token.id = user.id
+                // token.id = user.id
                 token.email = user.email;
             }
             console.log('JWT Callback - Token:', token);
@@ -62,7 +62,7 @@ export const authOptions: NextAuthOptions = {
         },
         session: async ({ session, token }: { session: any; token: any }) => {
             if (token && token.id && token.email) {
-                session.user.id = token.id
+                // session.user.id = token.id
                 session.user.email = token.email
             } else {
                 console.log('Session Callback - Token decryption issue:', token);
