@@ -1,7 +1,7 @@
 import { z } from "zod";
 import { publicProcedure, router, protectedProcedure } from "../trpc";
 import { signIn } from "next-auth/react";
-import { createUser } from "../../lib/auth/auth";
+import { createUser, validatePassword} from "../../lib/auth/auth";
 import { TRPCError } from "@trpc/server";
 
 export const authRouter = router({
@@ -67,5 +67,4 @@ export const authRouter = router({
 
             return { success: true };
         }),
-    
 });
