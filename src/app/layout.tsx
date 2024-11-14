@@ -22,7 +22,6 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   const headersList = headers();
-  const isAdmin = headersList.get("x-is-admin");
   const pathname = headersList.get("x-url") || "";
   const isAdminRoute = pathname.includes("/admin");
 
