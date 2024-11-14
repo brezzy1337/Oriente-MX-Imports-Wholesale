@@ -1,7 +1,8 @@
-const { createUser } = require('../lib/auth/auth');
+import bcrypt from 'bcryptjs';
+import { createUser } from '../lib/auth/auth';
 
 async function main() {
-  type UserRole = 'USER' | 'EMPLOYEE' | 'ADMIN' | 'CUSTOMER';
+  type UserRole = 'EMPLOYEE' | 'ADMIN';
   const args = process.argv.slice(2);
   
   if (args.length < 3) {

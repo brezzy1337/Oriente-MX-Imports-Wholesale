@@ -1,4 +1,4 @@
-const { deleteUser } = require('../lib/auth/auth');
+import { deleteUser } from '../lib/auth/auth';
 
 async function main() {
     const args = process.argv.slice(2);

@@ -1,10 +1,10 @@
-import { compare, hash } from 'bcryptjs';
+import bcrypt from 'bcryptjs';
 import { prisma } from '../../utils/primsa';
 
 export type UserRole = 'USER' | 'EMPLOYEE' | 'ADMIN';
 
 export async function createUser(email: string, password: string, name: string, role: UserRole = 'USER') {
-    const hashedPassword = await hash(password, 12)
+    const hashedPassword = await bcrypt.hash(password, 10)
 
     return prisma.user.create({
         data: {
@@ -21,7 +21,7 @@ export async function findUser(email: string) {
         
 export async function validatePassword(user: { password: string },
     inputPassword: string) {
-    return compare(inputPassword, user.password)
+    return bcrypt.compare(inputPassword, user.password)
 };                               
 
 export async function getUserId(email: string) {

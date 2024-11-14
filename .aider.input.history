@@ -806,3 +806,39 @@
 
 # 2024-11-13 13:16:40.766269
 +y
+
+# 2024-11-14 01:41:33.572234
++Hey can you help me write a command which I can run from the command line to create a new user>
+
+# 2024-11-14 01:41:41.314652
++y
+
+# 2024-11-14 01:42:02.143506
++/run npm install --save-dev ts-node
+
+# 2024-11-14 01:42:13.041469
++n
+
+# 2024-11-14 01:42:23.367306
++y
+
+# 2024-11-14 01:42:23.371449
++/run npx ts-node src/scripts/create-user.ts user@example.com password123 "John Doe" CUSTOMER
+
+# 2024-11-14 01:42:47.711061
++/run npm install --save-dev ts-node
+
+# 2024-11-14 01:42:54.763271
++/run npx ts-node src/scripts/create-user.ts user@example.com password123 "John Doe" CUSTOMER
+
+# 2024-11-14 01:43:14.043997
++n
+
+# 2024-11-14 01:48:18.766890
++Can you create a deleteUser script as well?
+
+# 2024-11-14 01:48:32.078394
++y
+
+# 2024-11-14 01:48:53.719981
++/run npm run delete-user user@example.com

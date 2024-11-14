@@ -1,6 +1,6 @@
 import { CreateNextContextOptions } from '@trpc/server/adapters/next';
-import { prisma } from '../utils/primsa';
-import { getServerAuthSession } from './auth';
+import { prisma } from '../primsa';
+import { getServerAuthSession } from '../../server/auth';
 import { Session } from 'next-auth';
 
 // import type { NextApiRequest, NextApiResponse } from '@trpc/server/adapters/next'; 

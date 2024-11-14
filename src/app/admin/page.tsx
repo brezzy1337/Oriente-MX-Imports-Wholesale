@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import { redirect } from 'next/navigation';
 import EmployeeSignIn from '@/components/forms/EmployeeSignIn';
 import EmployeeSignUp from '@/components/forms/EmployeeSignUp';
 

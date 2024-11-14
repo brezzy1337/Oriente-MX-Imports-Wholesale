@@ -37,12 +37,7 @@ export default function EmployeeSignUp() {
   // Check if passwords match
   useEffect(() => {
     setPasswordsMatch(password === confirmPassword || confirmPassword === "");
-    if (passwordsMatch === false) {
-      setError("Passwords do not match");
-    } else {
-      setError("");
-    }
-  }, [password, confirmPassword, passwordsMatch]);
+  }, [password, confirmPassword]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -137,6 +132,11 @@ export default function EmployeeSignUp() {
                 onChange={(e) => setConfirmPassword(e.target.value)}
               />
               <div />
+              {!passwordsMatch && (
+                <div className="text-red-500 text-sm">
+                  Passwords do not match
+                </div>
+              )}
             </div>
           </div>
 
