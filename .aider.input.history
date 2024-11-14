@@ -851,3 +851,15 @@
 
 # 2024-11-14 09:11:21.046619
 +y
+
+# 2024-11-14 09:15:04.627454
++  22 | children: React.ReactNode;
++  23 | }) {
++> 24 | const pathname = usePathname();
++     |                            ^
++  25 | const isAdminRoute = pathname?.startsWith('/admin');
++  26 |
++  27 | return (
+
+# 2024-11-14 09:16:01.248024
++n
