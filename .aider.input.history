@@ -842,3 +842,12 @@
 
 # 2024-11-14 01:48:53.719981
 +/run npm run delete-user user@example.com
+
+# 2024-11-14 09:10:22.636826
++y
+
+# 2024-11-14 09:11:18.534575
++Hey good afternoon! I'm curious if we could do something to the layout.tsx file to make it so that the admin route does not display the navigation and footer?
+
+# 2024-11-14 09:11:21.046619
++y
