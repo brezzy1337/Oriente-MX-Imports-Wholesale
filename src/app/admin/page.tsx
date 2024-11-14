@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import EmployeeSignIn from '@/components/forms/EmployeeSignIn';
-import EmployeeSignUp from '@/components/forms/EmployeeSignUp';
+// import EmployeeSignUp from '@/components/forms/EmployeeSignUp';
 
 export default function AdminPage() {
   const [isSignIn, setIsSignIn] = useState(true);

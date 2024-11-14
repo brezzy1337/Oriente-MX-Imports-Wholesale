@@ -12,11 +12,11 @@ const CreateCategory = dynamic(() => import('@/components/forms/CreateCategory')
 export default function DashboardPage() {
 
   const router = useRouter();
-  const session = getServerSession();
+  // const session = getServerSession();
 
-  if (!session) {
-    router.push('auth/signin')
-  }
+  // if (!session) {
+  //   router.push('auth/signin')
+  // }
 
   const [activeTab, setActiveTab] = useState('products');
   
