@@ -3,7 +3,7 @@ import dynamic from "next/dynamic";
 import { headers } from "next/headers";
 import Footer from "@/components/Footer";
 import { Inter } from "next/font/google";
-import "@/styles/globals.css";
+import "./globals.css"
 
 const inter = Inter({ subsets: ["latin"] });
 
