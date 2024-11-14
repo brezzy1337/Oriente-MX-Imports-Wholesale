@@ -866,3 +866,9 @@
 
 # 2024-11-14 10:27:55.867536
 +Is there a way to hide the Navigation and footer on the admin page itself?
+
+# 2024-11-14 10:42:40.724720
++The header and footer is still showing up on the admin page. Do you have any ideas of a better way to hide it?
+
+# 2024-11-14 10:42:58.105281
++y
