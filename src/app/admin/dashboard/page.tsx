@@ -1,13 +1,13 @@
 'use client';
 
 import { useState } from 'react';
-import { getServerSession } from 'next-auth';
+// import { getServerSession } from 'next-auth';
 import { useRouter } from 'next/navigation';
-import dynamic from 'next/dynamic';
+// import dynamic from 'next/dynamic';
 
-const CreateProduct = dynamic(() => import('@/components/forms/CreateProduct'), { ssr: false });
-const CreateBrand = dynamic(() => import('@/components/forms/CreateBrand'), { ssr: false });
-const CreateCategory = dynamic(() => import('@/components/forms/CreateCategory'), { ssr: false });
+// const CreateProduct = dynamic(() => import('@/components/forms/CreateProduct'), { ssr: false });
+// const CreateBrand = dynamic(() => import('@/components/forms/CreateBrand'), { ssr: false });
+// const CreateCategory = dynamic(() => import('@/components/forms/CreateCategory'), { ssr: false });
 
 export default function DashboardPage() {
 
@@ -65,21 +65,21 @@ export default function DashboardPage() {
             {activeTab === 'products' && (
               <div className="bg-white shadow sm:rounded-lg p-6">
                 <h2 className="text-xl font-semibold mb-4">Product Management</h2>
-                <CreateProduct />
+                {/* <CreateProduct /> */}
               </div>
             )}
             
             {activeTab === 'brands' && (
               <div className="bg-white shadow sm:rounded-lg p-6">
                 <h2 className="text-xl font-semibold mb-4">Brand Management</h2>
-                <CreateBrand />
+                {/* <CreateBrand /> */}
               </div>
             )}
             
             {activeTab === 'categories' && (
               <div className="bg-white shadow sm:rounded-lg p-6">
                 <h2 className="text-xl font-semibold mb-4">Category Management</h2>
-                <CreateCategory />
+                {/* <CreateCategory /> */}
               </div>
             )}
           </div>
