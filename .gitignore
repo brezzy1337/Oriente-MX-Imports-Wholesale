@@ -45,4 +45,4 @@ src/prisma/schema.primsa
 .env
 
 # scripts
-src//scripts
+src/scripts

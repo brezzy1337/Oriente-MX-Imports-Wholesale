@@ -2,7 +2,7 @@ import { deleteUser } from '../lib/auth/auth';
 
 async function main() {
     const args = process.argv.slice(2);
-    
+
     if (args.length < 1) {
         console.log('Usage: npm run delete-user <email>');
         process.exit(1);

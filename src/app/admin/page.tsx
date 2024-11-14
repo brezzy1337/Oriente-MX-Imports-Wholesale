@@ -21,7 +21,7 @@ export default function AdminPage() {
           >
             Sign In
           </button>
-          <button
+          {/* <button
             onClick={() => setIsSignIn(false)}
             className={`px-4 py-2 text-sm font-medium rounded-md ${
               !isSignIn
@@ -30,9 +30,9 @@ export default function AdminPage() {
             }`}
           >
             Sign Up
-          </button>
+          </button> */}
         </div>
-        {isSignIn ? <EmployeeSignIn /> : <EmployeeSignUp />}
+        {<EmployeeSignIn /> }
       </div>
     </div>
   );
