@@ -1,10 +1,10 @@
 "use client";
 
 import Image from "next/image";
-import HeroGallery from "@/components/HeroGallery";
-import ServiceCards from "@/components/ServiceCards";
-import FeaturedProducts from "@/components/FeaturedProducts";
-import DecoratedHeader from "@/components/DecoratedHeader";
+import HeroGallery from "@/app/components/HeroGallery";
+import ServiceCards from "@/app/components/ServiceCards";
+import FeaturedProducts from "@/app/components/FeaturedProducts";
+import DecoratedHeader from "@/app/components/DecoratedHeader";
 
 export default function Home() {
   return (

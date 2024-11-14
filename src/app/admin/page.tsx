@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import EmployeeSignIn from '@/components/forms/EmployeeSignIn';
+import EmployeeSignIn from '@/app/components/forms/EmployeeSignIn';
 // import EmployeeSignUp from '@/components/forms/EmployeeSignUp';
 
 export default function AdminPage() {

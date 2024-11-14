@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import dynamic from "next/dynamic";
 import { headers } from "next/headers";
-import Footer from "@/components/Footer";
+import Footer from "@/app/components/Footer";
 import { Inter } from "next/font/google";
 import "./globals.css"
 
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   description: "Thai food and goods importer, wholesaler, and distributor",
 };
 
-const Navigation = dynamic(() => import("@/components/Navigation"), {
+const Navigation = dynamic(() => import("@/app/components/Navigation"), {
   ssr: false,
 });
 

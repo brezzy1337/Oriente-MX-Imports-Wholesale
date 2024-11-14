@@ -7,11 +7,11 @@ import Image from "next/image";
 import { FaBars, FaFacebook, FaInstagram, FaWhatsapp } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 
-const ShoppingCart = dynamic(() => import("@/components/ShoppingCart"), {
+const ShoppingCart = dynamic(() => import("@/app/components/ShoppingCart"), {
   ssr: false,
 });
 
-const SideMenu = dynamic(() => import("@/components/SideMenu"), {
+const SideMenu = dynamic(() => import("@/app/components/SideMenu"), {
   ssr: false,
 });
 
