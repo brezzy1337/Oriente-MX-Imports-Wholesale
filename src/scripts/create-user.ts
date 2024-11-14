@@ -1,6 +1,7 @@
-import { createUser, UserRole } from '../lib/auth/auth';
+const { createUser } = require('../lib/auth/auth');
 
 async function main() {
+  type UserRole = 'USER' | 'EMPLOYEE' | 'ADMIN' | 'CUSTOMER';
   const args = process.argv.slice(2);
   
   if (args.length < 3) {
