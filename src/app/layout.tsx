@@ -22,14 +22,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   const headersList = headers();
-  const isAdmin= headersList.get("x-is-admin");
+  const isAdmin = headersList.get("x-is-admin");
+  const pathname = headersList.get("x-url") || "";
+  const isAdminRoute = pathname.includes("/admin");
 
   return (
     <html lang="en">
-      <body className={`${inter.className} ${!isAdmin ? 'pt-20' : ''}`}>
-        {!isAdmin && <Navigation />}
+      <body className={`${inter.className} ${!isAdminRoute ? 'pt-20' : ''}`}>
+        {!isAdminRoute && <Navigation />}
         <main>{children}</main>
-        {!isAdmin && <Footer />}
+        {!isAdminRoute && <Footer />}
       </body>
     </html>
   );
