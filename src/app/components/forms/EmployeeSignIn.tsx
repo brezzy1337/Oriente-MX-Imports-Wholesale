@@ -32,6 +32,7 @@ export default function EmployeeSignIn() {
       setError('An error occurred during sign in');
     } finally {
       setLoading(false);
+      router.push('/admin/dashboard');
     }
   };
 
