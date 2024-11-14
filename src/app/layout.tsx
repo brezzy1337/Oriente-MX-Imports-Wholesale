@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Head from "next/head";
 import dynamic from "next/dynamic";
 import Footer from "@/components/Footer";
 import { Inter } from "next/font/google";
@@ -23,9 +22,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <Head>
-        <title>Deli Asiya</title>
-      </Head>
       <body className={`${inter.className} pt-20`}>
         <Navigation />
         <main>{children}</main>
@@ -33,4 +29,4 @@ export default function RootLayout({
       </body>
     </html>
   );
-}
+};
