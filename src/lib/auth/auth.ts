@@ -28,3 +28,9 @@ export async function getUserId(email: string) {
     const user = await prisma.user.findUnique({ where: { email } })
     return user?.id
 }
+
+export async function deleteUser(email: string) {
+    return prisma.user.delete({
+        where: { email }
+    });
+}
