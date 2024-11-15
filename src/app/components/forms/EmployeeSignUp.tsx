@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useEffect } from "react";
-import { trpc } from "../../../utils/trpc/trpc";
+import { trpc } from "../../api/_trpc/providers/client";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 
