@@ -1,11 +1,11 @@
-'use server'
+// 'use server'
 
-import { z } from 'zod';
-import { protectedProcedure } from '@/server/trpc';
+// import { z } from 'zod';
+// import { protectedProcedure } from '@/server/trpc';
 
-export const createProduct = protectedProcedure
-.input(
-    z.object({
+// export const createProduct = protectedProcedure
+// .input(
+//     z.object({
         
-    })
-)
+//     })
+// )

@@ -1,14 +1,15 @@
 import { CreateNextContextOptions } from '@trpc/server/adapters/next';
-import { prisma } from '../primsa';
-import { getServerAuthSession } from '../../server/auth';
+import { prisma } from '@/utils/primsa';
+// import logger from '@/src/utils/logger';
+import { getServerAuthSession } from '@/server/auth';
 import { Session } from 'next-auth';
 
-// import type { NextApiRequest, NextApiResponse } from '@trpc/server/adapters/next'; 
+import type { NextApiRequest, NextApiResponse } from '@trpc/server/adapters/next'; 
 
 export type CreateContextOptions = {
   session: Session | null;
-  // res: NextApiResponse, 
-  // req: NextApiRequest
+  res: NextApiResponse, 
+  req: NextApiRequest
 };
 
 /**
@@ -25,8 +26,8 @@ export type CreateContextOptions = {
 const createInnerTRPCContext = (opts: CreateContextOptions) => {
   return {
     session: opts.session,
-    // res: opts.res,
-    // req: opts.req,
+    res: opts.res,
+    req: opts.req,
     prisma,
   };
 };
@@ -45,8 +46,8 @@ export const createTRPCContext = async (opts: CreateNextContextOptions) => {
 
   return createInnerTRPCContext({
     session,
-    // res,
-    // req
+    res,
+    req
   });
 };
 

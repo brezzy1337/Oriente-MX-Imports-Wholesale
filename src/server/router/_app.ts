@@ -1,4 +1,5 @@
 import { protectedProcedure, router } from "../trpc";
+import { createCallerFactory } from "../trpc";
 import { z } from "zod";
 import { TRPCError } from "@trpc/server";
 import { prisma } from "../../utils/primsa";
@@ -90,5 +91,7 @@ export const appRouter = router({
             return product;
         })
 });
+
+export const createCaller = createCallerFactory(appRouter);
 
 export type AppRouter = typeof appRouter;
