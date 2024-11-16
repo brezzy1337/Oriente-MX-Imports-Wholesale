@@ -109,6 +109,7 @@ export default function CreateBrand() {
         });
 
         const blob = await res.json();
+        
         formData.logoUrl = blob.url;
 
         const data = {

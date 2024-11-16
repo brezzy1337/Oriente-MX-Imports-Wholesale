@@ -24,9 +24,6 @@ export const appRouter = router({
       // This Occurs when parsing an empty JSON document
 
       try {
-        alert(input);
-        console.log(input);
-
         const brand = await prisma.brand.create({
           data: {
             name: input.name,
@@ -37,8 +34,7 @@ export const appRouter = router({
         return brand;
       } catch (error) {
         console.error(error);
-        throw new TRPCError({ code: 'INTERNAL_SERVER_ERROR', message: `${input}`});
-        // return Response.json({ error: `${input}` });
+        throw new TRPCError({ code: 'INTERNAL_SERVER_ERROR', message: `error: ${error}, input: ${input}`});
       }
     }),
 
