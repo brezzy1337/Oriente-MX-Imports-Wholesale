@@ -13,7 +13,6 @@ export const appRouter = router({
       name: z.string(),
       description: z.string().optional(),
       logoUrl: z.string().optional(),
-      imageUrl: z.string().optional()
     }))
     .mutation(async ({ input, ctx }) => {
       const { session } = ctx;
@@ -22,7 +21,11 @@ export const appRouter = router({
       }
 
       const brand = await prisma.brand.create({
-        data: input
+        data: {
+          name: input.name,
+          description: input.description,
+          logoUrl: input.logoUrl,
+        },
       });
       return brand;
     }),
