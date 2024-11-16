@@ -109,7 +109,7 @@ export default function CreateBrand() {
         });
 
         const blob = await res.json();
-        
+
         formData.logoUrl = blob.url;
 
         const data = {
@@ -121,8 +121,7 @@ export default function CreateBrand() {
         mutation.mutate(data);
 
       } catch (error) {
-        console.error("Error uploading file:", error);
-        alert("Error uploading image");
+        alert(`${error}`);
       } finally {
         setIsUploading(false);
       }
