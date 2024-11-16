@@ -16,6 +16,7 @@ export const appRouter = router({
     }))
     .mutation(async ({ input, ctx }) => {
       const { session } = ctx;
+
       if (!session.user?.email) {
         throw new TRPCError({ code: 'UNAUTHORIZED' });
       }
