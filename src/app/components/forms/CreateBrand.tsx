@@ -108,14 +108,14 @@ export default function CreateBrand() {
           body: file,
         });
 
-        const blob = await res.json();  
+        const blob = await res.json();
 
         formData.logoUrl = blob.url;
 
         mutation.mutate({
-          name: JSON.parse(formData.name),
-          description: JSON.parse(formData.description),
-          logoUrl: JSON.parse(formData.logoUrl),
+          name: (formData.name),
+          description:(formData.description),
+          logoUrl: (formData.logoUrl),
         });
 
       } catch (error) {
