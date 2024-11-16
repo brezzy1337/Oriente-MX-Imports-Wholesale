@@ -23,17 +23,23 @@ export const appRouter = router({
       // I believe this is causing the error "Unexpected end of JSON input"
       // This Occurs when parsing an empty JSON document
 
-      alert(input);
-      console.log(input);
+      try {
+        alert(input);
+        console.log(input);
 
-      const brand = await prisma.brand.create({
-        data: {
-          name: input.name,
-          description: input.description,
-          logoUrl: input.logoUrl,
-        },
-      });
-      return brand;
+        const brand = await prisma.brand.create({
+          data: {
+            name: input.name,
+            description: input.description,
+            logoUrl: input.logoUrl,
+          },
+        });
+        return brand;
+      } catch (error) {
+        console.error(error);
+        throw new TRPCError({ code: 'INTERNAL_SERVER_ERROR', message: `${input}`});
+        // return Response.json({ error: `${input}` });
+      }
     }),
 
   postCategory: protectedProcedure
