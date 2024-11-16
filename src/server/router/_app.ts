@@ -94,4 +94,63 @@ export const appRouter = router({
 
 export const createCaller = createCallerFactory(appRouter);
 
+export type AppRouter = typeof appRouter;import { router } from '../trpc';
+import { z } from 'zod';
+import { TRPCError } from '@trpc/server';
+import { prisma } from '@/lib/prisma';
+
+export const appRouter = router({
+  // Product routes
+  getProducts: publicProcedure.query(async () => {
+    return prisma.product.findMany({
+      include: {
+        brand: true,
+        category: true,
+      },
+    });
+  }),
+
+  deleteProduct: publicProcedure
+    .input(z.string())
+    .mutation(async ({ input }) => {
+      return prisma.product.delete({
+        where: { id: input },
+      });
+    }),
+
+  // Brand routes
+  getBrands: publicProcedure.query(async () => {
+    return prisma.brand.findMany({
+      include: {
+        products: true,
+      },
+    });
+  }),
+
+  deleteBrand: publicProcedure
+    .input(z.string())
+    .mutation(async ({ input }) => {
+      return prisma.brand.delete({
+        where: { id: input },
+      });
+    }),
+
+  // Category routes
+  getCategories: publicProcedure.query(async () => {
+    return prisma.category.findMany({
+      include: {
+        products: true,
+      },
+    });
+  }),
+
+  deleteCategory: publicProcedure
+    .input(z.string())
+    .mutation(async ({ input }) => {
+      return prisma.category.delete({
+        where: { id: input },
+      });
+    }),
+});
+
 export type AppRouter = typeof appRouter;
