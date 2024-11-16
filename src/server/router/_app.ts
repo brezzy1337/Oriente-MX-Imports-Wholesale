@@ -32,7 +32,8 @@ export const appRouter = router({
             logoUrl: input.logoUrl,
           },
         });
-        return brand;
+        //Checking if error is thrown here since then I know if the error is being thrown on the post or response end. I seems like a response issue since the data is going though.
+        // return brand;
       } catch (error) {
         console.error(error);
         throw new TRPCError({ code: 'INTERNAL_SERVER_ERROR', message: `error: ${error}, input: ${input}`});
