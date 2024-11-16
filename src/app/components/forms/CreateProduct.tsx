@@ -17,7 +17,9 @@ export default function CreateProduct() {
     imageUrl: '',
     status: 'ACTIVE' as 'ACTIVE' | 'DRAFT' | 'ARCHIVED'
   });
-  
+
+  const { data: brands } = trpc.getBrands.useQuery();
+  const { data: categories } = trpc.getCategories.useQuery();
   const [isUploading, setIsUploading] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
@@ -123,15 +125,21 @@ export default function CreateProduct() {
       </div>
 
       <div>
-        <label className="block text-sm font-medium text-gray-700">Category ID</label>
-        <input
-          type="text"
+        <label className="block text-sm font-medium text-gray-700">Category</label>
+        <select
           name="categoryId"
           value={formData.categoryId}
           onChange={handleChange}
           className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
           required
-        />
+        >
+          <option value="">Select a category</option>
+          {categories?.map((category) => (
+            <option key={category.id} value={category.id}>
+              {category.name}
+            </option>
+          ))}
+        </select>
       </div>
 
       <div>
@@ -159,15 +167,21 @@ export default function CreateProduct() {
       </div>
 
       <div>
-        <label className="block text-sm font-medium text-gray-700">Brand ID</label>
-        <input
-          type="text"
+        <label className="block text-sm font-medium text-gray-700">Brand</label>
+        <select
           name="brandId"
           value={formData.brandId}
           onChange={handleChange}
           className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
           required
-        />
+        >
+          <option value="">Select a brand</option>
+          {brands?.map((brand) => (
+            <option key={brand.id} value={brand.id}>
+              {brand.name}
+            </option>
+          ))}
+        </select>
       </div>
 
       <div>
