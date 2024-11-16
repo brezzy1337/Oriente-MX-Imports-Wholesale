@@ -108,7 +108,7 @@ export default function CreateBrand() {
           body: file,
         });
 
-        const blob = await res.json();
+        const blob = await res.json();  
 
         formData.logoUrl = blob.url;
 
@@ -119,7 +119,7 @@ export default function CreateBrand() {
         });
 
       } catch (error) {
-        // alert(`${error}`);
+        alert(`${error}`);
       } finally {
         setIsUploading(false);
       }
