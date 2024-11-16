@@ -21,23 +21,25 @@ export const appRouter = router({
         throw new TRPCError({ code: 'UNAUTHORIZED' });
       }
 
+      try{
+        const { name, description, logoUrl } = input;
+
+        const brand = await prisma.brand.create({
+          data: {
+            name,
+            description,
+            logoUrl,
+          }
+        });
+        //Checking if error is thrown here since then I know if the error is being thrown on the post or response end. I seems like a response issue since the data is going though
+        return brand;
+      } catch (error) {
+        throw new TRPCError({ code: 'INTERNAL_SERVER_ERROR', message: `${error}` });
+      }
+
       // I believe this is causing the error "Unexpected end of JSON input"
       // This Occurs when parsing an empty JSON document
 
-      try {
-        const brand = await prisma.brand.create({
-          data: {
-            name: input.name,
-            description: input.description,
-            logoUrl: input.logoUrl,
-          },
-        });
-        //Checking if error is thrown here since then I know if the error is being thrown on the post or response end. I seems like a response issue since the data is going though.
-        // return brand;
-      } catch (error) {
-        console.error(error);
-        throw new TRPCError({ code: 'INTERNAL_SERVER_ERROR', message: `error: ${error}, input: ${input}`});
-      }
     }),
 
   postCategory: protectedProcedure

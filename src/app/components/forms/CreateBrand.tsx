@@ -110,7 +110,10 @@ export default function CreateBrand() {
 
         const blob = await res.json();
 
-        formData.logoUrl = JSON.stringify(blob.url);
+        console.log(blob);
+        alert(`${blob.url}`);
+
+        formData.logoUrl = blob.url;
 
         mutation.mutate({
           name: formData.name,
