@@ -4,6 +4,9 @@ import { useState } from 'react';
 // import { getServerSession } from 'next-auth';
 import { useRouter } from 'next/navigation';
 import dynamic from 'next/dynamic';
+import ProductsTable from '@/app/components/tables/ProductsTable';
+import BrandsTable from '@/app/components/tables/BrandsTable';
+import CategoriesTable from '@/app/components/tables/CategoriesTable';
 
 const CreateProduct = dynamic(() => import('../../components/forms/CreateProduct'), { ssr: false });
 const CreateBrand = dynamic(() => import('../../components/forms/CreateBrand'), { ssr: false });
@@ -66,6 +69,7 @@ export default function DashboardPage() {
               <div className="bg-white shadow sm:rounded-lg p-6">
                 <h2 className="text-xl font-semibold mb-4">Product Management</h2>
                 <CreateProduct />
+                <ProductsTable />
               </div>
             )}
             
@@ -73,6 +77,7 @@ export default function DashboardPage() {
               <div className="bg-white shadow sm:rounded-lg p-6">
                 <h2 className="text-xl font-semibold mb-4">Brand Management</h2>
                 <CreateBrand />
+                <BrandsTable />
               </div>
             )}
             
@@ -80,6 +85,7 @@ export default function DashboardPage() {
               <div className="bg-white shadow sm:rounded-lg p-6">
                 <h2 className="text-xl font-semibold mb-4">Category Management</h2>
                 <CreateCategory />
+                <CategoriesTable />
               </div>
             )}
           </div>
