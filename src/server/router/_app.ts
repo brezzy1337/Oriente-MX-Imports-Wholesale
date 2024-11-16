@@ -105,7 +105,7 @@ export const appRouter = router({
     });
   }),
 
-  deleteProduct: protectedProcedure 
+  deleteProduct: protectedProcedure
     .input(z.string())
     .mutation(async ({ input }) => {
       return prisma.product.delete({
@@ -122,7 +122,7 @@ export const appRouter = router({
     });
   }),
 
-  deleteBrand: protectedProcedure 
+  deleteBrand: protectedProcedure
     .input(z.string())
     .mutation(async ({ input }) => {
       return prisma.brand.delete({
@@ -139,7 +139,7 @@ export const appRouter = router({
     });
   }),
 
-  deleteCategory: protectedProcedure 
+  deleteCategory: protectedProcedure
     .input(z.string())
     .mutation(async ({ input }) => {
       return prisma.category.delete({

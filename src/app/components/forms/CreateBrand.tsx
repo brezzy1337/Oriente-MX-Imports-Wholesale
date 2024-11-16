@@ -75,7 +75,6 @@ export default function CreateBrand() {
   const [formData, setFormData] = useState({
     name: '',
     description: '',
-    logoUrl: '',
   });
 
   const [isUploading, setIsUploading] = useState(false);
@@ -86,7 +85,6 @@ export default function CreateBrand() {
       setFormData({
         name: '',
         description: '',
-        logoUrl: '',
       });
       alert('Brand created successfully!');
     },
@@ -109,10 +107,10 @@ export default function CreateBrand() {
         });
         
         const blob = await res.json();
-        
+
         mutation.mutate({
           ...formData,
-          logoUrl: blob.url,
+          logoUrl: blob.url
         });
       } catch (error) {
         console.error('Error uploading file:', error);
@@ -124,7 +122,6 @@ export default function CreateBrand() {
       mutation.mutate(formData);
     }
   };
-
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({
