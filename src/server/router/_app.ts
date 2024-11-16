@@ -12,7 +12,8 @@ export const appRouter = router({
     .input(z.object({
       name: z.string(),
       description: z.string().optional(),
-      logoUrl: z.string().optional()
+      logoUrl: z.string().optional(),
+      imageUrl: z.string().optional()
     }))
     .mutation(async ({ input, ctx }) => {
       const { session } = ctx;
@@ -30,7 +31,8 @@ export const appRouter = router({
     .input(z.object({
       name: z.string(),
       description: z.string().optional(),
-      parentId: z.string().optional()
+      parentId: z.string().optional(),
+      imageUrl: z.string().optional()
     }))
     .mutation(async ({ input, ctx }) => {
       const { session } = ctx;
