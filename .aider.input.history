@@ -893,3 +893,18 @@
 
 # 2024-11-16 03:22:49.088699
 +n
+
+# 2024-11-16 03:48:48.507375
++Awesome looks great! In the Dashboard under the create new product, brand, and catagory can we get a table of current posted items. On the far left side of each item will be a edit and delete symbol. Can you make the routes to edit and delete these items as well?
+
+# 2024-11-16 03:49:18.321551
++Yep looks get to me
+
+# 2024-11-16 03:50:50.224533
++y
+
+# 2024-11-16 03:50:54.420817
++/run npm install @heroicons/react
+
+# 2024-11-16 03:51:06.569728
++n
