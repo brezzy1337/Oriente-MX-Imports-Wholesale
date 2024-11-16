@@ -108,11 +108,13 @@ export default function CreateBrand() {
         
         const blob = await res.json();
 
-        mutation.mutate({
+        const data = {
           name: formData.name,
           description: formData.description,
-          logoUrl: blob.url,
-        });
+          logoUrl: blob.url
+        }
+
+        mutation.mutate(data);
       } catch (error) {
         console.error('Error uploading file:', error);
         alert('Error uploading image');
@@ -122,8 +124,7 @@ export default function CreateBrand() {
     } else {
       mutation.mutate(formData);
     }
-  };
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  };  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({
       ...prev,
