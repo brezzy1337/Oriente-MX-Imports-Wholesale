@@ -22,7 +22,10 @@ export const appRouter = router({
 
       // I believe this is causing the error "Unexpected end of JSON input"
       // This Occurs when parsing an empty JSON document
-      
+
+      alert(input);
+      console.log(input);
+
       const brand = await prisma.brand.create({
         data: {
           name: input.name,
