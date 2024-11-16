@@ -112,13 +112,11 @@ export default function CreateBrand() {
 
         formData.logoUrl = blob.url;
 
-        const data = {
-          name: JSON.stringify(formData.name),
-          description: JSON.stringify(formData.description),
-          logoUrl: JSON.stringify(formData.logoUrl),
-        };
-
-        mutation.mutate(data);
+        mutation.mutate({
+          name: formData.name,
+          description: formData.description,
+          logoUrl: formData.logoUrl,
+        });
 
       } catch (error) {
         // alert(`${error}`);
@@ -127,7 +125,6 @@ export default function CreateBrand() {
       }
     }
   };
-
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
