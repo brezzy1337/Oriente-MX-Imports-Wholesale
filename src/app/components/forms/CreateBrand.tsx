@@ -113,15 +113,15 @@ export default function CreateBrand() {
         formData.logoUrl = blob.url;
 
         const data = {
-          name: formData.name,
-          description: formData.description,
-          logoUrl: formData.logoUrl,
+          name: JSON.stringify(formData.name),
+          description: JSON.stringify(formData.description),
+          logoUrl: JSON.stringify(formData.logoUrl),
         };
 
         mutation.mutate(data);
 
       } catch (error) {
-        alert(`${error}`);
+        // alert(`${error}`);
       } finally {
         setIsUploading(false);
       }
