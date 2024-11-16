@@ -113,9 +113,9 @@ export default function CreateBrand() {
         formData.logoUrl = blob.url;
 
         mutation.mutate({
-          name: JSON.stringify(formData.name),
-          description: JSON.stringify(formData.description),
-          logoUrl: JSON.stringify(formData.logoUrl),
+          name:formData.name,
+          description: formData.description,
+          logoUrl: formData.logoUrl,
         });
 
       } catch (error) {
