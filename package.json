@@ -28,6 +28,7 @@
     "@trpc/next": "^11.0.0-rc.633",
     "@trpc/react-query": "^11.0.0-rc.633",
     "@trpc/server": "^11.0.0-rc.632",
+    "@vercel/blob": "^0.26.0",
     "bcrypt": "^5.1.1",
     "bcryptjs": "^2.4.3",
     "jsonwebtoken": "^9.0.0",

@@ -872,3 +872,24 @@
 
 # 2024-11-14 10:42:58.105281
 +y
+
+# 2024-11-16 03:21:07.873604
++Hey I want to intergrate vercel blob to store product images posted on the createProduct form. Do you think you can lay out some starting steps for me without making any changes?
+
+# 2024-11-16 03:21:18.307562
++y
+
+# 2024-11-16 03:21:18.311692
++/run npm install @vercel/blob
+
+# 2024-11-16 03:21:39.934144
++n
+
+# 2024-11-16 03:21:44.288542
++y
+
+# 2024-11-16 03:22:44.860644
++/run npm install @vercel/blob
+
+# 2024-11-16 03:22:49.088699
++n
