@@ -110,12 +110,12 @@ export default function CreateBrand() {
 
         const blob = await res.json();
 
-        formData.logoUrl = blob.url;
+        const url = blob.url;
 
         mutation.mutate({
-          name:formData.name,
+          name: formData.name,
           description: formData.description,
-          logoUrl: formData.logoUrl,
+          logoUrl: url
         });
 
       } catch (error) {
@@ -124,8 +124,7 @@ export default function CreateBrand() {
         setIsUploading(false);
       }
     }
-  };
-  const handleChange = (
+  };  const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     const { name, value } = e.target;
