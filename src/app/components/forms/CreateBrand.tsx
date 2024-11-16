@@ -109,8 +109,9 @@ export default function CreateBrand() {
         const blob = await res.json();
 
         mutation.mutate({
-          ...formData,
-          logoUrl: blob.url
+          name: formData.name,
+          description: formData.description,
+          logoUrl: blob.url,
         });
       } catch (error) {
         console.error('Error uploading file:', error);
