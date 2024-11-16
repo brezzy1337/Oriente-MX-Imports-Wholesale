@@ -920,3 +920,9 @@
 
 # 2024-11-16 04:11:15.889674
 +So I have a quick change I want to do for the Create New Product form. Instead of Brand ID and Category ID I want them to be drop down menus showing the current Brands and Catagories names which then can be selected.
+
+# 2024-11-16 04:19:55.762077
++Can we add image urls to the brand, and catagories forms as well?
+
+# 2024-11-16 04:20:50.476976
++y
