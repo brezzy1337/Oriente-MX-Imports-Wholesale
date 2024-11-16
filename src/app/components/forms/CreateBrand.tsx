@@ -4,7 +4,7 @@
 // import { useState } from 'react';
 
 // export default function CreateBrand() {
-  
+
 //   const [name, setName] = useState('');
 //   const [description, setDescription] = useState('');
 //   const [logoUrl, setLogoUrl] = useState('');
@@ -66,15 +66,15 @@
 //     </form>
 //   );
 // }
-'use client';
+"use client";
 
-import { trpc } from "../../api/_trpc/providers/client"
-import { useState, useRef } from 'react';
+import { trpc } from "../../api/_trpc/providers/client";
+import { useState, useRef } from "react";
 
 export default function CreateBrand() {
   const [formData, setFormData] = useState({
-    name: '',
-    description: '',
+    name: "",
+    description: "",
   });
 
   const [isUploading, setIsUploading] = useState(false);
@@ -83,10 +83,10 @@ export default function CreateBrand() {
   const mutation = trpc.postBrand.useMutation({
     onSuccess: () => {
       setFormData({
-        name: '',
-        description: '',
+        name: "",
+        description: "",
       });
-      alert('Brand created successfully!');
+      alert("Brand created successfully!");
     },
     onError: (error) => {
       alert(`Error creating brand: ${error.message}`);
@@ -95,47 +95,53 @@ export default function CreateBrand() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (fileInputRef.current?.files?.[0]) {
       setIsUploading(true);
       try {
         const file = fileInputRef.current.files[0];
         const filename = encodeURIComponent(file.name);
         const res = await fetch(`/api/upload?filename=${filename}`, {
-          method: 'POST',
+          method: "POST",
           body: file,
         });
-        
+
         const blob = await res.json();
 
         const data = {
           name: formData.name,
           description: formData.description,
-          logoUrl: blob.url
-        }
+          logoUrl: blob.url,
+        };
 
         mutation.mutate(data);
+        
       } catch (error) {
-        console.error('Error uploading file:', error);
-        alert('Error uploading image');
+        console.error("Error uploading file:", error);
+        alert("Error uploading image");
       } finally {
         setIsUploading(false);
       }
-    } else {
-      mutation.mutate(formData);
     }
-  };  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  };
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [name]: value
+      [name]: value,
     }));
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4 p-4 bg-white rounded-lg shadow">
+    <form
+      onSubmit={handleSubmit}
+      className="space-y-4 p-4 bg-white rounded-lg shadow"
+    >
       <h2 className="text-xl font-bold mb-4">Create New Brand</h2>
-      
+
       <div>
         <label className="block text-sm font-medium text-gray-700">Name</label>
         <input
@@ -149,7 +155,9 @@ export default function CreateBrand() {
       </div>
 
       <div>
-        <label className="block text-sm font-medium text-gray-700">Description</label>
+        <label className="block text-sm font-medium text-gray-700">
+          Description
+        </label>
         <textarea
           name="description"
           value={formData.description}
@@ -159,7 +167,9 @@ export default function CreateBrand() {
       </div>
 
       <div>
-        <label className="block text-sm font-medium text-gray-700">Brand Logo</label>
+        <label className="block text-sm font-medium text-gray-700">
+          Brand Logo
+        </label>
         <input
           type="file"
           ref={fileInputRef}
@@ -178,7 +188,11 @@ export default function CreateBrand() {
         disabled={mutation.isPending || isUploading}
         className="inline-flex justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 disabled:opacity-50"
       >
-        {isUploading ? 'Uploading...' : mutation.isPending ? 'Creating...' : 'Create Brand'}
+        {isUploading
+          ? "Uploading..."
+          : mutation.isPending
+          ? "Creating..."
+          : "Create Brand"}
       </button>
     </form>
   );

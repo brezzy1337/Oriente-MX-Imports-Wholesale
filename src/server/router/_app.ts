@@ -20,6 +20,9 @@ export const appRouter = router({
         throw new TRPCError({ code: 'UNAUTHORIZED' });
       }
 
+      // I believe this is causing the error "Unexpected end of JSON input"
+      // This Occurs when parsing an empty JSON document
+      
       const brand = await prisma.brand.create({
         data: {
           name: input.name,
