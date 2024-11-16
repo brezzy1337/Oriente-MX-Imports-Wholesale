@@ -69,6 +69,7 @@
 "use client";
 
 import { trpc } from "../../api/_trpc/providers/client";
+import { createBrand } from "@/app/admin/functions/_productActions";
 import { useState, useRef } from "react";
 
 export default function CreateBrand() {
@@ -81,19 +82,19 @@ export default function CreateBrand() {
   const [isUploading, setIsUploading] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
-  const mutation = trpc.postBrand.useMutation({
-    onSuccess: () => {
-      setFormData({
-        name: "",
-        description: "",
-        logoUrl: "",
-      });
-      alert("Brand created successfully!");
-    },
-    onError: (error) => {
-      alert(`Error creating brand: ${error.message}`);
-    },
-  });
+  // const mutation = trpc.postBrand.useMutation({
+  //   onSuccess: () => {
+  //     setFormData({
+  //       name: "",
+  //       description: "",
+  //       logoUrl: "",
+  //     });
+  //     alert("Brand created successfully!");
+  //   },
+  //   onError: (error) => {
+  //     alert(`Error creating brand: ${error.message}`);
+  //   },
+  // });
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -115,11 +116,22 @@ export default function CreateBrand() {
 
         formData.logoUrl = blob.url;
 
-        mutation.mutate({
-          name: formData.name,
-          description: formData.description,
-          logoUrl: formData.logoUrl
-        });
+        const result = await createBrand(formData);
+
+        
+        if (result.success) {
+          setFormData({
+            name: "",
+            description: "",
+            logoUrl: "",
+          });
+          alert("Brand created successfully!");
+        }
+        // mutation.mutate({
+        //   name: formData.name,
+        //   description: formData.description,
+        //   logoUrl: formData.logoUrl
+        // });
 
       } catch (error) {
         alert(`${error}`);
