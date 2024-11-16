@@ -94,7 +94,6 @@ export default function CreateBrand() {
       alert(`Error creating brand: ${error.message}`);
     },
   });
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
@@ -108,11 +107,15 @@ export default function CreateBrand() {
           body: file,
         });
 
-        const blob = await res.json();
+        const blob = await res.blob();
 
-        formData.logoUrl = blob.url;
-
-        mutation.mutate(formData);
+        const logoUrl = URL.createObjectURL(blob);
+        
+        mutation.mutate({
+          name: formData.name,
+          description: formData.description,
+          logoUrl: logoUrl 
+        });
 
       } catch (error) {
         alert(`${error}`);
@@ -120,6 +123,7 @@ export default function CreateBrand() {
         setIsUploading(false);
       }
     }
+  };
   };  const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
