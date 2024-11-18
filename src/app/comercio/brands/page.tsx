@@ -1,43 +1,9 @@
 import Image from 'next/image';
+import { getBrands } from '@/app/functions/_serverActions';
 
-export default function Brands() {
-  const brands = [
-    {
-      id: 1,
-      name: "AROY D",
-      productCount: 45,
-      image: "/images/brands/aroy-d.png",
-      link: "/comercio/brands/aroy-d"
-    },
-    {
-      id: 2,
-      name: "KIKKOMAN",
-      productCount: 32,
-      image: "/images/brands/kikkoman.png",
-      link: "/comercio/brands/kikkoman"
-    },
-    {
-      id: 3,
-      name: "KUM CHUN",
-      productCount: 28,
-      image: "/images/brands/kum-chun.jpg",
-      link: "/comercio/brands/kum-chun"
-    },
-    {
-      id: 4,
-      name: "COCK",
-      productCount: 25,
-      image: "/images/brands/cock.jpg",
-      link: "/comercio/brands/cock"
-    },
-    {
-      id: 5,
-      name: "ROSE",
-      productCount: 30,
-      image: "/images/brands/rose.jpg",
-      link: "/comercio/brands/rose"
-    }
-  ];
+export default async function Brands() {
+  const result = await getBrands();
+  const brands = result.success ? result.data : [];
 
   return (
     <div className="min-h-screen bg-white">
@@ -53,7 +19,7 @@ export default function Brands() {
           {brands.map((brand) => (
             <a
               key={brand.id}
-              href={brand.link}
+              href={`/comercio/brands/${brand.id}`}
               className="group block"
             >
               <div className="relative w-full aspect-square overflow-hidden rounded-lg mb-4">

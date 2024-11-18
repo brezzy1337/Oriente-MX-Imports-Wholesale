@@ -1,22 +1,9 @@
 import Image from 'next/image';
+import { getCategories } from '@/app/functions/_serverActions';
 
-export default function Catalog() {
-  const categories = [
-    {
-      id: 1,
-      name: "Marcas Populares",
-      count: 24,
-      image: "/images/thai-brands.jpg",
-      link: "/comercio/brands"
-    },
-    {
-      id: 2,
-      name: "Alimentos",
-      count: 156,
-      image: "/images/thai-foods.jpg",
-      link: "/comercio/food"
-    }
-  ];
+export default async function Catalog() {
+  const result = await getCategories();
+  const categories = result.success ? result.data : [];
 
   return (
     <div className="min-h-screen bg-white">
