@@ -62,7 +62,7 @@ export default function BrandsTable() {
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap">{brand.name}</td>
                 <td className="px-6 py-4 whitespace-nowrap">{brand.description}</td>
-                <td className="px-6 py-4 whitespace-nowrap">{brand.products.length}</td>
+                <td className="px-6 py-4 whitespace-nowrap">{brand.products?.length || 0}</td>
               </tr>
             ))}
           </tbody>

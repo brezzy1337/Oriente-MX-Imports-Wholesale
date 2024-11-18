@@ -36,7 +36,7 @@ export default async function Brands() {
                     {brand.name}
                   </h2>
                   <p className="text-sm text-gray-500">
-                    {/* Removed reference to brand.products */}0 productos
+                    {brand.products?.length || 0} productos
                   </p>
                 </div>
               </a>

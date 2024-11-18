@@ -62,7 +62,7 @@ export default function CategoriesTable() {
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap">{category.name}</td>
                 <td className="px-6 py-4 whitespace-nowrap">{category.description}</td>
-                <td className="px-6 py-4 whitespace-nowrap">{category.products.length}</td>
+                <td className="px-6 py-4 whitespace-nowrap">{category.products?.length || 0}</td>
               </tr>
             ))}
           </tbody>
