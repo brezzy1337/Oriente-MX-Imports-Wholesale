@@ -1,19 +1,29 @@
 'use client';
 
-import { trpc } from "@/app/api/_trpc/providers/client";
+import { useEffect, useState } from "react";
 import { PencilIcon, TrashIcon } from "@heroicons/react/24/outline";
+import { getProducts } from "@/app/admin/functions/_productActions";
 
 export default function ProductsTable() {
-  const { data: products, isLoading, refetch } = trpc.getProducts.useQuery();
-  const deleteMutation = trpc.deleteProduct.useMutation({
-    onSuccess: () => {
-      refetch();
-    },
-  });
+  const [products, setProducts] = useState<any[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  const fetchProducts = async () => {
+    const result = await getProducts();
+    if (result.success && result.data) {
+      setProducts(result.data);
+    }
+    setIsLoading(false);
+  };
+
+  useEffect(() => {
+    fetchProducts();
+  }, []);
 
   const handleDelete = async (id: string) => {
     if (window.confirm('Are you sure you want to delete this product?')) {
-      deleteMutation.mutate(id);
+      // TODO: Implement delete product server action
+      await fetchProducts(); // Refresh the list after deletion
     }
   };
 

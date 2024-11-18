@@ -90,3 +90,17 @@ export async function getBrands() {
     return { success: false, error: 'Failed to fetch brands' };
   }
 }
+
+export async function getProducts() {
+  try {
+    const products = await prisma.product.findMany({
+      include: {
+        brand: true,
+        category: true
+      }
+    });
+    return { success: true, data: products };
+  } catch (error) {
+    return { success: false, error: 'Failed to fetch products' };
+  }
+}
