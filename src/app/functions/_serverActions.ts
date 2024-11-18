@@ -113,3 +113,37 @@ export async function getProducts() {
     return { success: false, error: 'Failed to fetch products' };
   }
 }
+
+export async function getBrandProducts(brandId: string) {
+  try {
+    const products = await prisma.product.findMany({
+      where: {
+        brandId: brandId
+      },
+      include: {
+        brand: true,
+        category: true
+      }
+    });
+    return { success: true, data: products };
+  } catch (error) {
+    return { success: false, error: 'Failed to fetch brand products' };
+  }
+}
+
+export async function getCategoryProducts(categoryId: string) {
+  try {
+    const products = await prisma.product.findMany({
+      where: {
+        categoryId: categoryId
+      },
+      include: {
+        brand: true,
+        category: true
+      }
+    });
+    return { success: true, data: products };
+  } catch (error) {
+    return { success: false, error: 'Failed to fetch category products' };
+  }
+}
