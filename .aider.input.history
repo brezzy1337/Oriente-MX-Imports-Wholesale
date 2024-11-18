@@ -998,3 +998,9 @@
 
 # 2024-11-18 03:39:32.231402
 +n
+
+# 2024-11-18 04:40:14.470840
++Hey can we create server action getBrandProducts and getCategoryProducts? I want these to take a input of a brand & product id and display them as needed.
+
+# 2024-11-18 04:40:21.213351
++y

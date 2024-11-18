@@ -1,8 +1,9 @@
 import Image from 'next/image';
-import { getProducts } from '@/app/functions/_serverActions';
+import { getBrandProducts } from '@/app/functions/_serverActions';
 
 export default async function BrandPage({ params }: { params: { id: string } }) {
-  const result = await getProducts();
+  const result = await getBrandProducts(params.id);
+  // I think is probably better to do on the backend using prisma commands and a new server action
   const products = result.success && result.data ? 
     result.data.filter(product => product.brandId === params.id) : 
     [];
@@ -30,7 +31,6 @@ export default async function BrandPage({ params }: { params: { id: string } }) 
         <p className="text-lg text-gray-600 text-center mb-16 max-w-2xl mx-auto">
           Productos de {brand.name}
         </p>
-
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {products.map((product) => (
             <div key={product.id} className="group">
