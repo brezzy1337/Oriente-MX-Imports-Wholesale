@@ -1,13 +1,21 @@
 import Image from 'next/image';
 import { getBrandProducts } from '@/app/functions/_serverActions';
 
+type Params = Promise<{ id: string }>
+
+export async function generateMetadata({ params }: { params: Params }) {
+  const { id } = await params;
+  return {
+    title: `Brand ${id}`,
+  };
+}
+
 export default async function BrandPage({
   params,
 }: {
-  params: { id: string };
+  params: Params
 }) {
-
-  const { id } = params;
+  const { id } = await params;
 
   const result = await getBrandProducts(id);
   // I think is probably better to do on the backend using prisma commands and a new server action
