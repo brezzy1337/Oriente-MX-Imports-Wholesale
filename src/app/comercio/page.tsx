@@ -24,8 +24,7 @@ export default async function Catalog() {
                 alt="Marcas"
                 fill
                 style={{ objectFit: "cover" }}
-                className="transition-transform duration-300 group-
-            hover:scale-105"
+                className="transition-transform duration-300 group-hover:scale-105"
               />
             </div>
             <div className="text-center">
@@ -39,12 +38,12 @@ export default async function Catalog() {
             categories.map((category) => (
               <a
                 key={category.id}
-                href={`/comercio/category/${category.id}`}
+                href={`/comercio/categories/${category.id}`}
                 className="group block"
               >
                 <div className="relative w-full aspect-square overflow-hidden rounded-lg mb-4">
                   <Image
-                    src={category.imageUrl}
+                    src={getBlobUrl(category.imageUrl)}
                     alt={category.name}
                     fill
                     style={{ objectFit: "cover" }}
@@ -56,8 +55,7 @@ export default async function Catalog() {
                     {category.name}
                   </h2>
                   <p className="text-sm text-gray-500">
-                    Ver productos
-                    {category.products.length}
+                    Ver productos ({category.products.length})
                   </p>
                 </div>
               </a>
