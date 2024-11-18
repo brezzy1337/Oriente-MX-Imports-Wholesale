@@ -1115,3 +1115,15 @@
 
 # 2024-11-18 06:42:22.992686
 +/run npm run build && npm run start
+
+# 2024-11-18 08:14:12.724936
++Hey, I'm back from break! I want to add a new feature on the dashboard menu for the tables. So we should have two icons one for delete but we need one for editing the form. I think the best way to do this is with a popup window. It will just genereate a new form with what the current selections are which are editable. On submit the window will automantically close.
+
+# 2024-11-18 08:14:21.639885
++y
+
+# 2024-11-18 08:15:07.414309
++/run npm install @headlessui/react
+
+# 2024-11-18 08:15:13.368950
++n
