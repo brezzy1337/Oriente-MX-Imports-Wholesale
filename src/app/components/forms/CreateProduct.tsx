@@ -1,15 +1,17 @@
 'use client';
 
-import { trpc } from "../../api/_trpc/providers/client"
+// import { trpc } from "../../api/_trpc/providers/client"
+
 import { useState } from 'react';
 import { useRef } from 'react';
+import { createProduct } from '@/app/admin/functions/_productActions';
 
 export default function CreateProduct() {
   
   const [formData, setFormData] = useState({
     name: '',
     description: '',
-    price: '',
+    price: 0,
     categoryId: '',
     unitSize: '',
     caseSize: '',
@@ -18,30 +20,30 @@ export default function CreateProduct() {
     status: 'ACTIVE' as 'ACTIVE' | 'DRAFT' | 'ARCHIVED'
   });
 
-  const { data: brands } = trpc.getBrands.useQuery();
-  const { data: categories } = trpc.getCategories.useQuery();
+  // const { data: brands } = trpc.getBrands.useQuery();
+  // const { data: categories } = trpc.getCategories.useQuery();
   const [isUploading, setIsUploading] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
-  const mutation = trpc.postProduct.useMutation({
-    onSuccess: () => {
-      setFormData({
-        name: '',
-        description: '',
-        price: '',
-        categoryId: '',
-        unitSize: '',
-        caseSize: '',
-        brandId: '',
-        imageUrl: '',
-        status: 'ACTIVE'
-      });
-      alert('Product created successfully!');
-    },
-    onError: (error) => {
-      alert(`Error creating product: ${error.message}`);
-    },
-  });
+  // const mutation = trpc.postProduct.useMutation({
+  //   onSuccess: () => {
+  //     setFormData({
+  //       name: '',
+  //       description: '',
+  //       price: '',
+  //       categoryId: '',
+  //       unitSize: '',
+  //       caseSize: '',
+  //       brandId: '',
+  //       imageUrl: '',
+  //       status: 'ACTIVE'
+  //     });
+  //     alert('Product created successfully!');
+  //   },
+  //   onError: (error) => {
+  //     alert(`Error creating product: ${error.message}`);
+  //   },
+  // });
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -52,29 +54,23 @@ export default function CreateProduct() {
         const file = fileInputRef.current.files[0];
         const filename = encodeURIComponent(file.name);
         const res = await fetch(`/api/upload?filename=${filename}`, {
-          method: 'POST',
+          method: "POST",
           body: file,
         });
-        
+
         const blob = await res.json();
-        
-        mutation.mutate({
-          ...formData,
-          price: parseFloat(formData.price) || 0,
-          imageUrl: blob.url,
-        });
+
+        formData.imageUrl = blob.url;
+
+        const result = await createProduct(formData);
+
       } catch (error) {
-        console.error('Error uploading file:', error);
-        alert('Error uploading image');
+        alert(`${error}`);
       } finally {
         setIsUploading(false);
       }
-    } else {
-      mutation.mutate({
-        ...formData,
-        price: parseFloat(formData.price) || 0,
-      });
-    }
+    } 
+     
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -86,9 +82,12 @@ export default function CreateProduct() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4 p-4 bg-white rounded-lg shadow">
+    <form
+      onSubmit={handleSubmit}
+      className="space-y-4 p-4 bg-white rounded-lg shadow"
+    >
       <h2 className="text-xl font-bold mb-4">Create New Product</h2>
-      
+
       <div>
         <label className="block text-sm font-medium text-gray-700">Name</label>
         <input
@@ -102,7 +101,9 @@ export default function CreateProduct() {
       </div>
 
       <div>
-        <label className="block text-sm font-medium text-gray-700">Description</label>
+        <label className="block text-sm font-medium text-gray-700">
+          Description
+        </label>
         <textarea
           name="description"
           value={formData.description}
@@ -125,7 +126,9 @@ export default function CreateProduct() {
       </div>
 
       <div>
-        <label className="block text-sm font-medium text-gray-700">Category</label>
+        <label className="block text-sm font-medium text-gray-700">
+          Category
+        </label>
         <select
           name="categoryId"
           value={formData.categoryId}
@@ -143,7 +146,9 @@ export default function CreateProduct() {
       </div>
 
       <div>
-        <label className="block text-sm font-medium text-gray-700">Unit Size</label>
+        <label className="block text-sm font-medium text-gray-700">
+          Unit Size
+        </label>
         <input
           type="text"
           name="unitSize"
@@ -155,7 +160,9 @@ export default function CreateProduct() {
       </div>
 
       <div>
-        <label className="block text-sm font-medium text-gray-700">Case Size</label>
+        <label className="block text-sm font-medium text-gray-700">
+          Case Size
+        </label>
         <input
           type="text"
           name="caseSize"
@@ -185,7 +192,9 @@ export default function CreateProduct() {
       </div>
 
       <div>
-        <label className="block text-sm font-medium text-gray-700">Product Image</label>
+        <label className="block text-sm font-medium text-gray-700">
+          Product Image
+        </label>
         <input
           type="file"
           ref={fileInputRef}
@@ -200,7 +209,9 @@ export default function CreateProduct() {
       </div>
 
       <div>
-        <label className="block text-sm font-medium text-gray-700">Status</label>
+        <label className="block text-sm font-medium text-gray-700">
+          Status
+        </label>
         <select
           name="status"
           value={formData.status}
@@ -215,10 +226,14 @@ export default function CreateProduct() {
 
       <button
         type="submit"
-        disabled={mutation.isPending || isUploading}
+        // disabled={mutation.isPending || isUploading}
         className="inline-flex justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 disabled:opacity-50"
       >
-        {isUploading ? 'Uploading...' : mutation.isPending ? 'Creating...' : 'Create Product'}
+        {/*isUploading
+          ? "Uploading..."
+          : mutation.isPending
+          ? "Creating..."
+          : "Create Product" */}
       </button>
     </form>
   );

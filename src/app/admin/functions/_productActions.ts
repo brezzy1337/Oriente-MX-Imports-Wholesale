@@ -20,3 +20,55 @@ export async function createBrand(formData: {
           return { success: false, error: 'Failed to create brand' };
         }
 }
+
+export async function createCategory(formData: {
+        name: string;
+        description: string;
+        // parentId: string;
+        imageUrl: string;
+}) {
+        try {
+          const result = await prisma.category.create({
+            data: {
+              name: formData.name,
+              description: formData.description,
+              // parentId: formData.parentId,
+              imageUrl: formData.imageUrl,
+            },
+          });
+          return { success: true, data: result };
+        } catch (error) {
+          return { success: false, error: 'Failed to create category' };
+        }
+}
+
+export async function createProduct(formData: {
+        name: string;
+        description: string;
+        price: number;
+        categoryId: string;
+        unitSize: string;
+        caseSize: string;
+        brandId: string;
+        imageUrl: string;
+        status: 'ACTIVE' | 'DRAFT' | 'ARCHIVED';
+}) {
+  try {
+          const result = await prisma.product.create({
+            data: {
+              name: formData.name,
+              description: formData.description,
+              price: formData.price,
+              categoryId: formData.categoryId,
+              unitSize: formData.unitSize,
+              caseSize: formData.caseSize,
+              brandId: formData.brandId,
+              imageUrl: formData.imageUrl,
+              status: formData.status,
+            },
+          });
+          return { success: true, data: result };
+        } catch (error) {
+          return { success: false, error: 'Failed to create product' };
+        }
+}
