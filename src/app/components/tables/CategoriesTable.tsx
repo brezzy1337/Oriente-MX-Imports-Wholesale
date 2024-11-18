@@ -1,19 +1,29 @@
 'use client';
 
-import { trpc } from "@/app/api/_trpc/providers/client";
+import { useEffect, useState } from "react";
 import { PencilIcon, TrashIcon } from "@heroicons/react/24/outline";
+import { getCategories } from "@/app/admin/functions/_productActions";
 
 export default function CategoriesTable() {
-  const { data: categories, isLoading, refetch } = trpc.getCategories.useQuery();
-  const deleteMutation = trpc.deleteCategory.useMutation({
-    onSuccess: () => {
-      refetch();
-    },
-  });
+  const [categories, setCategories] = useState<any[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  const fetchCategories = async () => {
+    const result = await getCategories();
+    if (result.success && result.data) {
+      setCategories(result.data);
+    }
+    setIsLoading(false);
+  };
+
+  useEffect(() => {
+    fetchCategories();
+  }, []);
 
   const handleDelete = async (id: string) => {
     if (window.confirm('Are you sure you want to delete this category?')) {
-      deleteMutation.mutate(id);
+      // TODO: Implement delete category server action
+      await fetchCategories(); // Refresh the list after deletion
     }
   };
 

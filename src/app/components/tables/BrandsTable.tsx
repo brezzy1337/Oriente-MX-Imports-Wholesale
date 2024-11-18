@@ -1,19 +1,29 @@
 'use client';
 
-import { trpc } from "@/app/api/_trpc/providers/client";
+import { useEffect, useState } from "react";
 import { PencilIcon, TrashIcon } from "@heroicons/react/24/outline";
+import { getBrands } from "@/app/admin/functions/_productActions";
 
 export default function BrandsTable() {
-  const { data: brands, isLoading, refetch } = trpc.getBrands.useQuery();
-  const deleteMutation = trpc.deleteBrand.useMutation({
-    onSuccess: () => {
-      refetch();
-    },
-  });
+  const [brands, setBrands] = useState<any[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  const fetchBrands = async () => {
+    const result = await getBrands();
+    if (result.success && result.data) {
+      setBrands(result.data);
+    }
+    setIsLoading(false);
+  };
+
+  useEffect(() => {
+    fetchBrands();
+  }, []);
 
   const handleDelete = async (id: string) => {
     if (window.confirm('Are you sure you want to delete this brand?')) {
-      deleteMutation.mutate(id);
+      // TODO: Implement delete brand server action
+      await fetchBrands(); // Refresh the list after deletion
     }
   };
 
