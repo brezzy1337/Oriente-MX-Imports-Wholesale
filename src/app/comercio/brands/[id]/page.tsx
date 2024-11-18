@@ -44,7 +44,7 @@ export default async function BrandPage({
             <div key={product.id} className="group">
               <div className="relative w-full aspect-square overflow-hidden rounded-lg mb-4">
                 <Image
-                  src={product.imageUrl || '/images/placeholder.jpg'}
+                  src={getBlobUrl(product.imageUrl)}
                   alt={product.name}
                   fill
                   style={{ objectFit: 'cover' }}
