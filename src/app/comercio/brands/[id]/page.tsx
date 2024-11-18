@@ -1,16 +1,18 @@
 import Image from 'next/image';
 import { getBrandProducts } from '@/app/functions/_serverActions';
 
-type Props = {
-  params: { id: string }
-  searchParams: { [key: string]: string | string[] | undefined }
-}
+export default async function BrandPage({
+  params,
+}: {
+  params: { id: string };
+}) {
 
-export default async function BrandPage({ params, searchParams }: Props) {
-  const result = await getBrandProducts(params.id);
+  const { id } = params;
+
+  const result = await getBrandProducts(id);
   // I think is probably better to do on the backend using prisma commands and a new server action
   const products = result.success && result.data ? 
-    result.data.filter(product => product.brandId === params.id) : 
+    result.data.filter(product => product.brandId === id) : 
     [];
 
   if (products.length === 0) {

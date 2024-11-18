@@ -1019,3 +1019,9 @@
 +Type error: Type 'PageProps' does not satisfy the constraint 'import("/vercel/path0/.next/types/app/comercio/brands/[id]/page").PageProps'.
 +  Types of property 'params' are incompatible.
 +    Type '{ id: string; }' is missing the following properties from type 'Promise<any>': then, catch, finally, [Symbol.toStringTag]
+
+# 2024-11-18 05:05:16.655976
++I'm looking at the documentation here and it looks like I have to pass the params to a object. https://nextjs.org/docs/app/building-your-application/upgrading/version-15#asynchronous-page. I'm not sure what the serach params are used for in this case however.
+
+# 2024-11-18 05:05:18.472957
++y
