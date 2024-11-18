@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { PencilIcon, TrashIcon } from "@heroicons/react/24/outline";
-import { getCategories } from "@/app/functions/_serverActions";
+import { getCategories, deleteCategory } from "@/app/functions/_serverActions";
 
 export default function CategoriesTable() {
   const [categories, setCategories] = useState<any[]>([]);
@@ -23,6 +23,7 @@ export default function CategoriesTable() {
   const handleDelete = async (id: string) => {
     if (window.confirm('Are you sure you want to delete this category?')) {
       // TODO: Implement delete category server action
+      deleteCategory(id);
       await fetchCategories(); // Refresh the list after deletion
     }
   };

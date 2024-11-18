@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { PencilIcon, TrashIcon } from "@heroicons/react/24/outline";
-import { getProducts } from "@/app/functions/_serverActions";
+import { getProducts, deleteProduct } from "@/app/functions/_serverActions";
 
 export default function ProductsTable() {
   const [products, setProducts] = useState<any[]>([]);
@@ -23,6 +23,7 @@ export default function ProductsTable() {
   const handleDelete = async (id: string) => {
     if (window.confirm('Are you sure you want to delete this product?')) {
       // TODO: Implement delete product server action
+      deleteProduct(id);
       await fetchProducts(); // Refresh the list after deletion
     }
   };

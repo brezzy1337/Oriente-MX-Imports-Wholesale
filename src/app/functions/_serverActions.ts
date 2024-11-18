@@ -167,3 +167,52 @@ export async function getCategoryProducts(categoryId: string) {
     return { success: false, error: 'Failed to fetch category products' };
   }
 }
+
+export async function deleteProduct(id: string): Promise<{ success: boolean; data?: any; error?: string }> {
+  try {
+    const result = await prisma.product.delete({
+      where: { id },
+    });
+    return { success: true, data: result };
+  } catch (error) {
+    return { success: false, error: 'Failed to delete product' };
+  }
+}
+
+export async function deleteCategory(id: string): Promise<{ success: boolean; data?: any; error?: string }> {
+  try {
+    const hasProducts = await prisma.product.findFirst({
+      where: { categoryId: id },
+    });
+
+    if (hasProducts) {
+      return { success: false, error: 'Cannot delete category with associated products' };
+    }
+
+    const result = await prisma.category.delete({
+      where: { id },
+    });
+    return { success: true, data: result };
+  } catch (error) {
+    return { success: false, error: 'Failed to delete category' };
+  }
+}
+
+export async function deleteBrand(id: string): Promise<{ success: boolean; data?: any; error?: string }> {
+  try {
+    const hasProducts = await prisma.product.findFirst({
+      where: { brandId: id },
+    });
+
+    if (hasProducts) {
+      return { success: false, error: 'Cannot delete brand with associated products' };
+    }
+
+    const result = await prisma.brand.delete({
+      where: { id },
+    });
+    return { success: true, data: result };
+  } catch (error) {
+    return { success: false, error: 'Failed to delete brand' };
+  }
+}
