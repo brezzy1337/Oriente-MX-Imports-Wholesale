@@ -935,3 +935,18 @@
 
 # 2024-11-18 02:06:58.842476
 +Hey, goodmorning! I was wondering if you could help me create the get category and get brand server actions I need to be mapped on my createProducts dropdown menus.
+
+# 2024-11-18 02:17:33.086279
++/add src/app/components/tables/BrandsTable.tsx
+
+# 2024-11-18 02:17:43.166956
++/add src/app/components/tables/CategoriesTable.tsx
+
+# 2024-11-18 02:20:22.561310
++Wow works perfectly thank you! Very grateful for all you help! Next step is going to be implementing those get server actions into the BrandTable and CategoriesTable components.
+
+# 2024-11-18 02:39:43.487625
++/add src/app/components/tables/ProductsTable.tsx
+
+# 2024-11-18 02:40:47.011254
++Awesome looks great! I think next creating a server actions to get products and using that in the productTables component would be a great new step!
