@@ -76,13 +76,19 @@ export default function CreateProduct() {
 
         const result = await createProduct(formData);
 
+
+        if (result.success) {
+          alert("Category created successfully!");
+        } else {
+          alert("Error creating category.");
+        }
+
       } catch (error) {
         alert(`${error}`);
       } finally {
         setIsUploading(false);
       }
     } 
-     
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
