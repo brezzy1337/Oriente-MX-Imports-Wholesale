@@ -40,22 +40,11 @@ export default function Home() {
             Nuestras Marcas Principales
           </DecoratedHeader>
           <div className="grid grid-cols-2 md:grid-cols-5 gap-8 max-w-4xl mx-auto">
-            <a href="/comercio/brands/aroy-d" className="group">
-              <div className="bg-white p-4 hover:shadow-md transition-shadow">
-                <Image
-                  src="/images/brands/aroy-d.png"
-                  alt="AROY-D"
-                  width={200}
-                  height={200}
-                  className="w-full h-auto"
-                />
-              </div>
-            </a>
             { brands.map((brand) => (
               <a href={`/comercio/brands/${brand.slug}`} key={brand.id} className="group">
                 <div className="bg-white p-4 hover:shadow-md transition-shadow">
                   <Image
-                    src={`/images/brands/${brand.slug}.png`}
+                    src={getBlobUrl(brand.logoUrl)}
                     alt={brand.name}
                     width={200}
                     height={200}
