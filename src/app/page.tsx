@@ -5,8 +5,31 @@ import HeroGallery from "@/app/components/HeroGallery";
 import ServiceCards from "@/app/components/ServiceCards";
 import FeaturedProducts from "@/app/components/FeaturedProducts";
 import DecoratedHeader from "@/app/components/DecoratedHeader";
+import { useState, useEffect } from "react"
+import { getBrands } from "./functions/_serverActions";
+import { getBlobUrl } from "@/utils/blob";
+
 
 export default function Home() {
+  
+  const [brands, setBrands] = useState<any[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  const fetchBrands = async () => {
+    const result = await getBrands();
+    if (result.success && result.data) {
+      setIsLoading(false);
+      setBrands(result.data);
+    }
+    return result.data;
+  };
+
+  useEffect(() => {
+    fetchBrands();
+  }, []);
+
+  if (isLoading) return <div>Loading...</div>;
+
   return (
     <main className="flex min-h-screen flex-col">
       <HeroGallery />
@@ -28,50 +51,19 @@ export default function Home() {
                 />
               </div>
             </a>
-            <a href="/comercio/brands/kikkoman" className="group">
-              <div className="bg-white p-4 hover:shadow-md transition-shadow">
-                <Image
-                  src="/images/brands/kikkoman.png"
-                  alt="KIKKOMAN"
-                  width={200}
-                  height={200}
-                  className="w-full h-auto"
-                />
-              </div>
-            </a>
-            <a href="/comercio/brands/kum-chun" className="group">
-              <div className="bg-white p-4 hover:shadow-md transition-shadow">
-                <Image
-                  src="/images/brands/kum-chun.jpg"
-                  alt="KUM CHUN"
-                  width={200}
-                  height={200}
-                  className="w-full h-auto"
-                />
-              </div>
-            </a>
-            <a href="/comercio/brands/cock" className="group">
-              <div className="bg-white p-4 hover:shadow-md transition-shadow">
-                <Image
-                  src="/images/brands/cock.jpg"
-                  alt="COCK"
-                  width={200}
-                  height={200}
-                  className="w-full h-auto"
-                />
-              </div>
-            </a>
-            <a href="/comercio/brands/rose" className="group">
-              <div className="bg-white p-4 hover:shadow-md transition-shadow">
-                <Image
-                  src="/images/brands/rose.jpg"
-                  alt="ROSE"
-                  width={200}
-                  height={200}
-                  className="w-full h-auto"
-                />
-              </div>
-            </a>
+            { brands.map((brand) => (
+              <a href={`/comercio/brands/${brand.slug}`} key={brand.id} className="group">
+                <div className="bg-white p-4 hover:shadow-md transition-shadow">
+                  <Image
+                    src={`/images/brands/${brand.slug}.png`}
+                    alt={brand.name}
+                    width={200}
+                    height={200}
+                    className="w-full h-auto"
+                  />
+                </div>
+              </a>
+            ))}
           </div>
         </div>
       </section>
