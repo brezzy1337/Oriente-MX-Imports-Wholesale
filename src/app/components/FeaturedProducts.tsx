@@ -1,15 +1,41 @@
 'use client';
 
-import { products } from '@/data/products';
+import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
+interface Product {
+  id: string;
+  name: string;
+  brandId: string;
+  categoryId: string;
+  unitSize: string;
+  caseSize: string;
+  imageUrl: string;
+}
+
 const FeaturedProducts = () => {
-  
-  const featuredProducts = products.filter(product => product.featured);
+  const [featuredProducts, setFeaturedProducts] = useState<Product[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchFeaturedProducts = async () => {
+      try {
+        const response = await fetch('/api/products/featured');
+        const data = await response.json();
+        setFeaturedProducts(data);
+      } catch (error) {
+        console.error('Error fetching featured products:', error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchFeaturedProducts();
+  }, []);
 
   const settings = {
     dots: true,
@@ -48,18 +74,15 @@ const FeaturedProducts = () => {
         <Slider {...settings}>
           {featuredProducts.map((product) => (
             <div key={product.id} className="px-2">
-              <Link href={`/tienda/${product.id}`}>
+              <Link href={`/comercio/products/${product.id}`}>
                 <div className="text-align-start">
                   <div className="relative h-32 w-full mb-4">
                     <Image
-                      src={product.image}
+                      src={product.imageUrl}
                       alt={product.name}
                       fill
                       className="object-contain"
                     />
-                  </div>
-                  <div className="text-sm text-gray-600 mb-2">
-                    {product.brand} - {product.category}
                   </div>
                   <h3 className="font-medium mb-1">{product.name} {product.unitSize}</h3>
                   <div className="text-sm text-gray-500 pb-8">{product.caseSize}</div>
