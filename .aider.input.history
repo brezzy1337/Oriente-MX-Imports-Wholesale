@@ -1082,3 +1082,36 @@
 
 # 2024-11-18 05:34:17.713709
 +y
+
+# 2024-11-18 06:34:38.223373
++n
+
+# 2024-11-18 06:34:39.754839
++https://stackoverflow.com/questions/77773401/cant-display-a-blob-image-coming-from-fastapi-in-next-js
+
+# 2024-11-18 06:34:42.551988
++y
+
+# 2024-11-18 06:36:06.008196
++Can you use this to update my getBlobUrl. I need to display the image of the images I'm getting as well 
+
+# 2024-11-18 06:36:15.161171
++y
+
+# 2024-11-18 06:39:28.540027
++/add src/app/comercio/page.tsx
+
+# 2024-11-18 06:41:16.461050
++Can you use the insights on this discussion changes o my page. My images are not displaying properly on deploy.
+
+# 2024-11-18 06:41:53.919400
++/add next.config.mjs
+
+# 2024-11-18 06:42:00.331995
++Can you take a look at my config for me
+
+# 2024-11-18 06:42:22.988434
++y
+
+# 2024-11-18 06:42:22.992686
++/run npm run build && npm run start

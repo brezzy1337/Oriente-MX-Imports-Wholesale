@@ -20,7 +20,7 @@ export default async function Catalog() {
           <a href="/comercio/brands" className="group block">
             <div className="relative w-full aspect-square overflow-hidden rounded-lg mb-4">
               <Image
-                src="/images/categories/brands.jpg"
+                src="/images/Thai-supermarket.jpg"
                 alt="Marcas"
                 fill
                 style={{ objectFit: "cover" }}

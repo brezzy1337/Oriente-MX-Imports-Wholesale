@@ -13,13 +13,13 @@ const SideMenu = ({ isOpen, onClose }: SideMenuProps) => {
   return (
     <>
       <div 
-        className={`fixed inset-0 bg-white z-40 transition-opacity ${
+        className={`fixed inset-0 bg-white transition-opacity ${
           isOpen ? 'opacity-100' : 'opacity-100 pointer-events-none'
         }`}
         onClick={onClose}
       />
       <div
-        className={`fixed top-0 left-0 h-full w-64 bg-[#FFFFFF] shadow-lg z-100 transform transition-transform lg:hidden ${
+        className={`fixed top-0 left-0 h-full w-64 bg-[#FFFFFF] shadow-lg z-30 transform transition-transform lg:hidden ${
           isOpen ? 'translate-x-0' : '-translate-x-full'        }`}
       >
         <div className="p-4">
