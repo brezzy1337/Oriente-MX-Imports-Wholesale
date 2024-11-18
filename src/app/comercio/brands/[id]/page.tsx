@@ -3,7 +3,7 @@ import { getProducts } from '@/app/functions/_serverActions';
 
 export default async function BrandPage({ params }: { params: { id: string } }) {
   const result = await getProducts();
-  const products = result.success ? 
+  const products = result.success && result.data ? 
     result.data.filter(product => product.brandId === params.id) : 
     [];
 
@@ -47,9 +47,9 @@ export default async function BrandPage({ params }: { params: { id: string } }) 
                 <h2 className="text-xl font-medium text-gray-900 mb-1">
                   {product.name}
                 </h2>
-                <p className="text-sm text-gray-500">
-                  ${product.price.toFixed(2)}
-                </p>
+                {/* <p className="text-sm text-gray-500"> */}
+                  {/* ${product.price.toFixed(2)} */}
+                {/* </p> */}
                 <p className="text-sm text-gray-500">
                   {product.unitSize}
                 </p>
