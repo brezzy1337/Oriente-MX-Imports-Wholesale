@@ -1,12 +1,14 @@
 'use client';
 
 import { useEffect, useState } from "react";
+import EditProduct from "../forms/EditProduct";
 import { PencilIcon, TrashIcon } from "@heroicons/react/24/outline";
 import { getProducts, deleteProduct } from "@/app/functions/_serverActions";
 
 export default function ProductsTable() {
   const [products, setProducts] = useState<any[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [editingProduct, setEditingProduct] = useState<any>(null);
 
   const fetchProducts = async () => {
     const result = await getProducts();
@@ -49,7 +51,7 @@ export default function ProductsTable() {
                 <td className="px-6 py-4 whitespace-nowrap">
                   <div className="flex items-center space-x-2">
                     <button
-                      onClick={() => window.location.href = `/dashboard/products/edit/${product.id}`}
+                      onClick={() => setEditingProduct(product)}
                       className="text-indigo-600 hover:text-indigo-900"
                     >
                       <PencilIcon className="h-5 w-5" />
@@ -79,5 +81,13 @@ export default function ProductsTable() {
         </table>
       </div>
     </div>
+      {editingProduct && (
+        <EditProduct
+          product={editingProduct}
+          isOpen={!!editingProduct}
+          onClose={() => setEditingProduct(null)}
+          onUpdate={fetchProducts}
+        />
+      )}
   );
 }

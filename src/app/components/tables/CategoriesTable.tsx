@@ -1,12 +1,14 @@
 'use client';
 
 import { useEffect, useState } from "react";
+import EditCategory from "../forms/EditCategory";
 import { PencilIcon, TrashIcon } from "@heroicons/react/24/outline";
 import { getCategories, deleteCategory } from "@/app/functions/_serverActions";
 
 export default function CategoriesTable() {
   const [categories, setCategories] = useState<any[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [editingCategory, setEditingCategory] = useState<any>(null);
 
   const fetchCategories = async () => {
     const result = await getCategories();
@@ -48,7 +50,7 @@ export default function CategoriesTable() {
                 <td className="px-6 py-4 whitespace-nowrap">
                   <div className="flex items-center space-x-2">
                     <button
-                      onClick={() => window.location.href = `/dashboard/categories/edit/${category.id}`}
+                      onClick={() => setEditingCategory(category)}
                       className="text-indigo-600 hover:text-indigo-900"
                     >
                       <PencilIcon className="h-5 w-5" />
@@ -70,5 +72,13 @@ export default function CategoriesTable() {
         </table>
       </div>
     </div>
+      {editingCategory && (
+        <EditCategory
+          category={editingCategory}
+          isOpen={!!editingCategory}
+          onClose={() => setEditingCategory(null)}
+          onUpdate={fetchCategories}
+        />
+      )}
   );
 }

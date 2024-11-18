@@ -198,6 +198,47 @@ export async function deleteCategory(id: string): Promise<{ success: boolean; da
   }
 }
 
+export async function updateCategory(id: string, formData: {
+  name: string;
+  description: string;
+  imageUrl: string;
+}) {
+  try {
+    const result = await prisma.category.update({
+      where: { id },
+      data: {
+        name: formData.name,
+        description: formData.description,
+        imageUrl: formData.imageUrl,
+      },
+    });
+    return { success: true, data: result };
+  } catch (error) {
+    return { success: false, error: 'Failed to update category' };
+  }
+}
+
+export async function updateProduct(id: string, formData: {
+  name: string;
+  description: string;
+  categoryId: string;
+  unitSize: string;
+  caseSize: string;
+  brandId: string;
+  imageUrl: string;
+  status: 'ACTIVE' | 'DRAFT' | 'ARCHIVED';
+}) {
+  try {
+    const result = await prisma.product.update({
+      where: { id },
+      data: formData,
+    });
+    return { success: true, data: result };
+  } catch (error) {
+    return { success: false, error: 'Failed to update product' };
+  }
+}
+
 export async function deleteBrand(id: string): Promise<{ success: boolean; data?: any; error?: string }> {
   try {
     const hasProducts = await prisma.product.findFirst({
