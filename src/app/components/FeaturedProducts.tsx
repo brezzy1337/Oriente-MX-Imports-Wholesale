@@ -7,6 +7,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { getFeaturedProducts } from '../functions/_serverActions';
 import { useEffect, useState } from 'react';
+import { getBlobUrl } from '@/utils/blob';
 
 interface Product {
   id: string;
@@ -32,8 +33,8 @@ const FeaturedProducts = () => {
     const loadFeaturedProducts = async () => {
       try {
         const result = await getFeaturedProducts();
-        if (result.success) {
-          setFeaturedProducts(result.data);
+        if (result.success && result.data) {
+          setFeaturedProducts(result.data as Product[]);
         } else {
           console.error('Failed to load featured products:', result.error);
         }
@@ -43,7 +44,6 @@ const FeaturedProducts = () => {
         setIsLoading(false);
       }
     };
-
     loadFeaturedProducts();
   }, []);
 
@@ -88,7 +88,7 @@ const FeaturedProducts = () => {
                 <div className="text-align-start">
                   <div className="relative h-32 w-full mb-4">
                     <Image
-                      src={product.imageUrl}
+                      src={getBlobUrl(product.imageUrl)}
                       alt={product.name}
                       fill
                       className="object-contain"

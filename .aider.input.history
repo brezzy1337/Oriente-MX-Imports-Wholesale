@@ -1133,3 +1133,15 @@
 
 # 2024-11-18 08:43:19.033174
 +y
+
+# 2024-11-18 10:53:42.977602
++/add src/app/components/FeaturedProducts.tsx
+
+# 2024-11-18 10:55:01.480429
++Hey, goodevening! I wanted to take a look at featured products. I think what I want do do where is grab 4 proucts from the database to display here.
+
+# 2024-11-18 10:55:50.206361
++/add src/app/functions/_serverActions.ts
+
+# 2024-11-18 10:56:15.857253
++I think we are going to need to overlook this one again. We have to use a server action to fetch the data.
