@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { PencilIcon, TrashIcon } from "@heroicons/react/24/outline";
-import { getBrands } from "@/app/admin/functions/_productActions";
+import { getBrands } from "@/app/functions/_serverActions";
 
 export default function BrandsTable() {
   const [brands, setBrands] = useState<any[]>([]);

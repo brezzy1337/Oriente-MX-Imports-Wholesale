@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { PencilIcon, TrashIcon } from "@heroicons/react/24/outline";
-import { getCategories } from "@/app/admin/functions/_productActions";
+import { getCategories } from "@/app/functions/_serverActions";
 
 export default function CategoriesTable() {
   const [categories, setCategories] = useState<any[]>([]);
