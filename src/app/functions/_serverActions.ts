@@ -239,6 +239,24 @@ export async function updateProduct(id: string, formData: {
   }
 }
 
+export async function getFeaturedProducts() {
+  try {
+    const products = await prisma.product.findMany({
+      where: {
+        status: 'ACTIVE'
+      },
+      take: 4,
+      include: {
+        brand: true,
+        category: true
+      }
+    });
+    return { success: true, data: products };
+  } catch (error) {
+    return { success: false, error: 'Failed to fetch featured products' };
+  }
+}
+
 export async function deleteBrand(id: string): Promise<{ success: boolean; data?: any; error?: string }> {
   try {
     const hasProducts = await prisma.product.findFirst({

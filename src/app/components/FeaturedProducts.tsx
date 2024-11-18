@@ -1,11 +1,12 @@
 'use client';
 
-import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import { getFeaturedProducts } from '../functions/_serverActions';
+import { useEffect, useState } from 'react';
 
 interface Product {
   id: string;
@@ -15,6 +16,12 @@ interface Product {
   unitSize: string;
   caseSize: string;
   imageUrl: string;
+  brand: {
+    name: string;
+  };
+  category: {
+    name: string;
+  };
 }
 
 const FeaturedProducts = () => {
@@ -22,19 +29,22 @@ const FeaturedProducts = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const fetchFeaturedProducts = async () => {
+    const loadFeaturedProducts = async () => {
       try {
-        const response = await fetch('/api/products/featured');
-        const data = await response.json();
-        setFeaturedProducts(data);
+        const result = await getFeaturedProducts();
+        if (result.success) {
+          setFeaturedProducts(result.data);
+        } else {
+          console.error('Failed to load featured products:', result.error);
+        }
       } catch (error) {
-        console.error('Error fetching featured products:', error);
+        console.error('Error loading featured products:', error);
       } finally {
         setIsLoading(false);
       }
     };
 
-    fetchFeaturedProducts();
+    loadFeaturedProducts();
   }, []);
 
   const settings = {
