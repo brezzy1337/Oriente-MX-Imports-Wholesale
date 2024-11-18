@@ -45,7 +45,7 @@ export async function createCategory(formData: {
 export async function createProduct(formData: {
   name: string;
   description: string;
-  price: number;
+  // price: number;
   categoryId: string;
   unitSize: string;
   caseSize: string;
@@ -58,7 +58,7 @@ export async function createProduct(formData: {
       data: {
         name: formData.name,
         description: formData.description,
-        price: formData.price,
+        // price: formData.price,
         categoryId: formData.categoryId,
         unitSize: formData.unitSize,
         caseSize: formData.caseSize,

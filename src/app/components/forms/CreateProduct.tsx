@@ -9,7 +9,7 @@ export default function CreateProduct() {
   const [formData, setFormData] = useState({
     name: '',
     description: '',
-    price: 0,
+    // price: 0,
     categoryId: '',
     unitSize: '',
     caseSize: '',
@@ -130,7 +130,7 @@ export default function CreateProduct() {
         />
       </div>
 
-      <div>
+      {/* <div>
         <label className="block text-sm font-medium text-gray-700">Price</label>
         <input
           type="number"
@@ -141,7 +141,7 @@ export default function CreateProduct() {
           className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
           required
         />
-      </div>
+      </div> */}
 
       <div>
         <label className="block text-sm font-medium text-gray-700">
