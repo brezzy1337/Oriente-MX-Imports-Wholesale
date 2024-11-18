@@ -8,59 +8,59 @@ import { authRouter } from "./auth";
 export const appRouter = router({
   auth: authRouter,
 
-  postBrand: protectedProcedure
-    .input(z.object({
-      name: z.string(),
-      description: z.string().optional(),
-      logoUrl: z.string().optional(),
-    }))
-    .mutation(async ({ input, ctx }) => {
-      const { session } = ctx;
+  // postBrand: protectedProcedure
+  //   .input(z.object({
+  //     name: z.string(),
+  //     description: z.string().optional(),
+  //     logoUrl: z.string().optional(),
+  //   }))
+  //   .mutation(async ({ input, ctx }) => {
+  //     const { session } = ctx;
 
-      if (!session.user?.email) {
-        throw new TRPCError({ code: 'UNAUTHORIZED' });
-      }
+  //     if (!session.user?.email) {
+  //       throw new TRPCError({ code: 'UNAUTHORIZED' });
+  //     }
 
-      try{
-        const { name, description, logoUrl } = input;
+  //     try{
+  //       const { name, description, logoUrl } = input;
 
-        const brand = await prisma.brand.create({
-          data: {
-            name,
-            description,
-            logoUrl,
-          }
-        });
-        //Checking if error is thrown here since then I know if the error is being thrown on the post or response end. I seems like a response issue since the data is going though
-        return brand;
+  //       const brand = await prisma.brand.create({
+  //         data: {
+  //           name,
+  //           description,
+  //           logoUrl,
+  //         }
+  //       });
+  //       //Checking if error is thrown here since then I know if the error is being thrown on the post or response end. I seems like a response issue since the data is going though
+  //       return brand;
 
-      } catch (error) {
-        throw new TRPCError({ code: 'INTERNAL_SERVER_ERROR', message: `${error}` });
-      }
+  //     } catch (error) {
+  //       throw new TRPCError({ code: 'INTERNAL_SERVER_ERROR', message: `${error}` });
+  //     }
 
-      // I believe this is causing the error "Unexpected end of JSON input"
-      // This Occurs when parsing an empty JSON document
+  //     // I believe this is causing the error "Unexpected end of JSON input"
+  //     // This Occurs when parsing an empty JSON document
 
-    }),
+    // }),
 
-  postCategory: protectedProcedure
-    .input(z.object({
-      name: z.string(),
-      description: z.string().optional(),
-      parentId: z.string().optional(),
-      imageUrl: z.string().optional()
-    }))
-    .mutation(async ({ input, ctx }) => {
-      const { session } = ctx;
-      if (!session.user?.email) {
-        throw new TRPCError({ code: 'UNAUTHORIZED' });
-      }
+  // postCategory: protectedProcedure
+  //   .input(z.object({
+  //     name: z.string(),
+  //     description: z.string().optional(),
+  //     parentId: z.string().optional(),
+  //     imageUrl: z.string().optional()
+  //   }))
+  //   .mutation(async ({ input, ctx }) => {
+  //     const { session } = ctx;
+  //     if (!session.user?.email) {
+  //       throw new TRPCError({ code: 'UNAUTHORIZED' });
+  //     }
 
-      const category = await prisma.category.create({
-        data: input
-      });
-      return category;
-    }),
+  //     const category = await prisma.category.create({
+  //       data: input
+  //     });
+  //     return category;
+  //   }),
 
   postProduct: protectedProcedure
     .input(z.object({

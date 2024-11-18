@@ -42,27 +42,9 @@ export async function createCategory(formData: {
         }
 }
 
-export async function getCategories() {
-  try {
-    const categories = await prisma.category.findMany();
-    return { success: true, data: categories };
-  } catch (error) {
-    return { success: false, error: 'Failed to fetch categories' };
-  }
-}
-
-export async function getBrands() {
-  try {
-    const brands = await prisma.brand.findMany();
-    return { success: true, data: brands };
-  } catch (error) {
-    return { success: false, error: 'Failed to fetch brands' };
-  }
-}
-
 export async function createProduct(formData: {
-        name: string;
-        description: string;
+  name: string;
+  description: string;
         price: number;
         categoryId: string;
         unitSize: string;
@@ -90,3 +72,21 @@ export async function createProduct(formData: {
           return { success: false, error: 'Failed to create product' };
         }
 }
+
+  export async function getCategories() {
+    try {
+      const categories = await prisma.category.findMany();
+      return { success: true, data: categories };
+    } catch (error) {
+      return { success: false, error: 'Failed to fetch categories' };
+    }
+  }
+  
+  export async function getBrands() {
+    try {
+      const brands = await prisma.brand.findMany();
+      return { success: true, data: brands };
+    } catch (error) {
+      return { success: false, error: 'Failed to fetch brands' };
+    }
+  }

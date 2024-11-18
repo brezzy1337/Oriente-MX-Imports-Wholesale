@@ -28,8 +28,8 @@ export default function CreateProduct() {
         getCategories()
       ]);
       
-      if (brandsResult.success) setBrands(brandsResult.data);
-      if (categoriesResult.success) setCategories(categoriesResult.data);
+      if (brandsResult.success && brandsResult.data) setBrands(brandsResult.data);
+      if (categoriesResult.success && categoriesResult.data) setCategories(categoriesResult.data);
     };
     
     fetchData();

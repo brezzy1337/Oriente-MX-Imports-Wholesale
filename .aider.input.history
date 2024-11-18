@@ -926,3 +926,12 @@
 
 # 2024-11-16 04:20:50.476976
 +y
+
+# 2024-11-18 02:05:19.173957
++/add src/app/components/forms/CreateProduct.tsx
+
+# 2024-11-18 02:05:26.470424
++/add src/app/admin/functions/_productActions.ts
+
+# 2024-11-18 02:06:58.842476
++Hey, goodmorning! I was wondering if you could help me create the get category and get brand server actions I need to be mapped on my createProducts dropdown menus.
