@@ -3,10 +3,12 @@
 import { useEffect, useState } from "react";
 import { PencilIcon, TrashIcon } from "@heroicons/react/24/outline";
 import { getBrands } from "@/app/functions/_serverActions";
+import EditBrand from "../forms/EditBrand";
 
 export default function BrandsTable() {
   const [brands, setBrands] = useState<any[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [editingBrand, setEditingBrand] = useState<any>(null);
 
   const fetchBrands = async () => {
     const result = await getBrands();
@@ -47,7 +49,7 @@ export default function BrandsTable() {
                 <td className="px-6 py-4 whitespace-nowrap">
                   <div className="flex items-center space-x-2">
                     <button
-                      onClick={() => window.location.href = `/dashboard/brands/edit/${brand.id}`}
+                      onClick={() => setEditingBrand(brand)}
                       className="text-indigo-600 hover:text-indigo-900"
                     >
                       <PencilIcon className="h-5 w-5" />
@@ -69,5 +71,13 @@ export default function BrandsTable() {
         </table>
       </div>
     </div>
+    {editingBrand && (
+      <EditBrand
+        brand={editingBrand}
+        isOpen={!!editingBrand}
+        onClose={() => setEditingBrand(null)}
+        onUpdate={fetchBrands}
+      />
+    )}
   );
 }

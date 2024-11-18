@@ -114,6 +114,26 @@ export async function getProducts() {
   }
 }
 
+export async function updateBrand(id: string, formData: {
+  name: string;
+  description: string;
+  logoUrl: string;
+}) {
+  try {
+    const result = await prisma.brand.update({
+      where: { id },
+      data: {
+        name: formData.name,
+        description: formData.description,
+        logoUrl: formData.logoUrl,
+      },
+    });
+    return { success: true, data: result };
+  } catch (error) {
+    return { success: false, error: 'Failed to update brand' };
+  }
+}
+
 export async function getBrandProducts(brandId: string) {
   try {
     const products = await prisma.product.findMany({
