@@ -3,13 +3,6 @@ import { getBrandProducts } from '@/app/functions/_serverActions';
 
 type Params = Promise<{ id: string }>
 
-export async function generateMetadata({ params }: { params: Params }) {
-  const { id } = await params;
-  return {
-    title: `Brand ${id}`,
-  };
-}
-
 export default async function BrandPage({
   params,
 }: {

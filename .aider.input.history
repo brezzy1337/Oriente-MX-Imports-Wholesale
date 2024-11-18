@@ -1025,3 +1025,42 @@
 
 # 2024-11-18 05:05:18.472957
 +y
+
+# 2024-11-18 05:11:18.187500
++I see I think I need to use this format:
+
+# 2024-11-18 05:11:24.313251
++// After
++type Params = Promise<{ slug: string }>
++ 
++export async function generateMetadata({ params }: { params: Params }) {
++  const { slug } = await params
++}
++ 
++export default async function Layout({
++  children,
++  params,
++}: {
++  children: React.ReactNode
++  params: Params
++}) {
++  const { slug } = await params
++}
+
+# 2024-11-18 05:11:58.321250
++I think we need to use this format for the params to be typed and passed properly 
++type Params = Promise<{ slug: string }>
++ 
++export async function generateMetadata({ params }: { params: Params }) {
++  const { slug } = await params
++}
++ 
++export default async function Layout({
++  children,
++  params,
++}: {
++  children: React.ReactNode
++  params: Params
++}) {
++  const { slug } = await params
++}
