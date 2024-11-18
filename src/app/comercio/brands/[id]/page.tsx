@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { getBrandProducts } from '@/app/functions/_serverActions';
+import { getBlobUrl } from '@/utils/blob';
 
 type Params = Promise<{ id: string }>
 
@@ -15,6 +16,7 @@ export default async function BrandPage({
   const products = result.success && result.data ? 
     result.data.filter(product => product.brandId === id) : 
     [];
+
 
   if (products.length === 0) {
     return (

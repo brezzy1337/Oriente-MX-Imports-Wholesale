@@ -1064,3 +1064,21 @@
 +}) {
 +  const { slug } = await params
 +}
+
+# 2024-11-18 05:20:18.691556
++Awesome I think we got it! The next step will be displaying the images from vercel blob that is using the image/log url for each brand, category, and product.
+
+# 2024-11-18 05:20:31.286303
++y
+
+# 2024-11-18 05:20:34.759000
++/run npm install @vercel/blob
+
+# 2024-11-18 05:20:41.501190
++n
+
+# 2024-11-18 05:34:01.688439
++I think we're ready to add dynamic routing for the products based on categories.
+
+# 2024-11-18 05:34:17.713709
++y
