@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { PencilIcon, TrashIcon } from "@heroicons/react/24/outline";
-import { getBrands } from "@/app/functions/_serverActions";
+import { getBrands, deleteBrand} from "@/app/functions/_serverActions";
 import EditBrand from "../forms/EditBrand";
 
 export default function BrandsTable() {
@@ -25,6 +25,7 @@ export default function BrandsTable() {
   const handleDelete = async (id: string) => {
     if (window.confirm('Are you sure you want to delete this brand?')) {
       // TODO: Implement delete brand server action
+      deleteBrand(id);
       await fetchBrands(); // Refresh the list after deletion
     }
   };
