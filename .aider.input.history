@@ -1004,3 +1004,12 @@
 
 # 2024-11-18 04:40:21.213351
 +y
+
+# 2024-11-18 04:53:44.822314
++I'm getting this error on deployment do you think you can break down why this could be the case? src/app/comercio/brands/[id]/page.tsx
++Type error: Type '{ params: { id: string; }; }' does not satisfy the constraint 'PageProps'.
++  Types of property 'params' are incompatible.
++    Type '{ id: string; }' is missing the following properties from type 'Promise<any>': then, catch, finally, [Symbol.toStringTag]
+
+# 2024-11-18 04:53:47.298190
++y
