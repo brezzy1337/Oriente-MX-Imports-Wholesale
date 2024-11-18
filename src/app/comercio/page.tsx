@@ -39,7 +39,7 @@ export default async function Catalog() {
             categories.map((category) => (
               <a
                 key={category.id}
-                href={`/category/${category.id}`}
+                href={`/comercio/category/${category.id}`}
                 className="group block"
               >
                 <div className="relative w-full aspect-square overflow-hidden rounded-lg mb-4">
