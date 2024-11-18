@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { useRef } from 'react';
-import { createProduct, getBrands, getCategories } from '@/app/admin/functions/_productActions';
+import { createProduct, getBrands, getCategories } from '@/app/functions/_serverActions';
 
 export default function CreateProduct() {
   

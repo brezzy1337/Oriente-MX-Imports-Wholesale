@@ -950,3 +950,51 @@
 
 # 2024-11-18 02:40:47.011254
 +Awesome looks great! I think next creating a server actions to get products and using that in the productTables component would be a great new step!
+
+# 2024-11-18 03:21:55.117130
++Awesome that should work perfectly. The next step might be a little tricky but I think it should be managable to shift. So what needs to happen is we need to make the comercio routes dynamic in terms of what categories, and brands are displayed. The current layout looks great it should be a matter to querying the data using the server actions for the categories, brands, and products to be mapped out. Where it starts to get challenging is that each categories and brand will need to display a new page with the assiciated products displayed. 
+
+# 2024-11-18 03:23:19.509953
++Awesome that should work perfectly. The next step might be a little tricky but I think it should be managable to shift. So what needs to happen is we need to make the comercio routes dynamic in terms of what categories, and brands are displayed. The current layout looks great it should be a matter to querying the data using the server actions for the categories, brands, and products to be mapped out. Where it starts to get challenging is that each categories and brand will need to display a new page with the assiciated products displayed.
+
+# 2024-11-18 03:23:54.676867
++n
+
+# 2024-11-18 03:24:12.890064
++/add src/app/comercio/brands/page.tsx
+
+# 2024-11-18 03:24:22.050538
++/add src/app/comercio/page.tsx
+
+# 2024-11-18 03:25:35.573574
++I added the pages I want to change. I want to ignore the other folders in brand and have a page such as [id].tsx which displays products based of the brand that is picked.
+
+# 2024-11-18 03:26:05.868842
++y
+
+# 2024-11-18 03:29:05.716931
++I'm looking at the brand.productCount and I think we can create a server action that fetches all products that has the brand name and display it the count of it.
+
+# 2024-11-18 03:31:46.560202
++Can we create a sever action called getProductCount which gets the amount of products associated with a categorie or brand?
+
+# 2024-11-18 03:32:28.205261
++/add _serverActions
+
+# 2024-11-18 03:32:29.720238
++n
+
+# 2024-11-18 03:32:39.859045
++/map-refresh
+
+# 2024-11-18 03:33:02.956609
++/map
+
+# 2024-11-18 03:33:17.217520
++/reset
+
+# 2024-11-18 03:39:30.167495
++/add src/app/admin/functions/_productActions.ts
+
+# 2024-11-18 03:39:32.231402
++n

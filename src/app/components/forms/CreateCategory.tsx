@@ -2,7 +2,7 @@
 
 import { trpc } from "../../api/_trpc/providers/client";
 import { useState, useRef } from "react";
-import { createCategory } from "@/app/admin/functions/_productActions";
+import { createCategory } from "@/app/functions/_serverActions";
 
 export default function CreateCategory() {
   const [formData, setFormData] = useState({

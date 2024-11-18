@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { PencilIcon, TrashIcon } from "@heroicons/react/24/outline";
-import { getProducts } from "@/app/admin/functions/_productActions";
+import { getProducts } from "@/app/functions/_serverActions";
 
 export default function ProductsTable() {
   const [products, setProducts] = useState<any[]>([]);

@@ -16,15 +16,15 @@ export default async function Catalog() {
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16 max-w-2xl mx-auto">
-          {categories.map((category) => (
+          {categories && categories.map((category) => (
             <a
               key={category.id}
-              href={category.link}
+              href={`/category/${category.id}`}
               className="group block"
             >
               <div className="relative w-full aspect-square overflow-hidden rounded-lg mb-4">
                 <Image
-                  src={category.image}
+                  src={category.imageUrl}
                   alt={category.name}
                   fill
                   style={{ objectFit: 'cover' }}
@@ -36,7 +36,8 @@ export default async function Catalog() {
                   {category.name}
                 </h2>
                 <p className="text-sm text-gray-500">
-                  {category.count} productos
+                  Ver productos
+                  {category.products.length}
                 </p>
               </div>
             </a>

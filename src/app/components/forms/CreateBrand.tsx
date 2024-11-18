@@ -1,7 +1,7 @@
 "use client";
 
 // import { trpc } from "../../api/_trpc/providers/client";
-import { createBrand } from "@/app/admin/functions/_productActions";
+import { createBrand } from "@/app/functions/_serverActions";
 import { useState, useRef } from "react";
 
 export default function CreateBrand() {
