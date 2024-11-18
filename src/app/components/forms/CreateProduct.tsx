@@ -1,10 +1,8 @@
 'use client';
 
-// import { trpc } from "../../api/_trpc/providers/client"
-
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useRef } from 'react';
-import { createProduct } from '@/app/admin/functions/_productActions';
+import { createProduct, getBrands, getCategories } from '@/app/admin/functions/_productActions';
 
 export default function CreateProduct() {
   
@@ -20,8 +18,22 @@ export default function CreateProduct() {
     status: 'ACTIVE' as 'ACTIVE' | 'DRAFT' | 'ARCHIVED'
   });
 
-  // const { data: brands } = trpc.getBrands.useQuery();
-  // const { data: categories } = trpc.getCategories.useQuery();
+  const [brands, setBrands] = useState<any[]>([]);
+  const [categories, setCategories] = useState<any[]>([]);
+  
+  useEffect(() => {
+    const fetchData = async () => {
+      const [brandsResult, categoriesResult] = await Promise.all([
+        getBrands(),
+        getCategories()
+      ]);
+      
+      if (brandsResult.success) setBrands(brandsResult.data);
+      if (categoriesResult.success) setCategories(categoriesResult.data);
+    };
+    
+    fetchData();
+  }, []);
   const [isUploading, setIsUploading] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
@@ -137,7 +149,7 @@ export default function CreateProduct() {
           required
         >
           <option value="">Select a category</option>
-          {categories?.map((category) => (
+          {categories.map((category) => (
             <option key={category.id} value={category.id}>
               {category.name}
             </option>
@@ -183,7 +195,7 @@ export default function CreateProduct() {
           required
         >
           <option value="">Select a brand</option>
-          {brands?.map((brand) => (
+          {brands.map((brand) => (
             <option key={brand.id} value={brand.id}>
               {brand.name}
             </option>
