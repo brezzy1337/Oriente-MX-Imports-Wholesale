@@ -3,7 +3,6 @@ import { getBrandProducts } from '@/app/functions/_serverActions';
 
 export default async function BrandPage({
   params,
-  searchParams,
 }: {
   params: { id: string };
   searchParams?: { [key: string]: string | string[] | undefined };

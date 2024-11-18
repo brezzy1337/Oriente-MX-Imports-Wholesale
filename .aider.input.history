@@ -1013,3 +1013,9 @@
 
 # 2024-11-18 04:53:47.298190
 +y
+
+# 2024-11-18 04:56:55.086288
++Still getting this a similar error: src/app/comercio/brands/[id]/page.tsx
++Type error: Type 'PageProps' does not satisfy the constraint 'import("/vercel/path0/.next/types/app/comercio/brands/[id]/page").PageProps'.
++  Types of property 'params' are incompatible.
++    Type '{ id: string; }' is missing the following properties from type 'Promise<any>': then, catch, finally, [Symbol.toStringTag]
