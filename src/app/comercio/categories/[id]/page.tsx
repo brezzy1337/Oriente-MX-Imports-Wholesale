@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { getCategoryProducts } from '@/app/functions/_serverActions';
 import { getBlobUrl } from '@/utils/blob';
 
@@ -46,7 +47,11 @@ export default async function CategoryPage({
         </p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {products.map((product) => (
-            <div key={product.id} className="group">
+            <Link 
+              href={`/comercio/products/${product.id}`}
+              key={product.id} 
+              className="group block cursor-pointer"
+            >
               <div className="relative w-full aspect-square overflow-hidden rounded-lg mb-4">
                 <Image
                   src={getBlobUrl(product.imageUrl)}
@@ -67,7 +72,7 @@ export default async function CategoryPage({
                   {product.brand.name}
                 </p>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
