@@ -1145,3 +1145,37 @@
 
 # 2024-11-18 10:56:15.857253
 +I think we are going to need to overlook this one again. We have to use a server action to fetch the data.
+
+# 2024-11-18 11:24:30.292777
++/add src/app/components/DecoratedHeader.tsx
+
+# 2024-11-18 11:24:50.750615
++I want to change the decortedHeader to just a straight red line
+
+# 2024-11-19 03:44:23.650134
++y
+
+# 2024-11-19 03:44:54.477233
++n
+
+# 2024-11-19 03:50:10.474537
++Hey good morning! So last time we where able to create dynamic pages for brands, and catagoires. Now I want to create some dynamic pages for the products themselves! So to start I want to image of the product on the left side. On the right of that image I want all the details of the product. First the Header will be the name of the product. Then under that discription, Unit size and case size, followed contact button.
+
+# 2024-11-19 03:50:55.070734
++> Hey good morning! So last time we where able to create dynamic pages for brands, and catagoi
++res. Now I want to create some dynamic pages for the products themselves! So to start I want t
++o image of the product on the left side. On the right of that image I want all the details of 
++the product. First the Header will be the name of the product. Then under that discription, Un
++it size and case size, followed contact button.          
+
+# 2024-11-19 03:51:02.555253
++y
+
+# 2024-11-19 04:01:55.281622
++/add src/app/comercio/categories/[id]/page.tsx
+
+# 2024-11-19 04:02:00.522596
++/add src/app/comercio/brands/[id]/page.tsx
+
+# 2024-11-19 04:03:12.408924
++Awesome the products page is looking awesome but I need to link the href of the products to the div that contains the products in the brand, and category displays

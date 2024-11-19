@@ -1,15 +1,19 @@
 import { getProduct } from '@/app/functions/_serverActions';
-import { Button } from '@/components/ui/button';
 import Image from 'next/image';
+import { getBlobUrl } from '@/utils/blob';
+import { Button } from '@headlessui/react';
 
-type Params = {
-  params: {
-    id: string;
-  };
-};
+type Params = Promise<{ id: string }>
 
-export default async function ProductPage({ params }: Params) {
-  const { success, data: product, error } = await getProduct(params.id);
+export default async function ProductPage({
+  params,
+}: {
+  params: Params
+}) {
+
+  const { id } = await params;
+
+  const { success, data: product, error } = await getProduct(id);
 
   if (!success || !product) {
     return (
@@ -23,12 +27,12 @@ export default async function ProductPage({ params }: Params) {
   }
 
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="container mx-auto px-4 py-8 pt-24">
       <div className="grid md:grid-cols-2 gap-8">
         {/* Left side - Product Image */}
         <div className="relative h-[400px] w-full">
           <Image
-            src={product.imageUrl}
+            src={getBlobUrl(product.imageUrl)}
             alt={product.name}
             fill
             className="object-contain rounded-lg"
@@ -36,7 +40,7 @@ export default async function ProductPage({ params }: Params) {
         </div>
 
         {/* Right side - Product Details */}
-        <div className="space-y-6">
+        <div className="flex flex-col space-y-6" >
           <h1 className="text-3xl font-bold">{product.name}</h1>
           
           <div className="space-y-4">
@@ -64,12 +68,11 @@ export default async function ProductPage({ params }: Params) {
             </div>
           </div>
 
-          <Button 
-            className="w-full md:w-auto"
-            size="lg"
+          <button 
+          className="w-full py-2 px-4 w-fit text-lg font-semibold bg-[#D32F2F] text-[#FFFFFF] rounded-lg hover:bg-[#B71C1C] transition-colors duration-300"
           >
             Contact Us About This Product
-          </Button>
+          </button>
         </div>
       </div>
     </div>
