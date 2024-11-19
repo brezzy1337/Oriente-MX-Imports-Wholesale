@@ -257,6 +257,26 @@ export async function getFeaturedProducts() {
   }
 }
 
+export async function getProduct(id: string) {
+  try {
+    const product = await prisma.product.findUnique({
+      where: { id },
+      include: {
+        brand: true,
+        category: true
+      }
+    });
+    
+    if (!product) {
+      return { success: false, error: 'Product not found' };
+    }
+
+    return { success: true, data: product };
+  } catch (error) {
+    return { success: false, error: 'Failed to fetch product' };
+  }
+}
+
 export async function deleteBrand(id: string): Promise<{ success: boolean; data?: any; error?: string }> {
   try {
     const hasProducts = await prisma.product.findFirst({
