@@ -1215,3 +1215,21 @@
 
 # 2024-11-20 04:12:11.476741
 +Awesome thanks for creating the api for me! Can we implement it into the contact page now to?
+
+# 2024-11-20 04:49:51.550905
++Awesome everything is looking great the next thing I think we should tackle is setting up the style for mobile intergration. Can you run me the best way to do this?
+
+# 2024-11-20 04:53:26.948217
++/add src/app/components/Navigation.tsx
+
+# 2024-11-20 04:53:32.678939
++/add src/app/components/Footer.tsx
+
+# 2024-11-20 04:54:27.176329
++Looking at the code it looks like the footer and the header is the causing the screen the be to wide on mobile. Can you see what could be causing that? No need to make changes I want to make them myself.
+
+# 2024-11-20 04:58:34.158235
++I could use some padding on the sides as well of the footer on mobile view.
+
+# 2024-11-20 05:06:35.067233
++On the mobile view can we have two rows holding the links to company, help, etc.

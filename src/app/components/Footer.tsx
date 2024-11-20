@@ -8,7 +8,7 @@ const Footer = () => {
     <footer className="bg-[#D32F2F] border-t border-gray-100 py-12 mt-20">
         <div className="flex flex-col space-y-8 px-4 md:px-8 lg:px-12">
           {/* Main Footer Content */}
-          <div className="w-screen">
+          {/* <div className="w-screen"> */}
           {/* Logo */}
           <div className="mb-8 md:mb-0 flex lg:w-auto justify-center">
             <Image
@@ -20,7 +20,7 @@ const Footer = () => {
             />
           </div>
             {/* <div className="flex md:flex-cols-5 gap-60 w-full justify-center space-y-1"> */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-8 lg:gap-12 md:py-4 w-full justify-center">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-2 lg:gap-4 md:py-4 lg:px-24 w-full justify-center lg:justify-items-center">
             {/* Company Column */}
             <div className="flex flex-col space-y-1">
               <h3 className="font-semibold text-lg mb-2 text-gray-800">
@@ -126,7 +126,7 @@ const Footer = () => {
             © 2024 Deli Asya. All rights reserved
           </p>
         </div>
-      </div>
+      {/* </div> */}
     </footer>
   );
 };
