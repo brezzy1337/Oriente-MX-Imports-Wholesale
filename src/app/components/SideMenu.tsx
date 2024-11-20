@@ -2,7 +2,7 @@
 
 // import { useState } from 'react';
 import Link from 'next/link';
-import { FaEnvelope, FaPhone, FaLinkedin } from 'react-icons/fa';
+import { FaEnvelope, FaPhone, FaLinkedin, FaWhatsapp } from 'react-icons/fa';
 
 interface SideMenuProps {
   isOpen: boolean;
@@ -47,15 +47,18 @@ const SideMenu = ({ isOpen, onClose }: SideMenuProps) => {
             </Link>
           </nav>
           <div className="mt-8 space-x-4">
-            <a href="mailto:info@deliasya.com" className="text-[#D32F2F] hover:text-[#FFD54F]">
+            <a href="mailto:deliasyagrupo@gmail.com" className="text-[#D32F2F] hover:text-[#FFD54F]">
               <FaEnvelope className="inline-block w-6 h-6" />
             </a>
-            <a href="tel:+525555555555" className="text-[#D32F2F] hover:text-[#FFD54F]">
+            <a href="tel:9843160169" className="text-[#D32F2F] hover:text-[#FFD54F]">
               <FaPhone className="inline-block w-6 h-6" />
             </a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-[#D32F2F] hover:text-[#FFD54F]">
-              <FaLinkedin className="inline-block w-6 h-6" />
+            <a href='https://wa.me/519843160169' target="_blank" rel="noopener noreferrer" className="text-[#D32F2F] hover:text-[#FFD54F]">
+              <FaWhatsapp className="inline-block w-6 h-6" />
             </a>
+            {/* <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-[#D32F2F] hover:text-[#FFD54F]">
+              <FaLinkedin className="inline-block w-6 h-6" />
+            </a> */}
           </div>
         </div>
       </div>

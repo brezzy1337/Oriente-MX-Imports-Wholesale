@@ -7,9 +7,9 @@ import Image from "next/image";
 import { FaBars, FaFacebook, FaInstagram, FaWhatsapp } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 
-const ShoppingCart = dynamic(() => import("@/app/components/ShoppingCart"), {
-  ssr: false,
-});
+// const ShoppingCart = dynamic(() => import("@/app/components/ShoppingCart"), {
+//   ssr: false,
+// });
 
 const SideMenu = dynamic(() => import("@/app/components/SideMenu"), {
   ssr: false,
@@ -67,15 +67,15 @@ const Navigation = () => {
             >
               Comercio
             </Link>
-            <Link
+            {/* <Link
               href="/catalogo"
               className="text-gray-800 hover:text-[#D32F2F] transition-colors"
             >
               Catálogo
-            </Link>
+            </Link> */}
           </div>
           <div className="hidden lg:flex justify-end space-x-4 px-12">
-            <Link
+            {/* <Link
               href="https://facebook.com"
               target="_blank"
               className="text-gray-600 hover:text-[#D32F2F] transition-colors"
@@ -88,22 +88,22 @@ const Navigation = () => {
               className="text-gray-600 hover:text-[#D32F2F] transition-colors"
             >
               <FaInstagram className="w-5 h-5" />
-            </Link>
+            </Link> */}
             <Link
-              href="https://wa.me/yourphonenumber"
+              href="https://wa.me/529843160169"
               target="_blank"
               className="text-gray-600 hover:text-[#D32F2F] transition-colors"
             >
               <FaWhatsapp className="w-5 h-5" />
             </Link>
             <Link
-              href="mailto:contact@deliasya.com"
+              href="mailto:deliasyagrupo@gmail.com"
               className="text-gray-600 hover:text-[#D32F2F] transition-colors"
             >
               <MdEmail className="w-5 h-5" />
             </Link>
           </div>
-          <ShoppingCart />
+          {/* <ShoppingCart /> */}
         </div>
       </div>
       <SideMenu
