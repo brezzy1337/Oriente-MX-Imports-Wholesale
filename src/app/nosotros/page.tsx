@@ -2,18 +2,18 @@ import Image from "next/image";
 
 export default function AboutUs() {
   return (
-    <div className="pt-20">
+    <div className="">
       {/* Hero Section */}
       <div className="relative h-[400px] w-full">
         <Image
-          src="/images/aboutus.jpg"
+          src="/images/ocean-freight-shipping.png"
           alt="Thai Supermarket"
           fill
           className="object-cover"
           priority
         />
         <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-          <h1 className="text-4xl md:text-5xl text-white font-bold">
+          <h1 className="text-4xl md:text-5xl text-primary font-bold">
             Nosotros
           </h1>
         </div>
