@@ -55,7 +55,7 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <h3 className="font-medium text-gray-800">Phone</h3>
-                  <p className="text-gray-600">+34 123 456 789</p>
+                  <p className="text-gray-600">984 316 0169</p>
                 </div>
               </div>
 
@@ -65,7 +65,7 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <h3 className="font-medium text-gray-800">WhatsApp</h3>
-                  <p className="text-gray-600">+34 123 456 789</p>
+                  <p className="text-gray-600">+52 984 316 0169</p>
                 </div>
               </div>
 
@@ -75,7 +75,7 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <h3 className="font-medium text-gray-800">Email</h3>
-                  <p className="text-gray-600">info@deliasya.com</p>
+                  <p className="text-gray-600">deliasyagrupo@gmail.com</p>
                 </div>
               </div>
 
@@ -183,6 +183,7 @@ export default function ContactPage() {
               <button
                 type="submit"
                 className="w-full bg-[#D32F2F] text-white py-4 px-6 rounded-lg hover:bg-[#B71C1C] transition-all duration-300 transform hover:scale-[1.02] font-semibold text-lg shadow-md"
+                onSubmit={handleSubmit}
               >
                 Send Message
               </button>
