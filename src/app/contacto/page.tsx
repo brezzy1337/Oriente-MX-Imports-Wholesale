@@ -68,22 +68,22 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <div className="bg-[#D32F2F] py-20 px-4">
+      <div className="bg-[#D32F2F] py-12 md:py-20 px-4">
         <div className="max-w-7xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Contact Us</h1>
-          <p className="text-white/90 text-lg max-w-2xl mx-auto">
+          <h1 className="text-3xl md:text-5xl font-bold text-white mb-4">Contact Us</h1>
+          <p className="text-white/90 text-base md:text-lg max-w-2xl mx-auto px-2">
             We're here to help and answer any questions you might have. 
             We look forward to hearing from you.
           </p>
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 py-12">
+      <div className="max-w-7xl mx-auto px-4 py-8 md:py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           {/* Contact Information */}
-          <div className="space-y-8">
-            <h2 className="text-3xl font-semibold text-gray-800">Get in Touch</h2>
-            <p className="text-gray-600">
+          <div className="space-y-6 md:space-y-8">
+            <h2 className="text-2xl md:text-3xl font-semibold text-gray-800">Get in Touch</h2>
+            <p className="text-gray-600 text-sm md:text-base">
               Have questions about our products or services? We're here to help!
             </p>
 
@@ -134,10 +134,10 @@ export default function ContactPage() {
           </div>
 
           {/* Contact Form */}
-          <div className="bg-white p-8 rounded-2xl shadow-lg">
-            <h2 className="text-2xl font-semibold text-gray-800 mb-8">Send us a Message</h2>
+          <div className="bg-white p-4 md:p-8 rounded-2xl shadow-lg">
+            <h2 className="text-xl md:text-2xl font-semibold text-gray-800 mb-6 md:mb-8">Send us a Message</h2>
             <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
                     Full Name *
@@ -150,7 +150,7 @@ export default function ContactPage() {
                     onChange={handleChange}
                     required
                     placeholder="Enter your full name"
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#D32F2F] focus:border-transparent placeholder-gray-400"
+                    className="w-full px-3 md:px-4 py-2 md:py-3 text-sm md:text-base rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#D32F2F] focus:border-transparent placeholder-gray-400"
                   />
                 </div>
 
@@ -243,7 +243,7 @@ export default function ContactPage() {
         </div>
 
         {/* Map Section */}
-        <div className="mt-12">
+        <div className="mt-8 md:mt-12">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12147.354652555768!2d-3.7037929!3d40.4167754!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd422997800a3c81%3A0xc436dec1618c2269!2sMadrid%2C%20Spain!5e0!3m2!1sen!2s!4v1699564178461!5m2!1sen!2s"
             width="100%"
