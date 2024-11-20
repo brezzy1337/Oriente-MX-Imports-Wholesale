@@ -37,7 +37,7 @@ export default function Home() {
       <section className="bg-gray-50 py-16">
         <div className="container mx-auto px-4">
           <DecoratedHeader>
-            Nuestras Marcas Principales
+            Nuestras Marcas 
           </DecoratedHeader>
           <div className="grid grid-cols-2 md:grid-cols-5 gap-8 max-w-4xl mx-auto">
             { brands.map((brand) => (

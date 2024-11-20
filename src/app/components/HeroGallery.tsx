@@ -6,9 +6,9 @@ import Image from 'next/image';
 const slides = [
   {
     id: 1,
-    title: "Sobre Nosotros",
-    heading: "Deli Asya",
-    description: "Somos tu socio mayorista líder en productos tailandeses en México, dedicados a importar productos auténticos directamente desde Tailandia. Nuestra misión es llevar los mejores ingredientes y sabores tailandeses a las cocinas y negocios mexicanos.",
+    title: "DeliAsay",
+    heading: "DeliAsya",
+    description: "Deliasya es importador y distribuidor de productos auténticos de la cocina tailandesa, llevando los sabores tradicionales de Tailandia directamente a tu mesa en Mexico.",
     image: "/images/thailand-bangkok.jpg",
     buttonText: "Conócenos",
     buttonLink: "/about"
@@ -16,30 +16,30 @@ const slides = [
   {
     id: 2,
     title: "Nuestros Productos",
-    heading: "Selección Tailandesa Auténtica",
-    description: "Descubre nuestra extensa gama de productos tailandeses premium, desde salsas esenciales hasta ingredientes especiales.",
+    heading: "Nuestros Productos",
+    description: "Deliasya trae lo mejor de Tailandia a tu mesa: leche de coco, pasta de curry, salsa y fideos de arroz auténticos.",
     image: "/images/Thai-supermarket.jpg",
     buttonText: "Ver Catálogo",
     buttonLink: "/comercio"
   },
   {
     id: 3,
-    title: "Garantía de Calidad",
-    heading: "Calidad Premium",
-    description: "Aseguramos que todos nuestros productos cumplan con los más altos estándares de calidad y autenticidad.",
+    title: "Valores",
+    heading: "Valores",
+    description: "En Deliasya garantizamos la máxima calidad de nuestros productos, seleccionados cuidadosamente para ofrecerte lo mejor de la gastronomía asiática.",
     image: "/images/thai-fresh-fruit.png",
     buttonText: "Nuestras Marcas",
     buttonLink: "/comercio/brands"
   },
-  {
-    id: 4,
-    title: "Distribución",
-    heading: "Servicio Nacional",
-    description: "Servicios confiables de distribución mayorista en todo México, asegurando que tu negocio nunca se quede sin existencias.",
-    image: "/images/truck.jpg",
-    buttonText: "Contáctanos",
-    buttonLink: "/contact"
-  }
+  // {
+  //   id: 4,
+  //   title: "Distribución",
+  //   heading: "Servicio Nacional",
+  //   description: "Servicios confiables de distribución mayorista en todo México, asegurando que tu negocio nunca se quede sin existencias.",
+  //   image: "/images/truck.jpg",
+  //   buttonText: "Contáctanos",
+  //   buttonLink: "/contact"
+  // }
 ];
 
 export default function HeroGallery() {
@@ -76,7 +76,7 @@ export default function HeroGallery() {
             <div className="absolute inset-0 bg-black/50" />
           </div>
           <div className="relative z-10 h-full flex flex-col justify-center items-center text-[#FFFFFF] text-center px-4">
-            <h2 className="text-xl font-semibold mb-2">{slide.title}</h2>
+            {/* <h2 className="text-xl font-semibold mb-2">{slide.title}</h2> */}
             <h1 className="text-5xl font-bold mb-4">{slide.heading}</h1>
             <p className="max-w-2xl text-lg mb-8">{slide.description}</p>
             <a

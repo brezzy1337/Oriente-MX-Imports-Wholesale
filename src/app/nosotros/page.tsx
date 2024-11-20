@@ -6,7 +6,7 @@ export default function AboutUs() {
       {/* Hero Section */}
       <div className="relative h-[400px] w-full">
         <Image
-          src="/images/thai-supermarket.jpg"
+          src="/images/aboutus.jpg"
           alt="Thai Supermarket"
           fill
           className="object-cover"
@@ -14,7 +14,7 @@ export default function AboutUs() {
         />
         <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
           <h1 className="text-4xl md:text-5xl text-white font-bold">
-            Sobre Nosotros
+            Nosotros
           </h1>
         </div>
       </div>
@@ -27,7 +27,7 @@ export default function AboutUs() {
               Nuestra Historia
             </h2>
             <p className="text-gray-600 leading-relaxed mb-6">
-              Deli Asya nació de la pasión por la auténtica cocina asiática y el deseo de 
+              DeliAsya nació de la pasión por la auténtica cocina asiática y el deseo de 
               compartir los sabores únicos de Asia con la comunidad local. Desde nuestros 
               humildes comienzos, nos hemos convertido en un destino confiable para 
               productos asiáticos de alta calidad.

@@ -34,6 +34,7 @@ export default function CreateProduct() {
     
     fetchData();
   }, []);
+  
   const [isUploading, setIsUploading] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
 

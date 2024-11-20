@@ -1179,3 +1179,39 @@
 
 # 2024-11-19 04:03:12.408924
 +Awesome the products page is looking awesome but I need to link the href of the products to the div that contains the products in the brand, and category displays
+
+# 2024-11-20 04:02:50.949974
++/add src/app/contacto/page.tsx
+
+# 2024-11-20 04:03:49.583149
++Hey good afternoon! So I'm ready to finish off the contacto handle submit function. We decided that it will send the message to a email.
+
+# 2024-11-20 04:04:23.031423
++y
+
+# 2024-11-20 04:04:28.634749
++/run npm install nodemailer
+
+# 2024-11-20 04:04:31.127615
++/run npm install --save-dev @types/nodemailer
+
+# 2024-11-20 04:04:40.349111
++n
+
+# 2024-11-20 04:06:54.916576
++Is there a way to do with without requiring a password?
+
+# 2024-11-20 04:08:33.382733
++y
+
+# 2024-11-20 04:08:33.387348
++/run npm install resend
+
+# 2024-11-20 04:11:43.938539
++n
+
+# 2024-11-20 04:11:47.530802
++N
+
+# 2024-11-20 04:12:11.476741
++Awesome thanks for creating the api for me! Can we implement it into the contact page now to?

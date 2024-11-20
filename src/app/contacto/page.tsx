@@ -11,6 +11,7 @@ export default function ContactPage() {
     phone: "",
     message: "",
   });
+
   const [isLoading, setIsLoading] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<{
     type: 'success' | 'error' | null;
@@ -124,8 +125,8 @@ export default function ContactPage() {
                 <div>
                   <h3 className="font-medium text-gray-800">Address</h3>
                   <p className="text-gray-600">
-                    Calle Example 123<br />
-                    28001 Madrid, Spain
+                    Manzana 40 lote 6, Avenida Kukulkan,<br />
+                    77760, Tulum, QR, Mexico
                   </p>
                 </div>
               </div>

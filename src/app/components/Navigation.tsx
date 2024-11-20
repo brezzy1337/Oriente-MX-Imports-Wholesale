@@ -47,7 +47,7 @@ const Navigation = () => {
               href="/"
               className="text-gray-800 hover:text-[#D32F2F] transition-colors"
             >
-              Hogar
+              Inicio
             </Link>
             <Link
               href="/nosotros"
