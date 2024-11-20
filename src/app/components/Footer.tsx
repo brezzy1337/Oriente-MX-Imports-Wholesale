@@ -20,9 +20,9 @@ const Footer = () => {
             />
           </div>
             {/* <div className="flex md:flex-cols-5 gap-60 w-full justify-center space-y-1"> */}
-            <div className="flex md:flex-cols-5 gap-4 md:gap-8 lg-gap-12 md:py-4 w-full justify-center space-y-1">
+            <div className="flex md:flex-cols-4 gap-8 md:gap-8 lg-gap-12 md:py-4 w-full justify-center space-y-1">
             {/* Company Column */}
-            <div className="flex grid grid-cols-1 justify-end item-end">
+            <div className="flex flex-col space-y-1">
               <h3 className="font-semibold text-lg mb-2 text-gray-800">
                 Company
               </h3>
