@@ -23,12 +23,12 @@ const Footer = () => {
             <div className="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-2 lg:gap-4 md:py-4 lg:px-24 w-full justify-center lg:justify-items-center">
             {/* Company Column */}
             <div className="flex flex-col space-y-1">
-              <h3 className="font-semibold text-lg mb-2 text-gray-800">
+              <h3 className="font-semibold text-lg mb-2 text-white">
                 Compañía
               </h3>
               <Link
                 href="/nosotros"
-                className="text-gray-600 hover:text-[#D32F2F] transition-colors"
+                className="text-white hover:text-gray-200 transition-colors"
               >
                 Nosotros
               </Link>
@@ -42,12 +42,12 @@ const Footer = () => {
 
             {/* Store Column */}
             <div className="flex flex-col space-y-1">
-              <h3 className="font-semibold text-lg mb-2 text-gray-800">
+              <h3 className="font-semibold text-lg mb-2 text-white">
                Catalogar
               </h3>
               <Link
                 href="/comercio"
-                className="text-gray-600 hover:text-[#D32F2F] transition-colors"
+                className="text-white hover:text-gray-200 transition-colors"
               >
                 Comercio
               </Link>
@@ -61,22 +61,22 @@ const Footer = () => {
 
             {/* Help Column */}
             <div className="flex flex-col space-y-1">
-              <h3 className="font-semibold text-lg mb-2 text-gray-800">Ayuda</h3>
+              <h3 className="font-semibold text-lg mb-2 text-white">Ayuda</h3>
               <Link
                 href="/contacto"
-                className="text-gray-600 hover:text-[#D32F2F] transition-colors"
+                className="text-white hover:text-gray-200 transition-colors"
               >
                 Contacto
               </Link>
               <Link
                 href="/mapa-del-sitio"
-                className="text-gray-600 hover:text-[#D32F2F] transition-colors"
+                className="text-white hover:text-gray-200 transition-colors"
               >
                 Mapa del sitio
               </Link>
               <Link
                 href="/privacy"
-                className="text-gray-600 hover:text-[#D32F2F] transition-colors"
+                className="text-white hover:text-gray-200 transition-colors"
               >
                 Aviso de privacidad
               </Link>
@@ -90,7 +90,7 @@ const Footer = () => {
             <Link
               href="https://facebook.com"
               target="_blank"
-              className="text-gray-600 hover:text-[#D32F2F] transition-colors"
+              className="text-white hover:text-gray-200 transition-colors"
             >
               <FaFacebook className="w-5 h-5" />
             </Link>
@@ -122,7 +122,7 @@ const Footer = () => {
             </Link>
           {/* Copyright */}
           </div>
-          <p className="text-center text-gray-600 mt-8">
+          <p className="text-center text-white mt-8">
             © 2024 DeliAsya. All rights reserved
           </p>
         </div>
