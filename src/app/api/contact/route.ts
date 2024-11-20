@@ -1,20 +1,14 @@
 import { NextResponse } from 'next/server';
-import nodemailer from 'nodemailer';
+import { Resend } from 'resend';
 
-const transporter = nodemailer.createTransport({
-  service: 'gmail',
-  auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASSWORD,
-  },
-});
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(request: Request) {
   try {
     const { name, company, email, phone, message } = await request.json();
 
-    const mailOptions = {
-      from: process.env.EMAIL_USER,
+    await resend.emails.send({
+      from: 'Deliasya Contact Form <onboarding@resend.dev>',
       to: 'deliasyagrupo@gmail.com',
       subject: `New Contact Form Submission from ${name}`,
       html: `
@@ -26,9 +20,7 @@ export async function POST(request: Request) {
         <p><strong>Message:</strong></p>
         <p>${message}</p>
       `,
-    };
-
-    await transporter.sendMail(mailOptions);
+    });
 
     return NextResponse.json(
       { message: 'Email sent successfully' },
