@@ -24,63 +24,62 @@ const Footer = () => {
             {/* Company Column */}
             <div className="flex flex-col space-y-1">
               <h3 className="font-semibold text-lg mb-2 text-gray-800">
-                Company
+                Compañía
               </h3>
               <Link
-                href="/about"
+                href="/nosotros"
                 className="text-gray-600 hover:text-[#D32F2F] transition-colors"
               >
-                About Us
+                Nosotros
               </Link>
               <Link
                 href="/privacy"
                 className="text-gray-600 hover:text-[#D32F2F] transition-colors"
               >
-                Privacy Notice
+                Aviso de privacidad
               </Link>
             </div>
 
             {/* Customer Service Column */}
             <div className="flex flex-col space-y-1">
-              <h3 className="font-semibold text-lg mb-2 text-gray-800">
-                Customer Service
-              </h3>
+              {/* <h3 className="font-semibold text-lg mb-2 text-gray-800">
+              </h3> */}
               <Link
-                href="/branches"
+                href="/mapa-del-sitio"
                 className="text-gray-600 hover:text-[#D32F2F] transition-colors"
               >
-                Branches
+                Mapa del sitio
               </Link>
             </div>
 
             {/* Help Column */}
             <div className="flex flex-col space-y-1">
-              <h3 className="font-semibold text-lg mb-2 text-gray-800">Help</h3>
+              <h3 className="font-semibold text-lg mb-2 text-gray-800">Ayuda</h3>
               <Link
-                href="/contact"
+                href="/contacto"
                 className="text-gray-600 hover:text-[#D32F2F] transition-colors"
               >
-                Contact Us
+                Contacto
               </Link>
             </div>
 
             {/* Store Column */}
             <div className="flex flex-col space-y-1">
-              <h3 className="font-semibold text-lg mb-2 text-gray-800">
+              {/* <h3 className="font-semibold text-lg mb-2 text-gray-800">
                 Store
-              </h3>
+              </h3> */}
               <Link
-                href="/products"
+                href="/comercio"
                 className="text-gray-600 hover:text-[#D32F2F] transition-colors"
               >
-                Products
+                Comercio
               </Link>
-              <Link
+              {/* <Link
                 href="/catalog"
                 className="text-gray-600 hover:text-[#D32F2F] transition-colors"
               >
                 Catalog
-              </Link>
+              </Link> */}
             </div>
           {/* </div> */}
           </div>
@@ -123,7 +122,7 @@ const Footer = () => {
           {/* Copyright */}
           </div>
           <p className="text-center text-gray-600 mt-8">
-            © 2024 Deli Asya. All rights reserved
+            © 2024 DeliAsya. All rights reserved
           </p>
         </div>
       {/* </div> */}

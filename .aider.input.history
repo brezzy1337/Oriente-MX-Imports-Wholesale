@@ -1233,3 +1233,18 @@
 
 # 2024-11-20 05:06:35.067233
 +On the mobile view can we have two rows holding the links to company, help, etc.
+
+# 2024-11-20 14:44:48.888975
++/add src/app/components/Footer.tsx
+
+# 2024-11-20 14:45:43.048856
++Hey! Good evening, hope your well! I was hoping we can create site map under the href mapa-del-sitio, and a privacy notice under Aviso de privacidad really quick. I need it to be in spanish as well.
+
+# 2024-11-20 14:46:18.676060
++y
+
+# 2024-11-20 14:46:19.815108
++yy
+
+# 2024-11-20 14:46:21.272213
++y

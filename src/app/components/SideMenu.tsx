@@ -30,9 +30,9 @@ const SideMenu = ({ isOpen, onClose }: SideMenuProps) => {
             <Link href="/" className="block text-gray-800 hover:text-[#D32F2F]" onClick={onClose}>
               Inicio
             </Link>
-            <Link href="/tienda" className="block text-gray-800 hover:text-[#D32F2F]" onClick={onClose}>
+            {/* <Link href="/tienda" className="block text-gray-800 hover:text-[#D32F2F]" onClick={onClose}>
               Tienda
-            </Link>
+            </Link> */}
             <Link href="/nosotros" className="block text-gray-800 hover:text-[#D32F2F]" onClick={onClose}>
               Nosotros
             </Link>
@@ -42,9 +42,9 @@ const SideMenu = ({ isOpen, onClose }: SideMenuProps) => {
             <Link href="/comercio" className="block text-gray-800 hover:text-[#D32F2F]" onClick={onClose}>
               Comercio
             </Link>
-            <Link href="/catalogo" className="block text-gray-800 hover:text-[#D32F2F]" onClick={onClose}>
+            {/* <Link href="/catalogo" className="block text-gray-800 hover:text-[#D32F2F]" onClick={onClose}>
               Catálogo
-            </Link>
+            </Link> */}
           </nav>
           <div className="mt-8 space-x-4">
             <a href="mailto:deliasyagrupo@gmail.com" className="text-[#D32F2F] hover:text-[#FFD54F]">
