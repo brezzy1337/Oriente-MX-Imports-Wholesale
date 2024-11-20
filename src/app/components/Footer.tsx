@@ -6,7 +6,7 @@ import { MdEmail } from "react-icons/md";
 const Footer = () => {
   return (
     <footer className="bg-[#D32F2F] border-t border-gray-100 py-12 mt-20">
-        <div className="flex flex-col space-y-8">
+        <div className="flex flex-col space-y-8 px-4 md:px-8 lg:px-12">
           {/* Main Footer Content */}
           <div className="w-screen">
           {/* Logo */}
