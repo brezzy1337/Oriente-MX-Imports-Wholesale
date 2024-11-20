@@ -20,7 +20,7 @@ const Footer = () => {
             />
           </div>
             {/* <div className="flex md:flex-cols-5 gap-60 w-full justify-center space-y-1"> */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-2 lg:gap-4 md:py-4 lg:px-24 w-full justify-center lg:justify-items-center">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-2 lg:gap-4 md:py-4 lg:px-24 w-full justify-center lg:justify-items-center">
             {/* Company Column */}
             <div className="flex flex-col space-y-1">
               <h3 className="font-semibold text-lg mb-2 text-gray-800">
@@ -32,42 +32,19 @@ const Footer = () => {
               >
                 Nosotros
               </Link>
-              <Link
-                href="/privacy"
-                className="text-gray-600 hover:text-[#D32F2F] transition-colors"
-              >
-                Aviso de privacidad
-              </Link>
             </div>
 
             {/* Customer Service Column */}
-            <div className="flex flex-col space-y-1">
-              {/* <h3 className="font-semibold text-lg mb-2 text-gray-800">
-              </h3> */}
-              <Link
-                href="/mapa-del-sitio"
-                className="text-gray-600 hover:text-[#D32F2F] transition-colors"
-              >
-                Mapa del sitio
-              </Link>
-            </div>
-
-            {/* Help Column */}
-            <div className="flex flex-col space-y-1">
-              <h3 className="font-semibold text-lg mb-2 text-gray-800">Ayuda</h3>
-              <Link
-                href="/contacto"
-                className="text-gray-600 hover:text-[#D32F2F] transition-colors"
-              >
-                Contacto
-              </Link>
-            </div>
+            {/* <div className="flex flex-col space-y-1">
+              <h3 className="font-semibold text-lg mb-2 text-gray-800">
+              </h3>
+            </div> */}
 
             {/* Store Column */}
             <div className="flex flex-col space-y-1">
-              {/* <h3 className="font-semibold text-lg mb-2 text-gray-800">
-                Store
-              </h3> */}
+              <h3 className="font-semibold text-lg mb-2 text-gray-800">
+               Catalogar
+              </h3>
               <Link
                 href="/comercio"
                 className="text-gray-600 hover:text-[#D32F2F] transition-colors"
@@ -81,6 +58,30 @@ const Footer = () => {
                 Catalog
               </Link> */}
             </div>
+
+            {/* Help Column */}
+            <div className="flex flex-col space-y-1">
+              <h3 className="font-semibold text-lg mb-2 text-gray-800">Ayuda</h3>
+              <Link
+                href="/contacto"
+                className="text-gray-600 hover:text-[#D32F2F] transition-colors"
+              >
+                Contacto
+              </Link>
+              <Link
+                href="/mapa-del-sitio"
+                className="text-gray-600 hover:text-[#D32F2F] transition-colors"
+              >
+                Mapa del sitio
+              </Link>
+              <Link
+                href="/privacy"
+                className="text-gray-600 hover:text-[#D32F2F] transition-colors"
+              >
+                Aviso de privacidad
+              </Link>
+            </div>
+
           {/* </div> */}
           </div>
 
