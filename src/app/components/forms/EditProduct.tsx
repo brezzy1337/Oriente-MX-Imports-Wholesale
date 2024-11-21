@@ -60,7 +60,7 @@ export default function EditProduct({ product, isOpen, onClose, onUpdate }: Edit
           <form onSubmit={handleSubmit} className="space-y-4 bg-[#FFFFFF]">
             <div>
               <label className="block text-sm font-medium text-gray-700">Name</label>
-              <input
+              <input  
                 type="text"
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
