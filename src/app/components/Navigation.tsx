@@ -42,7 +42,7 @@ const Navigation = () => {
             </Link>
           </div>
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-8 px-32 justify-start flex-1">
+          <div className="hidden lg:flex space-x-8 px-12 pr-52 flex-1">
             <Link
               href="/"
               className="text-gray-800 hover:text-[#D32F2F] transition-colors"
