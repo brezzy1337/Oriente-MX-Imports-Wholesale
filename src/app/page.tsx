@@ -34,7 +34,10 @@ export default function Home() {
     <main className="flex min-h-screen flex-col">
       <HeroGallery />
       <FeaturedProducts />
-      <section className="bg-gray-50 py-16">
+      <section className="container mx-auto px-4 py-12">
+        <ServiceCards />
+      </section>
+      <section className="bg-gray-50">
         <div className="container mx-auto px-4">
           <DecoratedHeader>
             Nuestras Marcas 
@@ -55,9 +58,6 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section>
-      <section className="container mx-auto px-4 py-12">
-        <ServiceCards />
       </section>
     </main>
   );
