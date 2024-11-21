@@ -66,7 +66,8 @@ export default function ProductsTable() {
                     </div>
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap">{product.name}</td>
-                  <td className="px-6 py-4 whitespace-nowrap">${product.price}</td>
+                  <td className="px-6 py-4 whitespace-nowrap">${product.unitSize}</td>
+                  <td className="px-6 py-4 whitespace-nowrap">${product.caseSize}</td>
                   <td className="px-6 py-4 whitespace-nowrap">{product.brand.name}</td>
                   <td className="px-6 py-4 whitespace-nowrap">
                     <span className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full 
