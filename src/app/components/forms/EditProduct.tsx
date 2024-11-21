@@ -57,7 +57,7 @@ export default function EditProduct({ product, isOpen, onClose, onUpdate }: Edit
             </button>
           </div>
 
-          <form onSubmit={handleSubmit} className="space-y-4">
+          <form onSubmit={handleSubmit} className="space-y-4 bg-[#FFFFFF]">
             <div>
               <label className="block text-sm font-medium text-gray-700">Name</label>
               <input
