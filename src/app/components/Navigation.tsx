@@ -65,7 +65,7 @@ const Navigation = () => {
               href="/comercio"
               className="text-gray-800 hover:text-[#D32F2F] transition-colors"
             >
-              Comercio
+             Productos 
             </Link>
             {/* <Link
               href="/catalogo"

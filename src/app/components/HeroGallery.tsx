@@ -15,7 +15,7 @@ const slides = [
   },
   {
     id: 2,
-    title: "Nuestros Productos",
+    title: "Productos",
     heading: "Nuestros Productos",
     description: "Deliasya trae lo mejor de Tailandia a tu mesa: leche de coco, pasta de curry, salsa y fideos de arroz auténticos.",
     image: "/images/Thai-supermarket.jpg",
