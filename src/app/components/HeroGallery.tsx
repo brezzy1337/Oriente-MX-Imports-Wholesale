@@ -13,24 +13,24 @@ const slides = [
     buttonText: "Conócenos",
     buttonLink: "/about"
   },
-  {
-    id: 2,
-    title: "Productos",
-    heading: "Nuestros Productos",
-    description: "Deliasya trae lo mejor de Tailandia a tu mesa: leche de coco, pasta de curry, salsa y fideos de arroz auténticos.",
-    image: "/images/Thai-supermarket.jpg",
-    buttonText: "Ver Catálogo",
-    buttonLink: "/comercio"
-  },
-  {
-    id: 3,
-    title: "Valores",
-    heading: "Valores",
-    description: "En Deliasya garantizamos la máxima calidad de nuestros productos, seleccionados cuidadosamente para ofrecerte lo mejor de la gastronomía asiática.",
-    image: "/images/thai-fresh-fruit.png",
-    buttonText: "Nuestras Marcas",
-    buttonLink: "/comercio/brands"
-  },
+  // {
+  //   id: 2,
+  //   title: "Productos",
+  //   heading: "Nuestros Productos",
+  //   description: "Deliasya trae lo mejor de Tailandia a tu mesa: leche de coco, pasta de curry, salsa y fideos de arroz auténticos.",
+  //   image: "/images/Thai-supermarket.jpg",
+  //   buttonText: "Ver Catálogo",
+  //   buttonLink: "/comercio"
+  // },
+  // {
+  //   id: 3,
+  //   title: "Valores",
+  //   heading: "Valores",
+  //   description: "En Deliasya garantizamos la máxima calidad de nuestros productos, seleccionados cuidadosamente para ofrecerte lo mejor de la gastronomía asiática.",
+  //   image: "/images/thai-fresh-fruit.png",
+  //   buttonText: "Nuestras Marcas",
+  //   buttonLink: "/comercio/brands"
+  // },
   // {
   //   id: 4,
   //   title: "Distribución",
