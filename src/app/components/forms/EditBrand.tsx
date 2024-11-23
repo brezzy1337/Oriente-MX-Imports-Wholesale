@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { uploadToVercelBlob } from '@/app/utils/imageUtils';
+import { uploadToVercelBlob, deleteFromVercelBlob} from '@/app/utils/imageUtils';
 import { Dialog } from '@headlessui/react';
 import { XMarkIcon } from '@heroicons/react/24/outline';
 import { updateBrand } from '@/app/functions/_serverActions';

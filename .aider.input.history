@@ -1293,3 +1293,6 @@
 
 # 2024-11-23 03:19:46.183735
 +y
+
+# 2024-11-23 03:35:50.162041
++Okay I think I want a new approach. I think we will have to replace the image location on prisma, and delete the old image.
