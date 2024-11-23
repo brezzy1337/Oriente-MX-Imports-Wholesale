@@ -63,7 +63,7 @@ const CatalogPDF = ({ products }: { products: Product[] }) => (
   <Document>
     <Page size="A4" style={styles.page}>
       <View style={styles.section}>
-        <View style={[styles.row, { backgroundColor: '#f3f4f6' }]}>
+        <View style={[styles.row, { backgroundColor: '#f3f4f6', justifyContent: 'flex-start', alignContent: 'center' }]}>
           <Text style={[styles.cell, styles.header]}></Text>
           <Text style={[styles.cell, styles.header]}>Name</Text>
           <Text style={[styles.cell, styles.header]}>Unit Size</Text>
