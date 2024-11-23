@@ -13,15 +13,15 @@ export async function uploadToBlob(file: File): Promise<PutBlobResult> {
   return response.json();
 }
 
-export function getBlobUrl(url: string | null): string {
-  if (!url) return '/images/placeholder.jpg';
+// export function getBlobUrl(url: string | null): string {
+//   if (!url) return '/images/placeholder.jpg';
   
-  // Handle full URLs (including Vercel Blob URLs)
-  if (url.startsWith('http')) return url;
+//   // Handle full URLs (including Vercel Blob URLs)
+//   if (url.startsWith('http')) return url;
   
-  // Handle URLs that already include /images/
-  if (url.startsWith('/images/')) return url;
+//   // Handle URLs that already include /images/
+//   if (url.startsWith('/images/')) return url;
   
-  // Handle relative paths
-  return `/images/${url.replace(/^\/+/, '')}`;
-}
+//   // Handle relative paths
+//   return `/images/${url.replace(/^\/+/, '')}`;
+// }

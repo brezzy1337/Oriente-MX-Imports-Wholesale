@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { getCategoryProducts } from '@/app/functions/_serverActions';
-import { getBlobUrl } from '@/utils/blob';
 
 type Params = Promise<{ id: string }>
 
@@ -54,7 +53,7 @@ export default async function CategoryPage({
             >
               <div className="relative w-full aspect-square overflow-hidden rounded-lg mb-4">
                 <Image
-                  src={getBlobUrl(product.imageUrl)}
+                  src={product.imageUrl || ''}
                   alt={product.name}
                   fill
                   style={{ objectFit: 'cover' }}
@@ -73,8 +72,7 @@ export default async function CategoryPage({
                 </p>
               </div>
             </Link>
-          ))}
-        </div>
+          ))}        </div>
       </div>
     </div>
   );
