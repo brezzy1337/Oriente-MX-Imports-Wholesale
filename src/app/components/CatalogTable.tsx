@@ -4,7 +4,18 @@ import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { getProducts } from '@/app/functions/_serverActions';
 import { Document, Page, Text, View, StyleSheet, PDFDownloadLink } from '@react-pdf/renderer';
-import Button from './ui/Button';
+
+interface products {
+  id: string;
+  name: string;
+  description: string;
+  imageUrl: string;
+  unitSize: string;
+  caseSize: string;
+  categoryId: string;
+  createdAt: string;
+  updatedAt: string;
+}
 
 const styles = StyleSheet.create({
   page: {
@@ -36,7 +47,7 @@ const styles = StyleSheet.create({
   },
 });
 
-export const CatalogPDF = ({ products }: { products: any[] }) => (
+export const CatalogPDF = ({ products }: { products: products[] }) => (
   <Document>
     <Page size="A4" style={styles.page}>
       <View style={styles.section}>
@@ -61,8 +72,14 @@ export default function CatalogTable() {
   const [products, setProducts] = useState<any[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
+  interface ApiResponse {
+    success: boolean;
+    data: products[];
+    error?: string;
+  }
+
   const fetchProducts = async () => {
-    const result = await getProducts();
+    const result = await getProducts() as ApiResponse;
     if (result.success && result.data) {
       setProducts(result.data);
     }
@@ -113,12 +130,11 @@ export default function CatalogTable() {
         <PDFDownloadLink
           document={<CatalogPDF products={products} />}
           fileName="product-catalog.pdf"
+          className="inline-flex justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
         >
-          {({ loading }) => (
-            <Button variant="primary">
-              {loading ? 'Generating PDF...' : 'Download PDF Catalog'}
-            </Button>
-          )}
+          {/* {({ blob, url, loading, error }) =>
+            loading ? 'Generating PDF...' : 'Download PDF Catalog'
+          } */}
         </PDFDownloadLink>
       </div>
     </div>
