@@ -1278,3 +1278,18 @@
 
 # 2024-11-23 03:03:23.126112
 +Awesome can you do that to edit products and catagories as well?
+
+# 2024-11-23 03:13:48.792717
++/add src/app/api/upload/route.ts
+
+# 2024-11-23 03:16:07.356027
++My mistake I forgot to add that the images have to be updated to verel blob via the api route I just added. I want to keep that same vercel blob url however and just replace the image. I think this will mean we first need to grab the url of the image being replace and then rename the replacment image going to the same name before replacing the image.
+
+# 2024-11-23 03:19:13.859920
++n
+
+# 2024-11-23 03:19:35.090743
++Sorry you can add create that image util
+
+# 2024-11-23 03:19:46.183735
++y
