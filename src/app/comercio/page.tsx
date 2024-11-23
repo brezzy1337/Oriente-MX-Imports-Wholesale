@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { getCategories, getProducts } from "@/app/functions/_serverActions";
+import PDFDownload from "@/app/components/PDFDownload";
 
 export default async function Catalog() {
   const result = await getCategories();
@@ -62,11 +63,9 @@ export default async function Catalog() {
               </a>
             ))}
         </div>
-        <button
-          className="w-full py-2 px-4 mt-16 w-fit text-lg font-semibold bg-[#D32F2F] text-[#FFFFFF] rounded-lg hover:bg-[#B71C1C] transition-colors duration-300"
-        >
-
-        </button>
+        <div className="flex justify-center mt-16">
+          <PDFDownload products={products} />
+        </div>
       </div>
     </div>
   );
