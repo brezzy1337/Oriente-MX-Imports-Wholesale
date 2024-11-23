@@ -43,7 +43,7 @@ export default async function Catalog() {
               >
                 <div className="relative w-full aspect-square overflow-hidden rounded-lg mb-4">
                   <Image
-                    src={getBlobUrl(category.imageUrl)}
+                    src={category.imageUrl}
                     alt={category.name}
                     fill
                     style={{ objectFit: "cover" }}
