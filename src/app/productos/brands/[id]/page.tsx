@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { getBrandProducts } from '@/app/functions/_serverActions';
-import { getBlobUrl } from '@/utils/blob';
 
 type Params = Promise<{ id: string }>
 
@@ -14,8 +13,8 @@ export default async function BrandPage({
 
   const result = await getBrandProducts(id);
   // I think is probably better to do on the backend using prisma commands and a new server action
-  const products = result.success && result.data ? 
-    result.data.filter(product => product.brandId === id) : 
+  const products = result.success && result.data ?
+    result.data.filter(product => product.brandId === id) :
     [];
 
 
@@ -44,14 +43,14 @@ export default async function BrandPage({
         </p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {products.map((product) => (
-            <Link 
+            <Link
               href={`/comercio/products/${product.id}`}
-              key={product.id} 
+              key={product.id}
               className="group block cursor-pointer"
             >
               <div className="relative w-full aspect-square overflow-hidden rounded-lg mb-4">
                 <Image
-                  src={getBlobUrl(product.imageUrl)}
+                  src={product.imageUrl || ''}
                   alt={product.name}
                   fill
                   style={{ objectFit: 'cover' }}
@@ -63,7 +62,7 @@ export default async function BrandPage({
                   {product.name}
                 </h2>
                 {/* <p className="text-sm text-gray-500"> */}
-                  {/* ${product.price.toFixed(2)} */}
+                {/* ${product.price.toFixed(2)} */}
                 {/* </p> */}
                 <p className="text-sm text-gray-500">
                   {product.unitSize}

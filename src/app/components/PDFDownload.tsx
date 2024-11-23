@@ -71,9 +71,9 @@ const CatalogPDF = ({ products }: { products: Product[] }) => (
         </View>
         {products.map((product, index) => (
           <View key={index} style={styles.row}>
-            <Image 
-              style={styles.imageCell} 
-              src={product.imageUrl} 
+            <Image
+              style={styles.imageCell}
+              src={product.imageUrl}
             />
             <Text style={styles.nameCell}>{product.name}</Text>
             <Text style={styles.cell}>{product.unitSize}</Text>
@@ -87,15 +87,14 @@ const CatalogPDF = ({ products }: { products: Product[] }) => (
 
 const DownloadPDFButton = ({ products }: { products: Product[] }) => {
   return (
-
-      <PDFDownloadLink
-        document={<CatalogPDF products={products} />}
-        fileName="product-catalog.pdf"
-        className='w-full py-2 px-4 w-fit text-lg font-semibold bg-[#D32F2F] text-[#FFFFFF] rounded-lg hover:bg-[#B71C1B] transition-colors duration-300 text-center'
-      >
-        Download Catalog
-        {/* {({ loading }) => (loading ? 'Generating PDF...' : 'Download PDF Catalog')} */}
-      </PDFDownloadLink>
+    <PDFDownloadLink
+      document={<CatalogPDF products={products} />}
+      fileName="product-catalog.pdf"
+      className='w-full py-2 px-4 w-fit text-lg font-semibold bg-[#D32F2F] text-[#FFFFFF] rounded-lg hover:bg-[#B71C1B] transition-colors duration-300 text-center'
+    >
+      Download Catalog
+      {/* {({ loading }) => (loading ? 'Generating PDF...' : 'Download PDF Catalog')} */}
+    </PDFDownloadLink>
   );
 };
 
