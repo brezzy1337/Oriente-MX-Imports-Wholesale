@@ -11,7 +11,7 @@ const slides = [
     description: "Deliasya es importador y distribuidor de productos auténticos de la cocina tailandesa, llevando los sabores tradicionales de Tailandia directamente a tu mesa en Mexico.",
     image: "/images/thailand-bangkok.jpg",
     buttonText: "Conócenos",
-    buttonLink: "/about"
+    buttonLink: "/nosotros"
   },
   {
     id: 2,
@@ -20,7 +20,7 @@ const slides = [
     description: "Deliasya trae lo mejor de Tailandia a tu mesa: leche de coco, pasta de curry, salsa y fideos de arroz auténticos.",
     image: "/images/Thai-supermarket.jpg",
     buttonText: "Ver Catálogo",
-    buttonLink: "/comercio"
+    buttonLink: "/catalogo"
   },
   {
     id: 3,
@@ -29,17 +29,17 @@ const slides = [
     description: "En Deliasya garantizamos la máxima calidad de nuestros productos, seleccionados cuidadosamente para ofrecerte lo mejor de la gastronomía asiática.",
     image: "/images/thai-fresh-fruit.png",
     buttonText: "Nuestras Marcas",
-    buttonLink: "/comercio/brands"
+    buttonLink: "/catalogo/brands"
   },
-  {
-    id: 4,
-    title: "Distribución",
-    heading: "Servicio Nacional",
-    description: "Servicios confiables de distribución mayorista en todo México, asegurando que tu negocio nunca se quede sin existencias.",
-    image: "/images/truck.jpg",
-    buttonText: "Contáctanos",
-    buttonLink: "/contact"
-  }
+  // {
+  //   id: 4,
+  //   title: "Distribución",
+  //   heading: "Servicio Nacional",
+  //   description: "Servicios confiables de distribución mayorista en todo México, asegurando que tu negocio nunca se quede sin existencias.",
+  //   image: "/images/truck.jpg",
+  //   buttonText: "Contáctanos",
+  //   buttonLink: "/contact"
+  // }
 ];
 
 export default function HeroGallery() {
