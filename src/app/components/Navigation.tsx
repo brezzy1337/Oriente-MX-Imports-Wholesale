@@ -62,10 +62,10 @@ const Navigation = () => {
               Contacto
             </Link>
             <Link
-              href="/comercio"
+              href="/catalogo"
               className="text-gray-800 hover:text-[#D32F2F] transition-colors"
             >
-             Productos 
+              Catalogo
             </Link>
             {/* <Link
               href="/catalogo"
