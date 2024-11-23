@@ -1,24 +1,28 @@
 "use client";
 
+import dynamic from 'next/dynamic'
 import Image from "next/image";
-import HeroGallery from "@/app/components/HeroGallery";
-import ServiceCards from "@/app/components/ServiceCards";
-import FeaturedProducts from "@/app/components/FeaturedProducts";
-import DecoratedHeader from "@/app/components/DecoratedHeader";
+// import HeroGallery from "@/app/components/HeroGallery";
+// import ServiceCards from "@/app/components/ServiceCards";
+// import FeaturedProducts from "@/app/components/FeaturedProducts";
+// import DecoratedHeader from "@/app/components/DecoratedHeader";
 import { useState, useEffect } from "react"
 import { getBrands } from "./functions/_serverActions";
+
 import { getBlobUrl } from "@/utils/blob";
 
 
+
+
 export default function Home() {
-  
+
   const [brands, setBrands] = useState<any[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
+  // const [isLoading, setIsLoading] = useState(true);
 
   const fetchBrands = async () => {
     const result = await getBrands();
     if (result.success && result.data) {
-      setIsLoading(false);
+      // setIsLoading(false);
       setBrands(result.data);
     }
     return result.data;
@@ -28,7 +32,20 @@ export default function Home() {
     fetchBrands();
   }, []);
 
-  if (isLoading) return <div>Loading...</div>;
+  const HeroGallery = dynamic(() => import("@/app/components/HeroGallery"), {
+    ssr: false,
+    loading: () => <div>Loading...</div>
+  });
+
+  const ServiceCards = dynamic(() => import("@/app/components/ServiceCards"), {
+    ssr: false,
+    loading: () => <div>Loading...</div>
+  });
+
+  const FeaturedProducts = dynamic(() => import("@/app/components/FeaturedProducts"), {
+    ssr: false,
+    loading: () => <div>Loading...</div>
+  });
 
   return (
     <main className="flex min-h-screen flex-col">
@@ -39,11 +56,11 @@ export default function Home() {
       </section>
       <section className="bg-gray-50">
         <div className="container mx-auto px-4">
-          <DecoratedHeader>
-            Nuestras Marcas 
-          </DecoratedHeader>
+          {/* <DecoratedHeader> */}
+          Nuestras Marcas
+          {/* </DecoratedHeader> */}
           <div className="grid grid-cols-2 md:grid-cols-5 gap-8 max-w-4xl mx-auto">
-            { brands.map((brand) => (
+            {brands.map((brand) => (
               <a href={`/comercio/brands/${brand.slug}`} key={brand.id} className="group">
                 <div className="bg-white p-4 hover:shadow-md transition-shadow">
                   <Image
