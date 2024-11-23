@@ -63,8 +63,8 @@ export default async function Catalog() {
               </a>
             ))}
         </div>
-        <div className="flex justify-center mt-16">
-          <PDFDownload products={products} />
+        <div className="mt-16 flex lg:max-w-3xl mx-auto">
+          <PDFDownload products={products?.filter((product): product is any => product !== null) ?? []} />
         </div>
       </div>
     </div>

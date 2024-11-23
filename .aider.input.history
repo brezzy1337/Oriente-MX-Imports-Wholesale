@@ -1296,3 +1296,59 @@
 
 # 2024-11-23 03:35:50.162041
 +Okay I think I want a new approach. I think we will have to replace the image location on prisma, and delete the old image.
+
+# 2024-11-23 04:18:48.418619
++I want to get started on a catalog genereator. It will generate a table that has the name, unit size, case size, and image of each product. I want the image to be the first field on the left, followed by the name, unit size and then case size. I want it to be accessable via a botton on the comercio tab at the bottom of the page. What step can we take to get started on this?
+
+# 2024-11-23 04:19:10.049886
++y
+
+# 2024-11-23 04:24:24.631487
++Looks like a great start. I added a button on the comercios page where I want to catalog to be downloadable in pdf form.
+
+# 2024-11-23 04:24:46.588289
++y
+
+# 2024-11-23 04:24:46.592555
++/run npm install @react-pdf/renderer
+
+# 2024-11-23 04:24:46.592662
++/run npm install @react-pdf/renderer
+
+# 2024-11-23 04:24:58.805199
++n
+
+# 2024-11-23 04:31:46.114849
++Awesome how could I display that with a exported button component.
+
+# 2024-11-23 04:32:08.381104
++n
+
+# 2024-11-23 04:53:11.795224
++[ Server ] Error: PDFDownloadLink is a web specific API. You're either using this component on Node, or your bundler is not loading react-pdf from the appropriate web build.
++
++
+
+# 2024-11-23 04:53:46.735468
++y
+
+# 2024-11-23 04:54:57.315739
++Can you intergrate PDFDownload into the comercio page?
+
+# 2024-11-23 04:55:31.602374
++n
+
+# 2024-11-23 04:55:45.537617
++/add src/app/catalogo/page.tsx
+
+# 2024-11-23 04:57:02.443448
++Can you add the downloadPDFButton to this file src/app/comercio/page.tsx
+
+# 2024-11-23 04:57:04.343035
++y
+
+# 2024-11-23 05:35:46.631448
++Awesome the Catalog is working great! I think I do want to make it a litte more modern tho. So to start off the cell have to have more hight so the images don't looked strech. Also the name is cutting off and I would like to avoid that if possible. I think the best bet would be to make the font size smaller in general as well.
+
+# 2024-11-23 05:40:36.433782
++Awsome is there a way to get the header alined with the fields below?

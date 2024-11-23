@@ -1,7 +1,6 @@
 import { getProduct } from '@/app/functions/_serverActions';
 import Image from 'next/image';
-import { getBlobUrl } from '@/utils/blob';
-import { Button } from '@headlessui/react';
+// import { Button } from '@headlessui/react';
 
 type Params = Promise<{ id: string }>
 
@@ -32,7 +31,7 @@ export default async function ProductPage({
         {/* Left side - Product Image */}
         <div className="relative h-[400px] w-full">
           <Image
-            src={getBlobUrl(product.imageUrl)}
+            src={product.imageUrl || ''}
             alt={product.name}
             fill
             className="object-contain rounded-lg"
