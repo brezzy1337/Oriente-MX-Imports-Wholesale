@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { getCategories } from "@/app/functions/_serverActions";
-import { getBlobUrl } from '@/utils/blob';
 
 export default async function Catalog() {
   const result = await getCategories();

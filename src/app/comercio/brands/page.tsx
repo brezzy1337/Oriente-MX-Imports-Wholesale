@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { getBrands } from "@/app/functions/_serverActions";
-import { getBlobUrl } from '@/utils/blob';
 
 export default async function Brands() {
   const result = await getBrands();
@@ -25,7 +24,7 @@ export default async function Brands() {
               >
                 <div className="relative w-full aspect-square overflow-hidden rounded-lg mb-4">
                   <Image
-                    src={getBlobUrl(brand.logoUrl) || ""}
+                    src={(brand.logoUrl) || ""}
                     alt={brand.name}
                     fill
                     style={{ objectFit: "cover" }}
