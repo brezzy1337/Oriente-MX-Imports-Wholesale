@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
   },
 });
 
-const CatalogPDF = ({ products }: { products: any[] }) => (
+export const CatalogPDF = ({ products }: { products: any[] }) => (
   <Document>
     <Page size="A4" style={styles.page}>
       <View style={styles.section}>
@@ -114,9 +114,9 @@ export default function CatalogTable() {
           fileName="product-catalog.pdf"
           className="inline-flex justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
         >
-          {({ blob, url, loading, error }) =>
+          {/* {({ blob, url, loading, error }) =>
             loading ? 'Generating PDF...' : 'Download PDF Catalog'
-          }
+          } */}
         </PDFDownloadLink>
       </div>
     </div>
