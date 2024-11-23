@@ -39,12 +39,12 @@ export default function Home() {
 
   const ServiceCards = dynamic(() => import("@/app/components/ServiceCards"), {
     ssr: false,
-    loading: () => <div>Loading...</div>
+    // loading: () => <div>Loading...</div>
   });
 
   const FeaturedProducts = dynamic(() => import("@/app/components/FeaturedProducts"), {
     ssr: false,
-    loading: () => <div>Loading...</div>
+    // loading: () => <div>Loading...</div>
   });
 
   return (
