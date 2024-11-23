@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { Dialog } from '@headlessui/react';
 import { XMarkIcon } from '@heroicons/react/24/outline';
 import { updateBrand } from '@/app/functions/_serverActions';
+import Image from 'next/image';
 
 interface EditBrandProps {
   brand: {
@@ -89,7 +90,7 @@ export default function EditBrand({ brand, isOpen, onClose, onUpdate }: EditBran
               <div className="mt-1 flex items-center space-x-4">
                 <div className="w-20 h-20 rounded-lg overflow-hidden bg-gray-100">
                   {imagePreview && (
-                    <img 
+                    <Image 
                       src={imagePreview} 
                       alt="Logo preview" 
                       className="w-full h-full object-cover"

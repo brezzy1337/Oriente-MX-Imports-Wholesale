@@ -1251,3 +1251,30 @@
 
 # 2024-11-20 15:06:19.459979
 +Can we make all the text white on the footer
+
+# 2024-11-23 02:59:23.479768
++y
+
+# 2024-11-23 03:00:06.402370
++/add src/app/components/tables/BrandsTable.tsx
+
+# 2024-11-23 03:00:16.871109
++/add src/app/components/tables/CategoriesTable.tsx
+
+# 2024-11-23 03:01:07.240579
++Hey I hope your morning was well! I need some help with the EditBrand.tsx
+
+# 2024-11-23 03:01:10.286018
++y
+
+# 2024-11-23 03:01:19.367427
++/add src/app/components/forms/EditCategory.tsx
+
+# 2024-11-23 03:01:22.798302
++/add src/app/components/forms/EditProduct.tsx
+
+# 2024-11-23 03:02:10.055856
++So I want to add a field which allows me to replace the image. I want the image to maintain the same url as well.
+
+# 2024-11-23 03:03:23.126112
++Awesome can you do that to edit products and catagories as well?
