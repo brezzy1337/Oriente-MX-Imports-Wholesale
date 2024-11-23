@@ -7,7 +7,6 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { getFeaturedProducts } from '../functions/_serverActions';
 import { useEffect, useState } from 'react';
-import { getBlobUrl } from '@/utils/blob';
 
 interface Product {
   id: string;
@@ -88,7 +87,7 @@ const FeaturedProducts = () => {
                 <div className="text-align-start">
                   <div className="relative h-32 w-full mb-4">
                     <Image
-                      src={getBlobUrl(product.imageUrl)}
+                      src={(product.imageUrl)}
                       alt={product.name}
                       fill
                       className="object-contain"

@@ -245,7 +245,7 @@ export default function ContactPage() {
         {/* Map Section */}
         <div className="mt-8 md:mt-12">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12147.354652555768!2d-3.7037929!3d40.4167754!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd422997800a3c81%3A0xc436dec1618c2269!2sMadrid%2C%20Spain!5e0!3m2!1sen!2s!4v1699564178461!5m2!1sen!2s"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3744.2338711501984!2d-87.47102009999999!3d20.2076004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f4fd7f701da68a7%3A0xab4b7d55b516590f!2sSukhothai%20Tulum%20-%20Thai%20Street%20Food!5e0!3m2!1sen!2s!4v1732334861446!5m2!1sen!2s"
             width="100%"
             height="450"
             style={{ border: 0 }}

@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import DecoratedHeader from "./DecoratedHeader"
 import { getBrands } from "../functions/_serverActions"
-import { getBlobUrl } from "@/utils/blob";
 
 const FeaturedBrands = () => {
 
@@ -34,7 +33,7 @@ const FeaturedBrands = () => {
                     <a href={`/comercio/brands/${brand.slug}`} key={brand.id} className="group">
                         <div className="bg-white p-4 hover:shadow-md transition-shadow">
                             <Image
-                                src={getBlobUrl(brand.logoUrl)}
+                                src={brand.logoUrl}
                                 alt={brand.name}
                                 width={200}
                                 height={200}
