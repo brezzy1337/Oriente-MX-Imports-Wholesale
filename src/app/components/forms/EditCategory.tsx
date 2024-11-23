@@ -23,6 +23,20 @@ export default function EditCategory({ category, isOpen, onClose, onUpdate }: Ed
     description: category.description,
     imageUrl: category.imageUrl,
   });
+  const [imagePreview, setImagePreview] = useState(category.imageUrl);
+
+  const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        const result = reader.result as string;
+        setImagePreview(result);
+        setFormData({ ...formData, imageUrl: result });
+      };
+      reader.readAsDataURL(file);
+    }
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -71,14 +85,38 @@ export default function EditCategory({ category, isOpen, onClose, onUpdate }: Ed
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700">Image URL</label>
-              <input
-                type="text"
-                value={formData.imageUrl}
-                onChange={(e) => setFormData({ ...formData, imageUrl: e.target.value })}
-                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
-                required
-              />
+              <label className="block text-sm font-medium text-gray-700">Category Image</label>
+              <div className="mt-1 flex items-center space-x-4">
+                <div className="w-20 h-20 rounded-lg overflow-hidden bg-gray-100">
+                  {imagePreview && (
+                    <img 
+                      src={imagePreview} 
+                      alt="Category preview" 
+                      className="w-full h-full object-cover"
+                    />
+                  )}
+                </div>
+                <div className="flex-1">
+                  <input
+                    type="file"
+                    accept="image/*"
+                    onChange={handleImageChange}
+                    className="block w-full text-sm text-gray-500
+                      file:mr-4 file:py-2 file:px-4
+                      file:rounded-full file:border-0
+                      file:text-sm file:font-semibold
+                      file:bg-indigo-50 file:text-indigo-700
+                      hover:file:bg-indigo-100"
+                  />
+                  <input
+                    type="text"
+                    value={formData.imageUrl}
+                    onChange={(e) => setFormData({ ...formData, imageUrl: e.target.value })}
+                    className="mt-2 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                    placeholder="Or enter image URL directly"
+                  />
+                </div>
+              </div>
             </div>
 
             <div className="mt-4 flex justify-end space-x-2">
