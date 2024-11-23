@@ -245,7 +245,7 @@ export async function getFeaturedProducts() {
       where: {
         status: 'ACTIVE'
       },
-      take: 4,
+      take: 6,
       include: {
         brand: true,
         category: true

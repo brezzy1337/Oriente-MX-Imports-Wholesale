@@ -28,7 +28,7 @@ const FeaturedBrands = () => {
             <DecoratedHeader>
                 Nuestras Marcas
             </DecoratedHeader>
-            <div className="grid grid-cols-2 md:grid-cols-5 gap-8 max-w-4xl mx-auto">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
                 {brands.map((brand) => (
                     <a href={`/comercio/brands/${brand.slug}`} key={brand.id} className="group">
                         <div className="bg-white p-4 hover:shadow-md transition-shadow">

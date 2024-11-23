@@ -1352,3 +1352,27 @@
 
 # 2024-11-23 05:40:36.433782
 +Awsome is there a way to get the header alined with the fields below?
+
+# 2024-11-23 21:02:12.202936
++Hey good morning! I want to do something interesting on the home page. I want to create a contact us bubble which will be green and have a whats app logo on it. When click it will send the user to our whats app.
+
+# 2024-11-23 21:02:43.961327
++y
+
+# 2024-11-23 21:03:07.607548
++/run npm install react-icons
+
+# 2024-11-23 21:03:07.610777
++/run npm install react-icons
+
+# 2024-11-23 21:03:17.588303
++n
+
+# 2024-11-23 21:05:23.811937
++Can we make the whatsapp button present on the whole website?
+
+# 2024-11-23 21:06:25.756065
++y
+
+# 2024-11-23 21:07:17.865026
++/undo

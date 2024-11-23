@@ -1,7 +1,6 @@
 "use client";
 
 import dynamic from 'next/dynamic';
-import WhatsAppButton from '@/app/components/WhatsAppButton';
 
 export default function Home() {
 
@@ -35,7 +34,6 @@ export default function Home() {
       <FeaturedBrands />
       <section className="bg-gray-50">
       </section>
-      <WhatsAppButton phoneNumber="1234567890" />
     </main>
   );
 }
