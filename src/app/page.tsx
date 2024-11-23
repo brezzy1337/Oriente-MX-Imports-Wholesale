@@ -5,14 +5,11 @@ import Image from "next/image";
 // import HeroGallery from "@/app/components/HeroGallery";
 // import ServiceCards from "@/app/components/ServiceCards";
 // import FeaturedProducts from "@/app/components/FeaturedProducts";
-// import DecoratedHeader from "@/app/components/DecoratedHeader";
+import DecoratedHeader from "@/app/components/DecoratedHeader";
 import { useState, useEffect } from "react"
 import { getBrands } from "./functions/_serverActions";
 
 import { getBlobUrl } from "@/utils/blob";
-
-
-
 
 export default function Home() {
 
@@ -56,9 +53,9 @@ export default function Home() {
       </section>
       <section className="bg-gray-50">
         <div className="container mx-auto px-4">
-          {/* <DecoratedHeader> */}
+          <DecoratedHeader>
           Nuestras Marcas
-          {/* </DecoratedHeader> */}
+          </DecoratedHeader>
           <div className="grid grid-cols-2 md:grid-cols-5 gap-8 max-w-4xl mx-auto">
             {brands.map((brand) => (
               <a href={`/comercio/brands/${brand.slug}`} key={brand.id} className="group">
