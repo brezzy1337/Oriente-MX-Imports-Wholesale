@@ -1,3 +1,5 @@
+import { del } from '@vercel/blob';
+
 export function getFilenameFromUrl(url: string): string {
   try {
     const urlObj = new URL(url);
@@ -9,6 +11,15 @@ export function getFilenameFromUrl(url: string): string {
   } catch {
     // If URL parsing fails, return a timestamp-based filename
     return `image-${Date.now()}.jpg`;
+  }
+}
+
+export async function deleteFromVercelBlob(url: string): Promise<void> {
+  try {
+    await del(url);
+  } catch (error) {
+    console.error('Error deleting from Vercel Blob:', error);
+    throw error;
   }
 }
 

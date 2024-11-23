@@ -38,7 +38,12 @@ export default function EditBrand({ brand, isOpen, onClose, onUpdate }: EditBran
         };
         reader.readAsDataURL(file);
 
-        // Upload to Vercel Blob
+        // Delete old image if it exists and is a Vercel Blob URL
+        if (formData.logoUrl && formData.logoUrl.includes('blob.vercel.app')) {
+          await deleteFromVercelBlob(formData.logoUrl);
+        }
+        
+        // Upload new image to Vercel Blob
         const blobUrl = await uploadToVercelBlob(file, formData.logoUrl);
         setFormData({ ...formData, logoUrl: blobUrl });
       } catch (error) {
