@@ -31,24 +31,31 @@ const styles = StyleSheet.create({
   row: {
     flexDirection: 'row',
     borderBottomWidth: 1,
-    borderBottomColor: '#000000',
+    borderBottomColor: '#E5E7EB',
     borderBottomStyle: 'solid',
     alignItems: 'center',
-    height: 50,
-    padding: 5,
+    minHeight: 80,
+    padding: 8,
   },
   cell: {
     flex: 1,
-    padding: 5,
+    padding: 8,
+    fontSize: 10,
+  },
+  imageCell: {
+    width: 60,
+    height: 60,
+    marginRight: 8,
   },
   nameCell: {
     flex: 2,
-    padding: 5,
-    width: "auto"
+    padding: 8,
+    fontSize: 10,
   },
   header: {
-    fontSize: 14,
+    fontSize: 12,
     fontWeight: 'bold',
+    color: '#374151',
   },
 });
 
@@ -64,10 +71,11 @@ const CatalogPDF = ({ products }: { products: Product[] }) => (
         </View>
         {products.map((product, index) => (
           <View key={index} style={styles.row}>
-
-            {/* <Image style={styles.cell} src={product.imageUrl} alt={`Product: ${product.name}`} /> */}
-            <Image style={styles.cell} src={product.imageUrl} />
-            <Text style={styles.cell}>{product.name}</Text>
+            <Image 
+              style={styles.imageCell} 
+              src={product.imageUrl} 
+            />
+            <Text style={styles.nameCell}>{product.name}</Text>
             <Text style={styles.cell}>{product.unitSize}</Text>
             <Text style={styles.cell}>{product.caseSize}</Text>
           </View>
