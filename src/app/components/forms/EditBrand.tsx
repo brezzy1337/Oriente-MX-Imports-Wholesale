@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { uploadToVercelBlob } from '@/app/utils/imageUtils';
 import { Dialog } from '@headlessui/react';
 import { XMarkIcon } from '@heroicons/react/24/outline';
 import { updateBrand } from '@/app/functions/_serverActions';
@@ -26,16 +27,24 @@ export default function EditBrand({ brand, isOpen, onClose, onUpdate }: EditBran
   });
   const [imagePreview, setImagePreview] = useState(brand.logoUrl);
 
-  const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleImageChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file) {
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        const result = reader.result as string;
-        setImagePreview(result);
-        setFormData({ ...formData, logoUrl: result });
-      };
-      reader.readAsDataURL(file);
+      try {
+        // Show local preview immediately
+        const reader = new FileReader();
+        reader.onloadend = () => {
+          setImagePreview(reader.result as string);
+        };
+        reader.readAsDataURL(file);
+
+        // Upload to Vercel Blob
+        const blobUrl = await uploadToVercelBlob(file, formData.logoUrl);
+        setFormData({ ...formData, logoUrl: blobUrl });
+      } catch (error) {
+        console.error('Failed to upload image:', error);
+        alert('Failed to upload image');
+      }
     }
   };
 
