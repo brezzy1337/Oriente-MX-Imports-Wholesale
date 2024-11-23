@@ -77,7 +77,10 @@ export default function CatalogTable() {
         </table>
       </div>
       <div className="mt-4 flex justify-end">
-        <DownloadPDFButton products={products} />
+        <div className="flex gap-4 items-center">
+          <p className="text-sm text-gray-500">Download the complete catalog</p>
+          <DownloadPDFButton products={products} />
+        </div>
       </div>
     </div>
   );
