@@ -39,8 +39,8 @@ const SideMenu = ({ isOpen, onClose }: SideMenuProps) => {
             <Link href="/contacto" className="block text-gray-800 hover:text-[#D32F2F]" onClick={onClose}>
               Contacto
             </Link>
-            <Link href="/comercio" className="block text-gray-800 hover:text-[#D32F2F]" onClick={onClose}>
-              Comercio
+            <Link href="/catalogo" className="block text-gray-800 hover:text-[#D32F2F]" onClick={onClose}>
+            Catalogo
             </Link>
             {/* <Link href="/catalogo" className="block text-gray-800 hover:text-[#D32F2F]" onClick={onClose}>
               Catálogo
