@@ -1,9 +1,11 @@
 import Image from "next/image";
-import { getCategories } from "@/app/functions/_serverActions";
+import { getCategories, getProducts } from "@/app/functions/_serverActions";
 
 export default async function Catalog() {
   const result = await getCategories();
   const categories = result.success ? result.data : [];
+  const productsResult = await getProducts();
+  const products = productsResult.success ? productsResult.data : [];
 
   return (
     <div className="min-h-screen bg-white">
@@ -60,6 +62,11 @@ export default async function Catalog() {
               </a>
             ))}
         </div>
+        <button
+          className="w-full py-2 px-4 mt-16 w-fit text-lg font-semibold bg-[#D32F2F] text-[#FFFFFF] rounded-lg hover:bg-[#B71C1C] transition-colors duration-300"
+        >
+
+        </button>
       </div>
     </div>
   );
