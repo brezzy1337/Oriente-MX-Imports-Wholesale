@@ -51,6 +51,7 @@ export default function EditProduct({ product, isOpen, onClose, onUpdate }: Edit
         // Upload to Vercel Blob
         const blobUrl = await uploadToVercelBlob(file, formData.imageUrl);
         setFormData({ ...formData, imageUrl: blobUrl });
+        alert(`Image uploaded successfully ${formData.imageUrl}` );
       } catch (error) {
         console.error('Failed to upload image:', error);
         alert('Failed to upload image');
