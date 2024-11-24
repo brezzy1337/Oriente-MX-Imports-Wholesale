@@ -6,7 +6,7 @@ export default function AboutUs() {
       {/* Hero Section */}
       <div className="relative h-[400px] w-full">
         <Image
-          src="/images/ocean-freight-shipping.png"
+          src="/images/shipping.jpeg"
           alt="Thai Supermarket"
           fill
           className="object-cover"
