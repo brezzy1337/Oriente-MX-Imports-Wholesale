@@ -46,10 +46,10 @@ const Footer = () => {
               Catalogar
             </h3>
             <Link
-              href="/comercio"
+              href="/catalogo"
               className="text-[#FFFFFF] hover:text-gray-200 transition-colors"
             >
-              Comercio
+              Catalogo
             </Link>
             {/* <Link
                 href="/catalog"
@@ -87,35 +87,35 @@ const Footer = () => {
 
         {/* Social Media Icons */}
         <div className="flex space-x-6 mt-8 items-center justify-center">
-          <Link
+          {/* <Link
             href="https://facebook.com"
             target="_blank"
             className="text-white hover:text-[#FFFFFF] transition-colors"
           >
             <FaFacebook className="w-5 h-5" />
-          </Link>
-          <Link
+          </Link> */}
+          {/* <Link
             href="https://instagram.com"
             target="_blank"
             className="text-gray-600 hover:text-[#FFFFFF] transition-colors"
           >
             <FaInstagram className="w-5 h-5" />
-          </Link>
+          </Link> */}
           <Link
-            href="https://wa.me/yourphonenumber"
+            href="https://wa.me/+529843160169"
             target="_blank"
             className="text-gray-600 hover:text-[#FFFFFF] transition-colors"
           >
             <FaWhatsapp className="w-5 h-5" />
           </Link>
           <Link
-            href="tel:+1234567890"
+            href="tel:+984 316 0169"
             className="text-gray-600 hover:text-[#FFFFFF] transition-colors flex items-center gap-2"
           >
             <FaPhone className="w-4 h-4" />
           </Link>
           <Link
-            href="mailto:contact@deliasya.com"
+            href="mailto:deliasyagrupo@gmail.com"
             className="text-gray-600 hover:text-[#FFFFFF] transition-colors flex items-center gap-2"
           >
             <MdEmail className="w-5 h-5" />
