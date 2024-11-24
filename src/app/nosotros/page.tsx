@@ -4,9 +4,9 @@ export default function AboutUs() {
   return (
     <div className="">
       {/* Hero Section */}
-      <div className="relative h-[400px] w-full">
+      <div className="relative h-[400px] w-full lg:h-[500px]">
         <Image
-          src="/images/shipping.jpeg"
+          src="/images/ship-scaled.jpg"
           alt="Thai Supermarket"
           fill
           className="object-cover"
