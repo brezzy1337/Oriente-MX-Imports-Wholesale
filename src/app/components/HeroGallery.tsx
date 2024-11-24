@@ -89,7 +89,6 @@ export default function HeroGallery() {
           </div>
         </div>
       ))}
-
       <div className="absolute bottom-8 left-0 right-0 flex justify-center gap-2 z-20">
         {slides.map((_, index) => (
           <button

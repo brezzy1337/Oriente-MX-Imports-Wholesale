@@ -93,8 +93,9 @@ const FeaturedProducts = () => {
                       className="object-contain"
                     />
                   </div>
-                  <h3 className="font-medium mb-1 text-center">{product.name} {product.unitSize}</h3>
-                  <div className="text-sm text-gray-500 pb-8 text-center">{product.caseSize}</div>
+                  <h3 className="font-medium mb-1 text-center">{product.name}</h3>
+                  <h3 className="font-medium mb-1 text-center">{product.unitSize}</h3>
+                  {/* <div className="text-sm text-gray-500 pb-8 text-center">{product.caseSize}</div> */}
                 </div>
               </Link>
             </div>
