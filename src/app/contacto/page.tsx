@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaWhatsapp } from "react-icons/fa";
 
 export default function ContactPage() {
@@ -68,16 +69,22 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <div className="bg-[#D32F2F] py-12 md:py-20 px-4">
+      <div className="relative h-[300px] w-[100%] mx-auto lg:h-[500px]">
+        <Image
+          src="/images/thailand-design.png"
+          alt="Thai Supermarket" 
+          fill
+          className="object-cover"
+          priority
+        />
         <div className="max-w-7xl mx-auto text-center">
           <h1 className="text-3xl md:text-5xl font-bold text-white mb-4">Contact Us</h1>
           <p className="text-white/90 text-base md:text-lg max-w-2xl mx-auto px-2">
-            We're here to help and answer any questions you might have. 
+            We're here to help and answer any questions you might have.
             We look forward to hearing from you.
           </p>
         </div>
       </div>
-
       <div className="max-w-7xl mx-auto px-4 py-8 md:py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           {/* Contact Information */}
@@ -221,11 +228,10 @@ export default function ContactPage() {
 
               {submitStatus.type && (
                 <div
-                  className={`p-4 rounded-lg ${
-                    submitStatus.type === 'success'
-                      ? 'bg-green-100 text-green-700'
-                      : 'bg-red-100 text-red-700'
-                  }`}
+                  className={`p-4 rounded-lg ${submitStatus.type === 'success'
+                    ? 'bg-green-100 text-green-700'
+                    : 'bg-red-100 text-red-700'
+                    }`}
                 >
                   {submitStatus.message}
                 </div>
