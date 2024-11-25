@@ -5,9 +5,8 @@
 import dynamic from 'next/dynamic';
 import { useState } from 'react';
 import { Document, Page, Text, View, Image, StyleSheet, PDFDownloadLink } from '@react-pdf/renderer';
-import CatalogGridPDF from './CatalogGridPDF';
-import PDFHeader from './PDFHeader';
-
+const CatalogGridPDF = dynamic(() => import('./CatalogGridPDF'));
+const PDFHeader = dynamic(() => import('./PDFHeader'));
 interface Product {
   id: string;
   name: string;
@@ -102,18 +101,17 @@ const DownloadPDFButton = ({ products }: { products: Product[] }) => {
     <div className="relative">
       <button
         onClick={() => setIsOpen(true)}
-        className='w-full py-2 px-4 w-fit text-lg font-semibold bg-[#D32F2F] text-[#FFFFFF] rounded-lg hover:bg-[#B71C1B] transition-colors duration-300 text-center'
+        className='w-full py-2 px-4 mb-16 text-lg font-semibold bg-[#D32F2F] text-[#FFFFFF] rounded-lg hover:bg-[#B71C1B] transition-colors duration-300 text-center'
       >
         Download Catalog
       </button>
-
       {isOpen && (
-        <div className="absolute z-10 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
+        <div className="z-10 w-full rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
           <div className="py-1" role="menu" aria-orientation="vertical">
             <PDFDownloadLink
               document={<CatalogPDF products={products} />}
               fileName="product-catalog-list.pdf"
-              className='block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900 w-full text-left'
+              className='block px-4 py-2 text-lg text-gray-700 hover:bg-gray-100 hover:text-primary w-full text-center'
               onClick={() => handleDownload('list')}
             >
               List Layout
@@ -121,7 +119,7 @@ const DownloadPDFButton = ({ products }: { products: Product[] }) => {
             <PDFDownloadLink
               document={<CatalogGridPDF products={products} />}
               fileName="product-catalog-grid.pdf"
-              className='block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900 w-full text-left'
+              className='block px-4 py-2 text-lg text-gray-700 hover:bg-gray-100 hover:text-primary w-full text-center'
               onClick={() => handleDownload('grid')}
             >
               Grid Layout
