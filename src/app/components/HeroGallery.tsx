@@ -9,14 +9,14 @@ const slides = [
     title: "DeliAsay",
     heading: "DeliAsya",
     description: "Deliasya es importador y distribuidor de productos auténticos de la cocina tailandesa, llevando los sabores tradicionales de Tailandia directamente a tu mesa en Mexico.",
-    image: "/images/thailand-bangkok.jpg",
-    buttonText: "Conócenos",
+    image: "/images/thai-riverside-view.jpg",
+    buttonText: "Conocernos",
     buttonLink: "/nosotros"
   },
   {
     id: 2,
     title: "Productos",
-    heading: "Nuestros Productos",
+    heading: "Productos",
     description: "Deliasya trae lo mejor de Tailandia a tu mesa: leche de coco, pasta de curry, salsa y fideos de arroz auténticos.",
     image: "/images/Thai-supermarket.jpg",
     buttonText: "Ver Catálogo",

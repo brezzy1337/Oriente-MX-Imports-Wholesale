@@ -1,13 +1,15 @@
 import Image from "next/image";
 import { getCategories, getProducts } from "@/app/functions/_serverActions";
-import PDFDownload from "@/app/components/PDFDownload";
+import PDFDownload from "../components/PDFDownload";
+
 
 export default async function Catalog() {
+
   const result = await getCategories();
   const categories = result.success ? result.data : [];
   const productsResult = await getProducts();
   const products = productsResult.success ? productsResult.data : [];
-
+  
   return (
     <div className="min-h-screen bg-white">
       <div className="container mx-auto px-4 py-16">
@@ -17,7 +19,9 @@ export default async function Catalog() {
         <p className="text-lg text-gray-600 text-center mb-16 max-w-2xl mx-auto">
           Descubre auténticos productos tailandeses para tu cocina
         </p>
-
+        <div className="justify-center lg:max-w-3xl mx-auto">
+          <PDFDownload products={products?.filter((product): product is any => product !== null) ?? []} />
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-x-12 gap-y-16 max-w-2xl mx-auto">
           <a href="/comercio/brands" className="group block">
             <div className="relative w-full aspect-square overflow-hidden rounded-lg mb-4">
@@ -62,9 +66,6 @@ export default async function Catalog() {
                 </div>
               </a>
             ))}
-        </div>
-        <div className="mt-16 flex lg:max-w-3xl mx-auto">
-          <PDFDownload products={products?.filter((product): product is any => product !== null) ?? []} />
         </div>
       </div>
     </div>

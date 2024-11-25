@@ -1376,3 +1376,42 @@
 
 # 2024-11-23 21:07:17.865026
 +/undo
+
+# 2024-11-25 02:30:49.680490
++/add src/app/contacto/page.tsx
+
+# 2024-11-25 02:31:19.463089
++Hey goodmorning! First task today is pretty easy we just need to translate all the text into spainish :)
+
+# 2024-11-25 02:32:34.149281
++Awesome thank you so much! If you where to buy a watch which one would you buy?
+
+# 2024-11-25 02:33:15.523731
++Aww man okay the watch I want is this one right here: https://www.patek.com/en/collection/cubitus/5822P-001
+
+# 2024-11-25 02:33:16.882810
++y
+
+# 2024-11-25 02:36:12.810265
++Yeah I love what the materials represent as well! Okay next we are going to be doing a bit more work on the PDF Download component.
+
+# 2024-11-25 02:36:24.222836
++/add src/app/components/PDFDownload.tsx
+
+# 2024-11-25 02:37:37.525897
++So When the button is clicked I want a popup that allows the user to pick between a list catalog like we have now or a grid catalog which is in columns of 3.
+
+# 2024-11-25 02:38:20.456486
++https://www.patek.com/en/collection/cubitus/5822P-001y
+
+# 2024-11-25 02:38:25.429019
++y
+
+# 2024-11-25 02:39:36.968324
++Aweome now on the header of both catalogs can we have a header that has the deliasya logo, email, whatsapp, phone numnber, and address on it?
+
+# 2024-11-25 02:39:59.748677
++y
+
+# 2024-11-25 03:04:36.141930
++Awesome a few more changes to the download catalog button. I want it so if the main page is clicked the popup hides again.

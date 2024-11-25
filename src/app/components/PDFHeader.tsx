@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/alt-text */
 import { View, Text, Image, StyleSheet } from '@react-pdf/renderer';
 
 const styles = StyleSheet.create({

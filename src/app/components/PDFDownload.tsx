@@ -5,8 +5,10 @@
 import dynamic from 'next/dynamic';
 import { useState, useEffect, useRef } from 'react';
 import { Document, Page, Text, View, Image, StyleSheet, PDFDownloadLink } from '@react-pdf/renderer';
-const CatalogGridPDF = dynamic(() => import('./CatalogGridPDF'));
-const PDFHeader = dynamic(() => import('./PDFHeader'));
+// import CatalogGridPDF from './CatalogGridPDF';
+import PDFHeader from './PDFHeader';
+// const CatalogGridPDF = dynamic(() => import('./CatalogGridPDF'));
+// const PDFHeader = dynamic(() => import('./PDFHeader'));
 interface Product {
   id: string;
   name: string;
@@ -26,8 +28,8 @@ const styles = StyleSheet.create({
     padding: 30,
   },
   section: {
-    margin: 10,
-    padding: 10,
+    margin: 2,
+    padding: 2,
     flexGrow: 1,
   },
   row: {
@@ -61,6 +63,46 @@ const styles = StyleSheet.create({
   },
 });
 
+const GridStyles = StyleSheet.create({
+  page: {
+    flexDirection: 'column',
+    backgroundColor: '#FFFFFF',
+    padding: 20,
+  },
+  section: {
+    margin: 4,
+    padding: 5,
+  },
+  gridContainer: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'space-between',
+  },
+  gridItem: {
+    width: '30%',
+    marginBottom: 20,
+    padding: 10,
+    borderRadius: 5,
+    backgroundColor: '#f8f9fa',
+  },
+  image: {
+    width: '100%',
+    height: 120,
+    objectFit: 'contain',
+    marginBottom: 8,
+  },
+  productName: {
+    fontSize: 12,
+    fontWeight: 'bold',
+    marginBottom: 4,
+  },
+  productInfo: {
+    fontSize: 10,
+    color: '#4B5563',
+    marginBottom: 2,
+  },
+});
+
 const CatalogPDF = ({ products }: { products: Product[] }) => (
   <Document>
     <Page size="A4" style={styles.page}>
@@ -83,6 +125,29 @@ const CatalogPDF = ({ products }: { products: Product[] }) => (
             <Text style={styles.cell}>{product.caseSize}</Text>
           </View>
         ))}
+      </View>
+    </Page>
+  </Document>
+);
+
+const CatalogGridPDF = ({ products }: { products: Product[] }) => (
+  <Document>
+    <Page size="A4" style={GridStyles.page}>
+      <PDFHeader />
+      <View style={GridStyles.section}>
+        <View style={GridStyles.gridContainer}>
+          {products.map((product, index) => (
+            <View key={index} style={GridStyles.gridItem}>
+              <Image
+                style={GridStyles.image}
+                src={product.imageUrl}
+              />
+              <Text style={GridStyles.productName}>{product.name}</Text>
+              <Text style={GridStyles.productInfo}>Unit Size: {product.unitSize}</Text>
+              <Text style={GridStyles.productInfo}>Case Size: {product.caseSize}</Text>
+            </View>
+          ))}
+        </View>
       </View>
     </Page>
   </Document>
@@ -112,10 +177,10 @@ const DownloadPDFButton = ({ products }: { products: Product[] }) => {
   };
 
   return (
-    <div className="relative">
+    <div className="relative mb-16">
       <button
         onClick={() => setIsOpen(true)}
-        className='w-full py-2 px-4 mb-16 text-lg font-semibold bg-[#D32F2F] text-[#FFFFFF] rounded-lg hover:bg-[#B71C1B] transition-colors duration-300 text-center'
+        className='w-full py-2 px-4 text-lg font-semibold bg-[#D32F2F] text-[#FFFFFF] rounded-lg hover:bg-[#B71C1B] transition-colors duration-300 text-center'
       >
         Download Catalog
       </button>
@@ -126,7 +191,7 @@ const DownloadPDFButton = ({ products }: { products: Product[] }) => {
               document={<CatalogPDF products={products} />}
               fileName="product-catalog-list.pdf"
               className='block px-4 py-2 text-lg text-gray-700 hover:bg-gray-100 hover:text-primary w-full text-center'
-              onClick={() => handleDownload('list')}
+              // onClick={() => handleDownload('list')}
             >
               List Layout
             </PDFDownloadLink>
@@ -134,7 +199,7 @@ const DownloadPDFButton = ({ products }: { products: Product[] }) => {
               document={<CatalogGridPDF products={products} />}
               fileName="product-catalog-grid.pdf"
               className='block px-4 py-2 text-lg text-gray-700 hover:bg-gray-100 hover:text-primary w-full text-center'
-              onClick={() => handleDownload('grid')}
+              // onClick={() => handleDownload('grid')}
             >
               Grid Layout
             </PDFDownloadLink>
