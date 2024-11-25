@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import Slider from 'react-slick';
+import { Suspense } from 'react';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { getFeaturedProducts } from '../functions/_serverActions';
@@ -49,11 +50,14 @@ const FeaturedProducts = () => {
   const settings = {
     dots: true,
     infinite: true,
-    speed: 500,
+    speed: 400,
     slidesToShow: 4,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
+    lazyload: true,
+    waitForAnimate: false,
+    pauseOnHover: true,
     responsive: [
       {
         breakpoint: 1024,
