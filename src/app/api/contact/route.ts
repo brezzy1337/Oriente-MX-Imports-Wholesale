@@ -6,10 +6,10 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 export async function POST(request: Request) {
   try {
     const { name, company, email, phone, message } = await request.json();
-
-    await resend.emails.send({
-      from: 'Deliasya Contact Form <contact.deliasyagrupo.com>',
-      to: 'deliasyagrupo@gmail.com',
+    
+    const { data, error } = await resend.emails.send({
+      from: 'Deliasya Contact Form <contact@deliasyagrupo.com>',
+      to: ['deliasyagrupo@gmail.com'],
       subject: `New Contact Form Submission from ${name}`,
       html: `
         <h2>New Contact Form Submission</h2>
@@ -21,15 +21,13 @@ export async function POST(request: Request) {
         <p>${message}</p>
       `,
     });
-    return NextResponse.json(
-      { message: 'Email sent successfully' },
-      { status: 200 }
-    );
+
+    if (error) {
+      return NextResponse.json({ error });
+    }
+
+    return NextResponse.json({ data });
   } catch (error) {
-    console.error('Error sending email:', error);
-    return NextResponse.json(
-      { error: 'Failed to send email' },
-      { status: 500 }
-    );
+    return NextResponse.json({ error });
   }
 }
