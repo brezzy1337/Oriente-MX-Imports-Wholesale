@@ -3,7 +3,7 @@
 'use client';
 
 import dynamic from 'next/dynamic';
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Document, Page, Text, View, Image, StyleSheet, PDFDownloadLink } from '@react-pdf/renderer';
 const CatalogGridPDF = dynamic(() => import('./CatalogGridPDF'));
 const PDFHeader = dynamic(() => import('./PDFHeader'));
@@ -91,6 +91,20 @@ const CatalogPDF = ({ products }: { products: Product[] }) => (
 const DownloadPDFButton = ({ products }: { products: Product[] }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [layout, setLayout] = useState<'list' | 'grid'>('list');
+  const menuRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
 
   const handleDownload = (selectedLayout: 'list' | 'grid') => {
     setLayout(selectedLayout);
@@ -106,7 +120,7 @@ const DownloadPDFButton = ({ products }: { products: Product[] }) => {
         Download Catalog
       </button>
       {isOpen && (
-        <div className="z-10 w-full rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
+        <div ref={menuRef} className="z-10 w-full rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
           <div className="py-1" role="menu" aria-orientation="vertical">
             <PDFDownloadLink
               document={<CatalogPDF products={products} />}
