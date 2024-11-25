@@ -6,6 +6,7 @@ import dynamic from 'next/dynamic';
 import { useState } from 'react';
 import { Document, Page, Text, View, Image, StyleSheet, PDFDownloadLink } from '@react-pdf/renderer';
 import CatalogGridPDF from './CatalogGridPDF';
+import PDFHeader from './PDFHeader';
 
 interface Product {
   id: string;
@@ -64,6 +65,7 @@ const styles = StyleSheet.create({
 const CatalogPDF = ({ products }: { products: Product[] }) => (
   <Document>
     <Page size="A4" style={styles.page}>
+      <PDFHeader />
       <View style={styles.section}>
         <View style={[styles.row, { backgroundColor: '#f3f4f6' }]}>
           <View style={styles.imageCell}></View>
