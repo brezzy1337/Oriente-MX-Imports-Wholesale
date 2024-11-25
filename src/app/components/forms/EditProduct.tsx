@@ -65,6 +65,7 @@ export default function EditProduct({ product, isOpen, onClose, onUpdate }: Edit
     if (result.success) {
       onUpdate();
       onClose();
+      alert('Product Updated')
     } else {
       alert('Failed to update product');
     }
