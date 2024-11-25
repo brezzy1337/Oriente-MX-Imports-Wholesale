@@ -39,7 +39,7 @@ export default function ContactPage() {
 
       setSubmitStatus({
         type: 'success',
-        message: 'Message sent successfully! We will contact you soon.',
+        message: '¡Mensaje enviado exitosamente! Nos pondremos en contacto pronto.',
       });
       setFormData({
         name: "",
@@ -51,7 +51,7 @@ export default function ContactPage() {
     } catch (error) {
       setSubmitStatus({
         type: 'error',
-        message: 'Failed to send message. Please try again later.',
+        message: 'Error al enviar el mensaje. Por favor, inténtalo más tarde.',
       });
     } finally {
       setIsLoading(false);
@@ -78,10 +78,10 @@ export default function ContactPage() {
           priority
         />
         <div className="max-w-7xl mx-auto text-center">
-          <h1 className="text-3xl md:text-5xl font-bold text-white mb-4">Contact Us</h1>
+          <h1 className="text-3xl md:text-5xl font-bold text-white mb-4">Contáctanos</h1>
           <p className="text-white/90 text-base md:text-lg max-w-2xl mx-auto px-2">
-            We're here to help and answer any questions you might have.
-            We look forward to hearing from you.
+            Estamos aquí para ayudarte y responder cualquier pregunta que tengas.
+            Esperamos saber de ti.
           </p>
         </div>
       </div>
@@ -89,9 +89,9 @@ export default function ContactPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           {/* Contact Information */}
           <div className="space-y-6 md:space-y-8">
-            <h2 className="text-2xl md:text-3xl font-semibold text-gray-800">Get in Touch</h2>
+            <h2 className="text-2xl md:text-3xl font-semibold text-gray-800">Ponte en Contacto</h2>
             <p className="text-gray-600 text-sm md:text-base">
-              Have questions about our products or services? We're here to help!
+              ¿Tienes preguntas sobre nuestros productos o servicios? ¡Estamos aquí para ayudarte!
             </p>
 
             <div className="space-y-6">
@@ -100,7 +100,7 @@ export default function ContactPage() {
                   <FaPhone className="text-white w-6 h-6" />
                 </div>
                 <div>
-                  <h3 className="font-medium text-gray-800">Phone</h3>
+                  <h3 className="font-medium text-gray-800">Teléfono</h3>
                   <p className="text-gray-600">984 316 0169</p>
                 </div>
               </div>
@@ -120,7 +120,7 @@ export default function ContactPage() {
                   <FaEnvelope className="text-white w-6 h-6" />
                 </div>
                 <div>
-                  <h3 className="font-medium text-gray-800">Email</h3>
+                  <h3 className="font-medium text-gray-800">Correo</h3>
                   <p className="text-gray-600">deliasyagrupo@gmail.com</p>
                 </div>
               </div>
@@ -130,7 +130,7 @@ export default function ContactPage() {
                   <FaMapMarkerAlt className="text-white w-6 h-6" />
                 </div>
                 <div>
-                  <h3 className="font-medium text-gray-800">Address</h3>
+                  <h3 className="font-medium text-gray-800">Dirección</h3>
                   <p className="text-gray-600">
                     Manzana 40 lote 6, Avenida Kukulkan,<br />
                     77760, Tulum, QR, Mexico
@@ -142,12 +142,12 @@ export default function ContactPage() {
 
           {/* Contact Form */}
           <div className="bg-white p-4 md:p-8 rounded-2xl shadow-lg">
-            <h2 className="text-xl md:text-2xl font-semibold text-gray-800 mb-6 md:mb-8">Send us a Message</h2>
+            <h2 className="text-xl md:text-2xl font-semibold text-gray-800 mb-6 md:mb-8">Envíanos un Mensaje</h2>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-                    Full Name *
+                    Nombre Completo *
                   </label>
                   <input
                     type="text"
@@ -156,14 +156,14 @@ export default function ContactPage() {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    placeholder="Enter your full name"
+                    placeholder="Ingresa tu nombre completo"
                     className="w-full px-3 md:px-4 py-2 md:py-3 text-sm md:text-base rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#D32F2F] focus:border-transparent placeholder-gray-400"
                   />
                 </div>
 
                 <div>
                   <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-2">
-                    Company Name *
+                    Nombre de la Empresa *
                   </label>
                   <input
                     type="text"
@@ -172,14 +172,14 @@ export default function ContactPage() {
                     value={formData.company}
                     onChange={handleChange}
                     required
-                    placeholder="Enter your company name"
+                    placeholder="Ingresa el nombre de tu empresa"
                     className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#D32F2F] focus:border-transparent placeholder-gray-400"
                   />
                 </div>
 
                 <div>
                   <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                    Email Address *
+                    Correo Electrónico *
                   </label>
                   <input
                     type="email"
@@ -188,14 +188,14 @@ export default function ContactPage() {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    placeholder="Enter your email"
+                    placeholder="Ingresa tu correo electrónico"
                     className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#D32F2F] focus:border-transparent placeholder-gray-400"
                   />
                 </div>
 
                 <div>
                   <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
-                    Phone Number *
+                    Número de Teléfono *
                   </label>
                   <input
                     type="tel"
@@ -204,7 +204,7 @@ export default function ContactPage() {
                     value={formData.phone}
                     onChange={handleChange}
                     required
-                    placeholder="Enter your phone number"
+                    placeholder="Ingresa tu número de teléfono"
                     className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#D32F2F] focus:border-transparent placeholder-gray-400"
                   />
                 </div>
@@ -212,7 +212,7 @@ export default function ContactPage() {
 
               <div>
                 <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-                  Message *
+                  Mensaje *
                 </label>
                 <textarea
                   id="message"
@@ -221,7 +221,7 @@ export default function ContactPage() {
                   onChange={handleChange}
                   required
                   rows={6}
-                  placeholder="How can we help you?"
+                  placeholder="¿Cómo podemos ayudarte?"
                   className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#D32F2F] focus:border-transparent placeholder-gray-400"
                 />
               </div>
@@ -242,7 +242,7 @@ export default function ContactPage() {
                 disabled={isLoading}
                 className="w-full bg-[#D32F2F] text-white py-4 px-6 rounded-lg hover:bg-[#B71C1C] transition-all duration-300 transform hover:scale-[1.02] font-semibold text-lg shadow-md disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                {isLoading ? 'Sending...' : 'Send Message'}
+                {isLoading ? 'Enviando...' : 'Enviar Mensaje'}
               </button>
             </form>
           </div>
