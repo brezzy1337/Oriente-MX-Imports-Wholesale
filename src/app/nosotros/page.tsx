@@ -24,7 +24,7 @@ export default function AboutUs() {
         <div className="max-w-4xl mx-auto">
           <div className="mb-16">
             <h2 className="text-3xl font-bold mb-6 text-gray-800">
-              Nuestra Historia
+              Historia
             </h2>
             <p className="text-gray-600 leading-relaxed mb-6">
               DeliAsya nació de la pasión por la auténtica cocina asiática y el deseo de 
@@ -41,7 +41,7 @@ export default function AboutUs() {
 
           <div className="mb-16">
             <h2 className="text-3xl font-bold mb-6 text-gray-800">
-              Nuestra Misión
+              Misión
             </h2>
             <p className="text-gray-600 leading-relaxed">
               Nuestra misión es ser el puente entre las tradiciones culinarias asiáticas 

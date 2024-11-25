@@ -14,7 +14,7 @@ export default async function Catalog() {
     <div className="min-h-screen bg-white">
       <div className="container mx-auto px-4 py-16">
         <h1 className="text-4xl font-bold mb-4 text-gray-900 text-center">
-          Sabores de Tailandia
+         Descargar Catalogo 
         </h1>
         <p className="text-lg text-gray-600 text-center mb-16 max-w-2xl mx-auto">
           Descubre auténticos productos tailandeses para tu cocina

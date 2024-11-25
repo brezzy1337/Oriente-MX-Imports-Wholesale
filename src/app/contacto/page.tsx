@@ -89,7 +89,7 @@ export default function ContactPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           {/* Contact Information */}
           <div className="space-y-6 md:space-y-8">
-            <h2 className="text-2xl md:text-3xl font-semibold text-gray-800">Ponte en Contacto</h2>
+            <h2 className="text-2xl md:text-3xl font-semibold text-gray-800">Contacto</h2>
             <p className="text-gray-600 text-sm md:text-base">
               ¿Tienes preguntas sobre nuestros productos o servicios? ¡Estamos aquí para ayudarte!
             </p>
@@ -142,7 +142,7 @@ export default function ContactPage() {
 
           {/* Contact Form */}
           <div className="bg-white p-4 md:p-8 rounded-2xl shadow-lg">
-            <h2 className="text-xl md:text-2xl font-semibold text-gray-800 mb-6 md:mb-8">Envíanos un Mensaje</h2>
+            <h2 className="text-xl md:text-2xl font-semibold text-gray-800 mb-6 md:mb-8">Contactarnos</h2>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                 <div>
