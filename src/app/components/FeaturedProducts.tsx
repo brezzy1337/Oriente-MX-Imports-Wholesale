@@ -84,6 +84,7 @@ const FeaturedProducts = () => {
     <section className="py-16 bg-white width-full">
       <div className="container-custom">
         <h2 className="text-3xl font-bold text-center mb-12">Productos</h2>
+        <Suspense fallback={<div>Loading...</div>}>
         <Slider {...settings}>
           {featuredProducts.map((product) => (
             <div key={product.id} className="px-2">
@@ -107,6 +108,7 @@ const FeaturedProducts = () => {
             </div>
           ))}
         </Slider>
+        </Suspense>
       </div>
     </section>
   );
