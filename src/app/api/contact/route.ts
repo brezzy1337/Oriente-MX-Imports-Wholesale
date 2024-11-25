@@ -8,7 +8,7 @@ export async function POST(request: Request) {
     const { name, company, email, phone, message } = await request.json();
 
     await resend.emails.send({
-      from: 'Deliasya Contact Form <onboarding@resend.dev>',
+      from: 'Deliasya Contact Form <contact.deliasyagrupo.com>',
       to: 'deliasyagrupo@gmail.com',
       subject: `New Contact Form Submission from ${name}`,
       html: `
@@ -21,7 +21,6 @@ export async function POST(request: Request) {
         <p>${message}</p>
       `,
     });
-
     return NextResponse.json(
       { message: 'Email sent successfully' },
       { status: 200 }
