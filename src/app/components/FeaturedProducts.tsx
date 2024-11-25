@@ -90,6 +90,8 @@ const FeaturedProducts = () => {
                       src={(product.imageUrl)}
                       alt={product.name}
                       fill
+                      loading='eager'
+                      priority={true}
                       className="object-contain"
                     />
                   </div>
