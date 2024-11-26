@@ -52,6 +52,7 @@ export async function createProduct(formData: {
   brandId: string;
   imageUrl: string;
   status: 'ACTIVE' | 'DRAFT' | 'ARCHIVED';
+  featured: boolean;
 }) {
   try {
     const result = await prisma.product.create({
@@ -227,11 +228,15 @@ export async function updateProduct(id: string, formData: {
   brandId: string;
   imageUrl: string;
   status: 'ACTIVE' | 'DRAFT' | 'ARCHIVED';
+  featured: boolean;
 }) {
   try {
     const result = await prisma.product.update({
       where: { id },
-      data: formData,
+      data: {
+        ...formData,
+        featured: formData.featured
+      },
     });
     return { success: true, data: result };
   } catch (error) {

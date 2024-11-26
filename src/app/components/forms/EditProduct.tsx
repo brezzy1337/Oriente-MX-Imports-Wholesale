@@ -18,6 +18,7 @@ interface EditProductProps {
     brandId: string;
     imageUrl: string;
     status: 'ACTIVE' | 'DRAFT' | 'ARCHIVED';
+    featured: boolean;
   };
   isOpen: boolean;
   onClose: () => void;
@@ -34,6 +35,7 @@ export default function EditProduct({ product, isOpen, onClose, onUpdate }: Edit
     brandId: product.brandId,
     imageUrl: product.imageUrl,
     status: product.status,
+    featured: product.featured || false,
   });
   const [imagePreview, setImagePreview] = useState(product.imageUrl);
 
@@ -174,6 +176,19 @@ export default function EditProduct({ product, isOpen, onClose, onUpdate }: Edit
                 <option value="DRAFT">Draft</option>
                 <option value="ARCHIVED">Archived</option>
               </select>
+            </div>
+
+            <div className="flex items-center">
+              <input
+                type="checkbox"
+                id="featured"
+                checked={formData.featured}
+                onChange={(e) => setFormData({ ...formData, featured: e.target.checked })}
+                className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+              />
+              <label htmlFor="featured" className="ml-2 block text-sm text-gray-900">
+                Featured Product
+              </label>
             </div>
 
             <div className="mt-4 flex justify-end space-x-2">
