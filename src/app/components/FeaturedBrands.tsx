@@ -30,7 +30,7 @@ const FeaturedBrands = () => {
             </DecoratedHeader>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
                 {brands.map((brand) => (
-                    <a href={`/comercio/brands/${brand.slug}`} key={brand.id} className="group">
+                    <a href={`/catalogo/brands/${brand.slug}`} key={brand.id} className="group">
                         <div className="bg-white p-4 hover:shadow-md transition-shadow">
                             <Image
                                 src={brand.logoUrl}

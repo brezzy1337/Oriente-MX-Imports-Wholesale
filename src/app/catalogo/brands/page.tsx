@@ -19,7 +19,7 @@ export default async function Brands() {
             brands.map((brand) => (
               <a
                 key={brand.id}
-                href={`/comercio/brands/${brand.id}`}
+                href={`/catalogo/brands/${brand.id}`}
                 className="group block"
               >
                 <div className="relative w-full aspect-square overflow-hidden rounded-lg mb-4">

@@ -92,7 +92,7 @@ return (
         <Slider {...settings}>
           {featuredProducts.map((product) => (
             <div key={product.id} className="px-2">
-              <Link href={`/comercio/products/${product.id}`}>
+              <Link href={`/catalogo/products/${product.id}`}>
                 <div className="text-align-start">
                   <div className="relative h-32 w-full mb-4">
                     <Image

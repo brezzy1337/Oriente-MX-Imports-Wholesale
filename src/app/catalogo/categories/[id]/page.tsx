@@ -47,7 +47,7 @@ export default async function CategoryPage({
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {products.map((product) => (
             <Link 
-              href={`/comercio/products/${product.id}`}
+              href={`/catalogo/products/${product.id}`}
               key={product.id} 
               className="group block cursor-pointer"
             >
