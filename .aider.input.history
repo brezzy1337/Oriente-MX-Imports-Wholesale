@@ -1415,3 +1415,15 @@
 
 # 2024-11-25 03:04:36.141930
 +Awesome a few more changes to the download catalog button. I want it so if the main page is clicked the popup hides again.
+
+# 2024-11-26 17:02:26.264009
++y
+
+# 2024-11-26 17:03:33.243388
++/add src/app/components/forms/EditProduct.tsx
+
+# 2024-11-26 17:04:39.972355
++Hey! So I want to add a quick change to the edit product form. I want to add a check mark for featured item which will set the featured boolean on that product in postgres to true.
+
+# 2024-11-26 17:05:01.422873
++y

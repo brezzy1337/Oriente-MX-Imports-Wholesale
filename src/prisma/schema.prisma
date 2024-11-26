@@ -32,6 +32,7 @@ model Product {
   category    Category @relation(fields: [categoryId], references: [id])
   categoryId  String
   status      Status   @default(ACTIVE)
+  featured    Boolean  @default(false)
   editor      User?    @relation("ProductEditor", fields: [editorId], references: [id])
   editorId    String?
   createdAt   DateTime @default(now())                                                       

@@ -139,6 +139,8 @@ export default function EditProduct({ product, isOpen, onClose, onUpdate }: Edit
                       src={imagePreview} 
                       alt="Product preview" 
                       className="w-full h-full object-cover"
+                      width={80}
+                      height={80}
                     />
                   )}
                 </div>
