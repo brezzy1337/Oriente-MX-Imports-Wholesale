@@ -246,9 +246,23 @@ export async function getFeaturedProducts() {
         status: 'ACTIVE'
       },
       take: 6,
-      include: {
-        brand: true,
-        category: true
+      select: {
+        id: true,
+        name: true,
+        imageUrl: true,
+        unitSize: true,
+        brandId: true,
+        categoryId: true,
+        brand: {
+          select: {
+            name: true
+          }
+        },
+        category: {
+          select: {
+            name: true
+          }
+        }
       }
     });
     return { success: true, data: products };
@@ -256,6 +270,7 @@ export async function getFeaturedProducts() {
     return { success: false, error: 'Failed to fetch featured products' };
   }
 }
+
 
 export async function getProduct(id: string) {
   try {
