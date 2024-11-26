@@ -15,7 +15,8 @@ export default function CreateProduct() {
     caseSize: '',
     brandId: '',
     imageUrl: '',
-    status: 'ACTIVE' as 'ACTIVE' | 'DRAFT' | 'ARCHIVED'
+    status: 'ACTIVE' as 'ACTIVE' | 'DRAFT' | 'ARCHIVED',
+    featured: false
   });
 
   const [brands, setBrands] = useState<any[]>([]);
