@@ -72,7 +72,7 @@ export default function ContactPage() {
       <div className="relative h-[300px] w-[100%] mx-auto lg:h-[500px]">
         <Image
           src="/images/thailand-design.png"
-          alt="Thai Supermarket" 
+          alt="Thai Supermarket"
           fill
           className="object-cover"
           priority
@@ -125,7 +125,7 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              <div className="flex items-center space-x-4">
+              {/* <div className="flex items-center space-x-4">
                 <div className="bg-[#D32F2F] p-3 rounded-full">
                   <FaMapMarkerAlt className="text-white w-6 h-6" />
                 </div>
@@ -136,7 +136,7 @@ export default function ContactPage() {
                     77760, Tulum, QR, Mexico
                   </p>
                 </div>
-              </div>
+                </div> */}
             </div>
           </div>
 
@@ -249,7 +249,7 @@ export default function ContactPage() {
         </div>
 
         {/* Map Section */}
-        <div className="mt-8 md:mt-12">
+        {/* <div className="mt-8 md:mt-12">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3744.1984!2d-87.47102009999999!3d20.2076004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f4fd7f701da68a7%3A0xab4b7d55b516590f!2sSukhothai%20Tulum%20-%20Thai%20Street%20Food!5e0!3m2!1sen!2s!4v1732334861446!5m2!1sen!2s"
             width="100%"
@@ -260,7 +260,7 @@ export default function ContactPage() {
             referrerPolicy="no-referrer-when-downgrade"
             className="rounded-2xl"
           />
-        </div>
+        </div> */}
       </div>
     </div>
   );
