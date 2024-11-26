@@ -243,7 +243,7 @@ export async function getFeaturedProducts() {
   try {
     const products = await prisma.product.findMany({
       where: {
-        status: 'ACTIVE'
+        status: 'ACTIVE',
       },
       take: 6,
       select: {
