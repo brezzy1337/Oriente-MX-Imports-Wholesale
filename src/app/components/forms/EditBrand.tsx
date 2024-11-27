@@ -50,6 +50,7 @@ export default function EditBrand({ brand, isOpen, onClose, onUpdate }: EditBran
         console.error('Failed to upload image:', error);
         alert('Failed to upload image');
       }
+      alert('Image uploaded successfully');
     }
   };
 

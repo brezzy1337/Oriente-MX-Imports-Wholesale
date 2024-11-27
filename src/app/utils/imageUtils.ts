@@ -38,7 +38,7 @@ export async function uploadToVercelBlob(file: File, existingUrl: string): Promi
       body: file
     });
 
-    if (!response.ok) {
+    if (!response.ok || !response.body) {
       throw new Error('Failed to upload image');
     }
 

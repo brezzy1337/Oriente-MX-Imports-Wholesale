@@ -41,10 +41,12 @@ export default function EditCategory({ category, isOpen, onClose, onUpdate }: Ed
         // Upload to Vercel Blob
         const blobUrl = await uploadToVercelBlob(file, formData.imageUrl);
         setFormData({ ...formData, imageUrl: blobUrl });
+        
       } catch (error) {
         console.error('Failed to upload image:', error);
         alert('Failed to upload image');
       }
+      alert('Image uploaded successfully');
     }
   };
 
