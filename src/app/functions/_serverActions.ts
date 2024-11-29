@@ -51,7 +51,7 @@ export async function createProduct(formData: {
   caseSize: string;
   brandId: string;
   imageUrl: string;
-  status: 'ACTIVE' | 'DRAFT' | 'ARCHIVED';
+  status: 'ACTIVE' | 'INACTIVE';
   featured: boolean;
 }) {
   try {
@@ -104,6 +104,9 @@ export async function getBrands() {
 export async function getProducts() {
   try {
     const products = await prisma.product.findMany({
+      where: {
+        status: 'ACTIVE'
+      },
       include: {
         brand: true,
         category: true
@@ -139,7 +142,8 @@ export async function getBrandProducts(brandId: string) {
   try {
     const products = await prisma.product.findMany({
       where: {
-        brandId: brandId
+        brandId: brandId,
+        status: 'ACTIVE'
       },
       include: {
         brand: true,
@@ -156,7 +160,8 @@ export async function getCategoryProducts(categoryId: string) {
   try {
     const products = await prisma.product.findMany({
       where: {
-        categoryId: categoryId
+        categoryId: categoryId,
+        status: 'ACTIVE'
       },
       include: {
         brand: true,

@@ -167,17 +167,17 @@ export default function EditProduct({ product, isOpen, onClose, onUpdate }: Edit
               </div>
             </div>
 
-            <div>
-              <label className="block text-sm font-medium text-gray-700">Status</label>
-              <select
-                value={formData.status}
-                onChange={(e) => setFormData({ ...formData, status: e.target.value as 'ACTIVE' | 'DRAFT' | 'ARCHIVED' })}
-                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
-              >
-                <option value="ACTIVE">Active</option>
-                <option value="DRAFT">Draft</option>
-                <option value="ARCHIVED">Archived</option>
-              </select>
+            <div className="flex items-center">
+              <input
+                type="checkbox"
+                id="active"
+                checked={formData.status === 'ACTIVE'}
+                onChange={(e) => setFormData({ ...formData, status: e.target.checked ? 'ACTIVE' : 'INACTIVE' })}
+                className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+              />
+              <label htmlFor="active" className="ml-2 block text-sm text-gray-900">
+                Product Active
+              </label>
             </div>
 
             <div className="flex items-center">
