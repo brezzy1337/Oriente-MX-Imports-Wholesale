@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { getCategories, getProducts } from "@/app/functions/_serverActions";
+import { getCategories, getActiveProducts } from "@/app/functions/_serverActions";
 import PDFDownload from "../components/PDFDownload";
 
 
@@ -7,7 +7,7 @@ export default async function Catalog() {
 
   const result = await getCategories();
   const categories = result.success ? result.data : [];
-  const productsResult = await getProducts();
+  const productsResult = await getActiveProducts();
   const products = productsResult.success ? productsResult.data : [];
   
   return (

@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import EditProduct from "../forms/EditProduct";
 import { PencilIcon, TrashIcon } from "@heroicons/react/24/outline";
-import { getProducts, deleteProduct } from "@/app/functions/_serverActions";
+import { getActiveProducts, deleteProduct } from "@/app/functions/_serverActions";
 
 export default function ProductsTable() {
   const [products, setProducts] = useState<any[]>([]);
@@ -11,7 +11,7 @@ export default function ProductsTable() {
   const [editingProduct, setEditingProduct] = useState<any>(null);
 
   const fetchProducts = async () => {
-    const result = await getProducts();
+    const result = await getActiveProducts();
     if (result.success && result.data) {
       setProducts(result.data);
     }

@@ -104,8 +104,21 @@ export async function getBrands() {
 export async function getProducts() {
   try {
     const products = await prisma.product.findMany({
+      include: {
+        brand: true,
+        category: true
+      }
+    });
+    return { success: true, data: products };
+  } catch (error) {
+    return { success: false, error: 'Failed to fetch products' };
+  }
+}
+export async function getActiveProducts() {
+  try {
+    const products = await prisma.product.findMany({
       where: {
-        status: 'ACTIVE'
+        status: "ACTIVE"
       },
       include: {
         brand: true,
@@ -117,6 +130,7 @@ export async function getProducts() {
     return { success: false, error: 'Failed to fetch products' };
   }
 }
+
 
 export async function updateBrand(id: string, formData: {
   name: string;
@@ -232,7 +246,7 @@ export async function updateProduct(id: string, formData: {
   caseSize: string;
   brandId: string;
   imageUrl: string;
-  status: 'ACTIVE' | 'DRAFT' | 'ARCHIVED';
+  status: 'ACTIVE' | 'INACTIVE';
   featured: boolean;
 }) {
   try {

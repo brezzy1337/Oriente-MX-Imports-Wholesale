@@ -17,7 +17,7 @@ interface EditProductProps {
     caseSize: string;
     brandId: string;
     imageUrl: string;
-    status: 'ACTIVE' | 'DRAFT' | 'ARCHIVED';
+    status: 'ACTIVE' | 'INACTIVE';
     featured: boolean;
   };
   isOpen: boolean;

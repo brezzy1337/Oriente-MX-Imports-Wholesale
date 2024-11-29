@@ -1427,3 +1427,21 @@
 
 # 2024-11-26 17:05:01.422873
 +y
+
+# 2024-11-29 10:41:47.253380
++n
+
+# 2024-11-29 10:42:13.552738
++/add src/app/components/forms/EditProduct.tsx
+
+# 2024-11-29 10:43:12.327766
++/add Product src/app/components/tables/ProductsTable.tsx
+
+# 2024-11-29 10:43:17.504147
++n
+
+# 2024-11-29 10:45:18.156883
++Hey good evening! I want to make a quick improvement on the product editing and display. I want a check box that determines if the product status is inactive or active. If inactive it will not be displayed on the front end ui or that catalog.
+
+# 2024-11-29 10:45:56.959186
++y

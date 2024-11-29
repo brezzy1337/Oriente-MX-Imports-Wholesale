@@ -62,52 +62,52 @@ export const appRouter = router({
   //     return category;
   //   }),
 
-  postProduct: protectedProcedure
-    .input(z.object({
-      name: z.string(),
-      description: z.string().optional(),
-      price: z.number().optional(),
-      categoryId: z.string(),
-      unitSize: z.string(),
-      caseSize: z.string(),
-      brandId: z.string(),
-      imageUrl: z.string().optional(),
-      status: z.enum(['ACTIVE', 'DRAFT', 'ARCHIVED']).default('ACTIVE')
-    }))
+  // postProduct: protectedProcedure
+  //   .input(z.object({
+  //     name: z.string(),
+  //     description: z.string().optional(),
+  //     price: z.number().optional(),
+  //     categoryId: z.string(),
+  //     unitSize: z.string(),
+  //     caseSize: z.string(),
+  //     brandId: z.string(),
+  //     imageUrl: z.string().optional(),
+  //     status: z.enum(['ACTIVE', 'DRAFT', 'ARCHIVED']).default('ACTIVE')
+  //   }))
 
-    .mutation(async ({ input, ctx }) => {
-      const { session } = ctx;
-      if (!session.user?.email) {
-        throw new TRPCError({ code: 'UNAUTHORIZED' });
-      }
+  //   .mutation(async ({ input, ctx }) => {
+  //     const { session } = ctx;
+  //     if (!session.user?.email) {
+  //       throw new TRPCError({ code: 'UNAUTHORIZED' });
+  //     }
 
-      const { categoryId, brandId, ...restInput } = input;
-      const product = await prisma.product.create({
-        data: {
-          ...restInput,
-          editor: {
-            connect: {
-              email: session.user.email
-            }
-          },
-          brand: {
-            connect: {
-              id: brandId
-            }
-          },
-          category: {
-            connect: {
-              id: categoryId
-            }
-          }
-        },
-        include: {
-          brand: true,
-          category: true,
-        }
-      });
-      return product;
-    }),
+  //     const { categoryId, brandId, ...restInput } = input;
+  //     const product = await prisma.product.create({
+  //       data: {
+  //         ...restInput,
+  //         editor: {
+  //           connect: {
+  //             email: session.user.email
+  //           }
+  //         },
+  //         brand: {
+  //           connect: {
+  //             id: brandId
+  //           }
+  //         },
+  //         category: {
+  //           connect: {
+  //             id: categoryId
+  //           }
+  //         }
+  //       },
+  //       include: {
+  //         brand: true,
+  //         category: true,
+  //       }
+  //     });
+  //     return product;
+  //   }),
 
   getProducts: protectedProcedure.query(async () => {
     return prisma.product.findMany({
