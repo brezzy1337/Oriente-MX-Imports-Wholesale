@@ -15,7 +15,7 @@ export default function CreateProduct() {
     caseSize: '',
     brandId: '',
     imageUrl: '',
-    status: 'ACTIVE' as 'ACTIVE' | 'DRAFT' | 'ARCHIVED',
+    status: 'ACTIVE' as 'ACTIVE' | 'INACTIVE',
     featured: false
   });
 
