@@ -31,6 +31,7 @@ model Product {
   brandId     String
   category    Category @relation(fields: [categoryId], references: [id])
   categoryId  String
+  country     Country  @default(Thailand)
   status      Status   @default(ACTIVE)
   featured    Boolean  @default(false)
   editor      User?    @relation("ProductEditor", fields: [editorId], references: [id])
@@ -72,3 +73,8 @@ enum Status {
   ACTIVE
   INACTIVE
  } 
+
+ enum Country {
+  Thailand
+  Vietnam
+}

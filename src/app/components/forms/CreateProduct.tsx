@@ -5,7 +5,7 @@ import { useRef } from 'react';
 import { createProduct, getBrands, getCategories } from '@/app/functions/_serverActions';
 
 export default function CreateProduct() {
-  
+
   const [formData, setFormData] = useState({
     name: '',
     description: '',
@@ -16,26 +16,27 @@ export default function CreateProduct() {
     brandId: '',
     imageUrl: '',
     status: 'ACTIVE' as 'ACTIVE' | 'INACTIVE',
+    country: 'Thailand' as 'Thailand' | 'Vietnam',
     featured: false
   });
 
   const [brands, setBrands] = useState<any[]>([]);
   const [categories, setCategories] = useState<any[]>([]);
-  
+
   useEffect(() => {
     const fetchData = async () => {
       const [brandsResult, categoriesResult] = await Promise.all([
         getBrands(),
         getCategories()
       ]);
-      
+
       if (brandsResult.success && brandsResult.data) setBrands(brandsResult.data);
       if (categoriesResult.success && categoriesResult.data) setCategories(categoriesResult.data);
     };
-    
+
     fetchData();
   }, []);
-  
+
   const [isUploading, setIsUploading] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
@@ -61,7 +62,7 @@ export default function CreateProduct() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (fileInputRef.current?.files?.[0]) {
       setIsUploading(true);
       try {
@@ -90,7 +91,7 @@ export default function CreateProduct() {
       } finally {
         setIsUploading(false);
       }
-    } 
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -208,6 +209,21 @@ export default function CreateProduct() {
               {brand.name}
             </option>
           ))}
+        </select>
+      </div>
+
+      <div>
+        <label className="block text-sm font-medium text-gray-700">
+        Country Of Origin
+        </label>
+        <select
+          name="status"
+          value={formData.country}
+          onChange={handleChange}
+          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+        >
+          <option value="Thailand">Thailand</option>
+          <option value="Vietnam">Vietnam</option>
         </select>
       </div>
 

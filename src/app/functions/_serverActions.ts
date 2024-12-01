@@ -51,6 +51,7 @@ export async function createProduct(formData: {
   caseSize: string;
   brandId: string;
   imageUrl: string;
+  country: 'Thailand' | 'Vietnam';
   status: 'ACTIVE' | 'INACTIVE';
   featured: boolean;
 }) {
@@ -65,6 +66,7 @@ export async function createProduct(formData: {
         caseSize: formData.caseSize,
         brandId: formData.brandId,
         imageUrl: formData.imageUrl,
+        country: formData.country,
         status: formData.status,
       },
     });
